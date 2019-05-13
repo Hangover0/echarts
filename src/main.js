@@ -5,7 +5,7 @@ import App from './App'
 // 全局安装echarts
 import echarts from "echarts";
 Vue.use(echarts);
-import "echarts/theme/mythemens"
+import "echarts/theme/mythemes"
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
