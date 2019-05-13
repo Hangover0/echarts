@@ -1,11 +1,13 @@
 <template>
   <div id="app">
     <div class="img">
-      <img class="headImg" src="./assets/head.png" alt="">
-    </div>  
+      <img class="headImg" src="./assets/head.png" alt>
+    </div>
     <div class="data">
-      <p>{{data}}</p>
-      <!-- <iframe class="weather" name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=52&icon=1&num=3" width="280" height="50" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" color="#fff"></iframe> -->
+      <p>{{data.toLocaleDateString()}}</p>
+      <p>{{data.toLocaleTimeString()}}</p>
+      <p>{{weather.weather}}</p>
+      <p>{{weather.temperature}}℃</p>
     </div>
     <div class="content">
       <echartsL/>
@@ -18,20 +20,51 @@
 </template>
 
 <script>
-import echartsL from './components/echartsL'
-import echartsR from './components/echartsR'
+import echartsL from "./components/echartsL";
+import echartsR from "./components/echartsR";
+import $ from "jquery";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     echartsL,
     echartsR
   },
-  data(){
+  data() {
     return {
       data: new Date(),
-    }
+      weather: "",
+    };
   },
-}
+  created() {
+    // this.$axios
+    //   .get("https://restapi.amap.com/v3/weather/weatherInfo?parameters", {
+    //     params: {
+    //       city: "510100",
+    //       key: "977140f03634a89cee0099bb9681cf8c"
+    //     }
+    //   })
+    //   .then(res => {
+    //     this.weather = res.data.lives[0];
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+     this.$axios
+      .get("https://free-api.heweather.net/s6/weather/now?", {
+        params: {
+          location: "chengdu",
+          key: "HE1905131121461811"
+        }
+      })
+      .then(res => {
+        console.log(res);
+        // this.weather = res.data.lives[0];
+      })
+      .catch(error => {
+        console.log(error);
+      }); 
+  }
+};
 </script>
 
 <style>
@@ -42,10 +75,6 @@ export default {
 p {
   padding: 0px;
 }
-/* html {
-  width: 9600px;
-  height: 3240px;
-} */
 #app {
   width: 9600px;
   height: 3240px;
@@ -64,11 +93,15 @@ p {
   opacity: 0.8;
 }
 /* 时间样式 */
-.data{
+.data {
+  display: flex;
   color: #ffffff;
   position: absolute;
   top: 79px;
   right: 201px;
+}
+.data p {
+  margin-right: 30px;
 }
 .content {
   margin: 38px 0 0 1920px;
