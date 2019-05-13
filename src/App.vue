@@ -104,8 +104,10 @@ p {
   margin-right: 30px;
 }
 .content {
-  margin: 38px 0 0 1920px;
+  margin: 38px 20px 0 1920px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
 }
 /* 头部图片样式 */
 .img {
