@@ -71,7 +71,7 @@ p {
   right: 201px;
 }
 .content {
-  margin: 38px 0 0 0;
+  margin: 38px 0 0 1920px;
   box-sizing: border-box;
 }
 /* 头部图片样式 */
