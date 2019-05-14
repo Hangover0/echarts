@@ -9,12 +9,14 @@
           <img class="arrows" src="../assets/标题样式.png" alt>采购费用分析
         </div>
         <div>
-          <div>
-
+          <div class='total-price'>
+            <div class='sub-total'>
+              
+            </div>
           </div>
           <div id="caigouEchart">
-        </div>
-        
+          </div>
+
         </div>
         <div class='transverseLine'>
           <img src="../assets/横线.svg" alt>
@@ -24,21 +26,22 @@
       <div class='caigou-part2'>
         <div class='part2-box'>
           <!-- 各类物资采购金额占比 -->
-          <div class='caigou-kinds'>
-            <div class="sub-title">
-              <img class="arrows" src="../assets/标题样式.png" alt>各类物资采购金额占比
+          <div>
+            <div class='caigou-kinds'>
+              <div class="sub-title">
+                <img class="arrows" src="../assets/标题样式.png" alt>各类物资采购金额占比
+              </div>
+              <div id='caigouKindsEchart'></div>
             </div>
-
-            <div id='caigouKindsEchart'></div>
             <!-- 竖线 -->
-            <!-- <div class="longLine">
-                                                              <img src="../assets/竖线.svg" alt>
-                                                            </div> -->
+            <div class="longLine">
+              <img src="../assets/竖线.svg" alt>
+            </div>
           </div>
           <!--历年各类物资采购金额占比  -->
           <div>
             <div class="sub-title">
-              <img class="arrows" src="../assets/标题样式.png" alt>各类物资采购金额占比
+              <img class="arrows" src="../assets/标题样式.png" alt>历年各类物资采购金额占比
             </div>
             <div id='overCaigouKindsEchart'></div>
           </div>
@@ -85,7 +88,7 @@
         </div>
         <div class="main-gongying">
           <div class="sub-title">
-            <img class="arrows" src="../assets/标题样式.png" alt>交货一次检验合格率
+            <img class="arrows" src="../assets/标题样式.png" alt>主要供应商
           </div>
           <div id="mainGongyingEchart">
           </div>
@@ -149,33 +152,10 @@
         </div>
 
         <div class="right-part4">
-          <div>
-            <div class="sub-title">
-              <img class="arrows" src="../assets/标题样式.png" alt>订单签单率
-            </div>
-            <div id='rightLastEchart1'></div>
+          <div class="sub-title">
+            <img class="arrows" src="../assets/标题样式.png" alt>订单签单率
           </div>
-
-          <div>
-            <div class="sub-title">
-              <img class="arrows" src="../assets/标题样式.png" alt>销售产品完成率
-            </div>
-            <div id='rightLastEchart2'></div>
-          </div>
-
-          <div>
-            <div class="sub-title">
-              <img class="arrows" src="../assets/标题样式.png" alt>销售回款回笼率
-            </div>
-            <div id='rightLastEchart3'></div>
-          </div>
-
-          <div>
-            <div class="sub-title">
-              <img class="arrows" src="../assets/标题样式.png" alt>销售收入增加率
-            </div>
-            <div id='rightLastEchart4'></div>
-          </div>
+          <div id='rightLastEchart'></div>
         </div>
 
       </div>
@@ -205,11 +185,7 @@ export default {
       product3: '',
       product4: '',
       product5: '',
-      rightLastEchart4: '',
-      rightLastEchart4: '',
-      rightLastEchart4: '',
-      rightLastEchart4: '',
-
+      rightLastEchart: '',
     }
   },
   methods: {
@@ -329,8 +305,6 @@ export default {
       );
       this.overCaigouKindsEchart.setOption({
         title: {
-          text: '历年各类物资采购金额占比',
-          x: 'center'
         },
         tooltip: {
           trigger: 'axis',
@@ -644,6 +618,10 @@ export default {
       var JosnList = [];
 
       JosnList.push({ name: '日本康太克', value: '1' }, { name: 'ABB', value: '2' }, { name: '太安', value: '3' }, { name: '东旗', value: '4' },
+        { name: '西安西玛电机', value: '5' }, { name: '瑞士TESA', value: '6' }, { name: '迪博自控技术', value: '7' }, { name: '仪和贸易', value: '8' }, { name: '光明仪表', value: '9' },
+        { name: '西门子', value: '10' }, { name: '南通远东', value: '11' }, { name: '海德汉光学', value: '12' }, { name: '五金机械', value: '13' }, { name: '伸格公司', value: '14' },
+        { name: '西门子', value: '15' }, { name: '上海跃进', value: '16' }, { name: '西门子', value: '10' }, { name: '南通远东', value: '11' }, { name: '海德汉光学', value: '12' }, { name: '五金机械', value: '13' }, { name: '伸格公司', value: '14' },
+        { name: '西门子', value: '15' }, { name: '上海跃进', value: '16' }, { name: '日本康太克', value: '1' }, { name: 'ABB', value: '2' }, { name: '太安', value: '3' }, { name: '东旗', value: '4' },
         { name: '西安西玛电机', value: '5' }, { name: '瑞士TESA', value: '6' }, { name: '迪博自控技术', value: '7' }, { name: '仪和贸易', value: '8' }, { name: '光明仪表', value: '9' },
         { name: '西门子', value: '10' }, { name: '南通远东', value: '11' }, { name: '海德汉光学', value: '12' }, { name: '五金机械', value: '13' }, { name: '伸格公司', value: '14' },
         { name: '西门子', value: '15' }, { name: '上海跃进', value: '16' }, { name: '西门子', value: '10' }, { name: '南通远东', value: '11' }, { name: '海德汉光学', value: '12' }, { name: '五金机械', value: '13' }, { name: '伸格公司', value: '14' },
@@ -1031,370 +1009,91 @@ export default {
         ]
       })
     },
-    rightLastEchartF4() {
-      this.rightLastEchart4 = echarts.init(
-        document.getElementById("rightLastEchart4"),
+    rightLastEchartF() {
+      this.rightLastEchart = echarts.init(
+        document.getElementById("rightLastEchart"),
         "mythemes"
       );
-      this.rightLastEchart4.setOption({
+      this.rightLastEchart.setOption({
         title: {
-          show: false
         },
         tooltip: {
           trigger: 'axis',
           axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985'
-            },
+            type: 'cross'
           }
         },
         legend: {
-          data: ['生产计划大纲按时生产完成率', '同期客户增长率', '同期最终客户占比率'],
-          y: 'bottom'
+          data: ['订单签单率', '销售产品完成率', '销售回款回笼率', '销售收入增加率']
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
         },
         toolbox: {
           feature: {
             saveAsImage: {}
           }
         },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '10%',
-          containLabel: true
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['2012年', '2013年', '2014年', '2015年', '2016年', '2017年', '2018年']
         },
-        xAxis: [
-          {
-            type: 'category',
-            boundaryGap: false,
-            data: ['2014年', '2015年', '2016年', '2017年', '2018年'],
+        yAxis: {
+          type: 'value',
+          axisLabel: {
+            formatter: '{value} %'
           }
-        ],
-        yAxis: [
-          {
-            name: '比率',
-            type: 'value',
-            axisLabel: {
-              formatter: '{value} %'
-            },
-            min: '0',
-            max: '300'
-          }
-        ],
+        },
         series: [
           {
-            name: '生产计划大纲按时生产完成率',
+            name: '订单签单率',
             type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [95, 90, 200, 97, 150],
+            data: [95, 95, 80, 95, 100, 89, 90],
             markPoint: {
               data: [
-                {
-                  name: '最大值',
-                  type: 'max'
-                },
-                { name: '最小值', type: 'min' }
+                { type: 'max', name: '最大值' }
               ]
-            }
-          },
-          {
-            name: '同期客户增长率',
-            stack: '总量',
-            type: 'line',
-            areaStyle: {},
-            data: [60, 80, 50, 30, 10]
-          },
-          {
-            name: '同期最终客户占比率',
-            type: 'line',
-            stack: '总量',
-            label: {
-              normal: {
-                show: true,
-                position: 'top'
-              }
             },
-            areaStyle: { normal: {} },
-            data: [30, 20, 50, 70, 90]
+          },
+          {
+            name: '销售产品完成率',
+            type: 'line',
+            data: [85, 80, 91, 95, 120, 80, 64],
+            markPoint: {
+              data: [
+                { type: 'max', name: '最大值' }
+              ]
+            },
+          },
+          {
+            name: '销售回款回笼率',
+            type: 'line',
+            data: [65, 70, 55, 60, 75, 91, 90],
+            markPoint: {
+              data: [
+                { type: 'max', name: '最大值' }
+              ]
+            },
+
+          },
+          {
+            name: '销售收入增加率',
+            type: 'line',
+            data: [15, 10, 20, 30, 15, 7, 6],
+            markPoint: {
+              data: [
+                { type: 'max', name: '最大值' }
+              ]
+            },
           }
         ]
       })
     },
-     rightLastEchartF3() {
-      this.rightLastEchart3 = echarts.init(
-        document.getElementById("rightLastEchart3"),
-        "mythemes"
-      );
-      this.rightLastEchart3.setOption({
-        title: {
-          show: false
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985'
-            },
-          }
-        },
-        legend: {
-          data: ['生产计划大纲按时生产完成率', '同期客户增长率', '同期最终客户占比率'],
-          y: 'bottom'
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '10%',
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: 'category',
-            boundaryGap: false,
-            data: ['2014年', '2015年', '2016年', '2017年', '2018年'],
-          }
-        ],
-        yAxis: [
-          {
-            name: '比率',
-            type: 'value',
-            axisLabel: {
-              formatter: '{value} %'
-            },
-            min: '0',
-            max: '300'
-          }
-        ],
-        series: [
-          {
-            name: '生产计划大纲按时生产完成率',
-            type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [95, 90, 200, 97, 150],
-            markPoint: {
-              data: [
-                {
-                  name: '最大值',
-                  type: 'max'
-                },
-                { name: '最小值', type: 'min' }
-              ]
-            }
-          },
-          {
-            name: '同期客户增长率',
-            stack: '总量',
-            type: 'line',
-            areaStyle: {},
-            data: [60, 80, 50, 30, 10]
-          },
-          {
-            name: '同期最终客户占比率',
-            type: 'line',
-            stack: '总量',
-            label: {
-              normal: {
-                show: true,
-                position: 'top'
-              }
-            },
-            areaStyle: { normal: {} },
-            data: [30, 20, 50, 70, 90]
-          }
-        ]
-      })
-    },
-     rightLastEchartF2() {
-      this.rightLastEchart2 = echarts.init(
-        document.getElementById("rightLastEchart2"),
-        "mythemes"
-      );
-      this.rightLastEchart2.setOption({
-        title: {
-          show: false
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985'
-            },
-          }
-        },
-        legend: {
-          data: ['生产计划大纲按时生产完成率', '同期客户增长率', '同期最终客户占比率'],
-          y: 'bottom'
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '10%',
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: 'category',
-            boundaryGap: false,
-            data: ['2014年', '2015年', '2016年', '2017年', '2018年'],
-          }
-        ],
-        yAxis: [
-          {
-            name: '比率',
-            type: 'value',
-            axisLabel: {
-              formatter: '{value} %'
-            },
-            min: '0',
-            max: '300'
-          }
-        ],
-        series: [
-          {
-            name: '生产计划大纲按时生产完成率',
-            type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [95, 90, 200, 97, 150],
-            markPoint: {
-              data: [
-                {
-                  name: '最大值',
-                  type: 'max'
-                },
-                { name: '最小值', type: 'min' }
-              ]
-            }
-          },
-          {
-            name: '同期客户增长率',
-            stack: '总量',
-            type: 'line',
-            areaStyle: {},
-            data: [60, 80, 50, 30, 10]
-          },
-          {
-            name: '同期最终客户占比率',
-            type: 'line',
-            stack: '总量',
-            label: {
-              normal: {
-                show: true,
-                position: 'top'
-              }
-            },
-            areaStyle: { normal: {} },
-            data: [30, 20, 50, 70, 90]
-          }
-        ]
-      })
-    },
-     rightLastEchartF1() {
-      this.rightLastEchart1 = echarts.init(
-        document.getElementById("rightLastEchart1"),
-        "mythemes"
-      );
-      this.rightLastEchart1.setOption({
-        title: {
-          show: false
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985'
-            },
-          }
-        },
-        legend: {
-          data: ['生产计划大纲按时生产完成率', '同期客户增长率', '同期最终客户占比率'],
-          y: 'bottom'
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '10%',
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: 'category',
-            boundaryGap: false,
-            data: ['2014年', '2015年', '2016年', '2017年', '2018年'],
-          }
-        ],
-        yAxis: [
-          {
-            name: '比率',
-            type: 'value',
-            axisLabel: {
-              formatter: '{value} %'
-            },
-            min: '0',
-            max: '300'
-          }
-        ],
-        series: [
-          {
-            name: '生产计划大纲按时生产完成率',
-            type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [95, 90, 200, 97, 150],
-            markPoint: {
-              data: [
-                {
-                  name: '最大值',
-                  type: 'max'
-                },
-                { name: '最小值', type: 'min' }
-              ]
-            }
-          },
-          {
-            name: '同期客户增长率',
-            stack: '总量',
-            type: 'line',
-            areaStyle: {},
-            data: [60, 80, 50, 30, 10]
-          },
-          {
-            name: '同期最终客户占比率',
-            type: 'line',
-            stack: '总量',
-            label: {
-              normal: {
-                show: true,
-                position: 'top'
-              }
-            },
-            areaStyle: { normal: {} },
-            data: [30, 20, 50, 70, 90]
-          }
-        ]
-      })
-    },
+
 
 
   },
@@ -1412,10 +1111,8 @@ export default {
     this.productF3();
     this.productF4();
     this.productF5();
-    this.rightLastEchartF4();
-    this.rightLastEchartF3();
-    this.rightLastEchartF2();
-    this.rightLastEchartF1();
+  this.rightLastEchartF();
+    
   },
   created: function() {
     this.caigouEchartF();
@@ -1431,20 +1128,18 @@ export default {
     this.productF3();
     this.productF4();
     this.productF5();
-    this.rightLastEchartF4();
-    this.rightLastEchartF3();
-    this.rightLastEchartF2();
-    this.rightLastEchartF1();
+    this.rightLastEchartF();
   }
 }
 </script>
 
 <style scoped>
 .echart-container {
-   width: 3800px;
+  width: 3800px;
   display: flex;
   justify-content: space-between;
 }
+
 .left-box,
 .right-box {
   width: 1857px;
@@ -1454,6 +1149,7 @@ export default {
   background: url("../assets/bg2.png");
   box-sizing: border-box;
   padding: 180px 100px 0;
+  overflow: hidden;
 }
 
 .left-title {
@@ -1470,18 +1166,21 @@ export default {
   width: 100%;
   padding: 0 0 50px 0;
 }
-.caigou-part >div:nth-of-type(2){
- display: flex;
+
+.caigou-part>div:nth-of-type(2) {
+  display: flex;
   width: 100%;
-  height:80%;
- justify-content: flex-start;
+  height: 80%;
+  justify-content: flex-start;
 }
-.caigou-part >div:nth-of-type(2)>div:nth-of-type(1) {
-   width:40%;
+
+.caigou-part>div:nth-of-type(2)>div:nth-of-type(1) {
+  width: 40%;
   height: 80%;
 }
-.caigou-part >div:nth-of-type(2)>div:nth-of-type(2) {
-   width:60%;
+
+.caigou-part>div:nth-of-type(2)>div:nth-of-type(2) {
+  width: 60%;
   height: 80%;
 }
 
@@ -1498,11 +1197,90 @@ export default {
   padding-bottom: 10px;
 }
 
+.sub-title>img {
+  margin-right: 20px;
+}
+
 #caigouEchart {
   background: transparent;
   width: 1717px;
-  height: 400px;
+  height: 261px;
 }
+
+
+/* .total-price {
+  width: 382.3px !important;
+  height: 300px !important;
+  border-radius: 50%;
+  position: relative;
+  border: 5px solid transparent;
+  border-left-color: rgba(30, 198, 239, 0.3);
+  border-bottom-color: rgba(30, 198, 239, 0.3);
+  border-top-color: rgba(30, 198, 239, 0.3);
+  padding: 20px;
+  animation: loading 2s linear infinite;
+} */
+.total-price {
+  width: 382.3px !important;
+  height: 300px !important;
+  border-radius: 50%;
+  background: url('./../assets/2.svg');
+  padding: 20px;
+  animation: loading 2s linear infinite;
+}
+
+.sub-total {
+  width: 100% !important;
+  height: 100% !important;
+  border: 5px solid transparent;
+  border-radius: 50%;
+   background: url('./../assets/1.svg');
+  box-sizing: border-box;
+  animation: loading1 1s linear infinite;
+}
+
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@-webkit-keyframes loading1 {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+@keyframes loading1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+
+
+
+
 
 
 /* 横线 */
@@ -1511,17 +1289,39 @@ export default {
   padding-top: 50px;
 }
 
+.transverseLine img {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
 /* 竖线 */
 
 .longLine {
   text-align: center;
-  height: 500px;
+  height: 650px;
 }
 
 .longLine img {
   width: 2%;
   height: 100%;
 }
+
+
+
+
+
+
+
+
+
 
 
 /* 采购KPI的第二部分 */
@@ -1537,8 +1337,21 @@ export default {
   width: 40%;
 }
 
+.part2-box>div:nth-of-type(1) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.part2-box>div:nth-of-type(1)>div:nth-of-type(1) {
+  width: 80%;
+}
+
+.part2-box>div:nth-of-type(1)>div:nth-of-type(2) {
+  width: 20%;
+}
+
 #caigouKindsEchart {
-  height: 500px;
+  height: 400px;
 }
 
 .part2-box>div:nth-of-type(2),
@@ -1547,8 +1360,17 @@ export default {
 }
 
 #overCaigouKindsEchart {
-  height: 500px;
+  height: 423px;
 }
+
+
+
+
+
+
+
+
+
 
 
 /* 重要物资历史采购价格趋势部分 */
@@ -1556,6 +1378,15 @@ export default {
 #importantCaigouEchart {
   height: 500px;
 }
+
+
+
+
+
+
+
+
+
 
 
 /* 交货一次检验合格率  准时交货率 主要供应商*/
@@ -1583,11 +1414,11 @@ export default {
 }
 
 #commitGoodsEchart {
-  height: 200px;
+  height: 300px;
 }
 
 #commitGoodsTimeEchart {
-  height: 200px;
+  height: 300px;
 }
 
 #mainGongyingEchart {
@@ -1605,10 +1436,21 @@ export default {
 
 
 
+
+
+
+
+
+
+
+
+
 /* 右边部分 */
 
 .right-part1,
-.right-part2 {
+.right-part2,
+.right-part3,
+.right-part4 {
   padding-bottom: 50px;
 }
 
@@ -1620,11 +1462,10 @@ export default {
 .right-part1-main>div {
   width: 526px;
   height: 93px;
- background:rgba(109,156,235,0.25);
+  margin-top:20px;
+  background: rgba(109, 156, 235, 0.25);
   border: 1px solid rgba(210, 228, 255, 1);
-  opacity: 0.4;
   border-radius: 6px;
-  line-height: 93px;
 }
 
 .right-part1-main>div:nth-of-type(2) {
@@ -1632,8 +1473,6 @@ export default {
 }
 
 .right-part1-main>div>span:nth-of-type(1) {
-  width: 123px;
-  height: 29px;
   font-size: 30px;
   margin-left: 40px;
   font-family: FZLTHK--GBK1-0;
@@ -1655,7 +1494,6 @@ export default {
 }
 
 .right-part1-main>div>span:nth-of-type(3) {
-  height: 40px;
   font-size: 60px;
   font-family: LetsgoDigital-Regular;
   font-weight: 400;
@@ -1664,7 +1502,6 @@ export default {
 }
 
 .right-part1-main>div>span:nth-of-type(4) {
-  height: 40px;
   font-size: 40px;
   font-family: LetsgoDigital-Regular;
   font-weight: 400;
@@ -1675,6 +1512,15 @@ export default {
 #rightEchart1 {
   height: 600px;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1712,19 +1558,8 @@ export default {
 }
 
 
-.right-part4 {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 
-.right-part4>div {
-  width: 45%;
-  padding: 20px 0 30px;
-}
-
-.right-part4>div>div:nth-of-type(2) {
-  height: 350px;
-  /* background-color: pink; */
+#rightLastEchart {
+  height: 600px;
 }
 </style>
