@@ -36,33 +36,33 @@ export default {
     };
   },
   created() {
-    // this.$axios
-    //   .get("https://restapi.amap.com/v3/weather/weatherInfo?parameters", {
-    //     params: {
-    //       city: "510100",
-    //       key: "977140f03634a89cee0099bb9681cf8c"
-    //     }
-    //   })
-    //   .then(res => {
-    //     this.weather = res.data.lives[0];
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
-     this.$axios
-      .get("https://free-api.heweather.net/s6/weather/now?", {
+    this.$axios
+      .get("https://restapi.amap.com/v3/weather/weatherInfo?parameters", {
         params: {
-          location: "chengdu",
-          key: "HE1905131121461811"
+          city: "510100",
+          key: "977140f03634a89cee0099bb9681cf8c"
         }
       })
       .then(res => {
-        console.log(res);
-        // this.weather = res.data.lives[0];
+        this.weather = res.data.lives[0];
       })
       .catch(error => {
         console.log(error);
-      }); 
+      });
+    //  this.$axios
+    //   .get("https://free-api.heweather.net/s6/weather/now?", {
+    //     params: {
+    //       location: "chengdu",
+    //       key: "HE1905131121461811"
+    //     }
+    //   })
+    //   .then(res => {
+    //     console.log(res);
+    //     // this.weather = res.data.lives[0];
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   }); 
   }
 };
 </script>
