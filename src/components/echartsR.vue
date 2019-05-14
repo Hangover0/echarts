@@ -11,12 +11,13 @@
         <div>
           <div class='total-price'>
             <div class='sub-total'>
-              
             </div>
+          </div>
+          <div class="font-part">
+            <img src="../assets/totalPrice.png" alt="">
           </div>
           <div id="caigouEchart">
           </div>
-
         </div>
         <div class='transverseLine'>
           <img src="../assets/横线.svg" alt>
@@ -113,9 +114,9 @@
               <span>亿元 </span>
             </div>
             <div>
-              <span>合同总额</span>
+              <span>销售总额</span>
               <span>￥</span>
-              <span>1.65</span>
+              <span>1.32</span>
               <span>亿元 </span>
             </div>
           </div>
@@ -198,8 +199,14 @@ export default {
         title: {
         },
         legend: {
-          y: 'bottom',
+          x: 'right',
+          y: 'top',
           show: true,
+          textStyle: {
+            color: '#fff',
+            fontSize: 20
+          },
+          padding:[0,0,50,0]
         },
         tooltip: {
           trigger: 'axis',
@@ -217,7 +224,19 @@ export default {
           position: 'top',
           splitLine: { lineStyle: { type: 'dashed' } },
           min: -0.1,
-          max: 0.25
+          max: 0.25,
+          nameTextStyle: {
+            color: "#fff",
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#ddd",
+            },
+          },
+          axisLabel: {
+            color: "#ddd",
+            fontSize: 18,
+          }
         },
         yAxis: {
           type: 'category',
@@ -225,7 +244,16 @@ export default {
           axisLabel: { show: false },
           axisTick: { show: false },
           splitLine: { show: false },
-          data: ['2017', '2016', '2015']
+          data: ['2017', '2016', '2015'],
+          axisLine: {
+              lineStyle: {
+                color: "#ddd",
+              }
+            },
+            axisLabel: {
+              color: "#ddd",
+              fontSize: 18,
+            }
         },
         series: [
           {
@@ -260,10 +288,16 @@ export default {
           formatter: "{a} <br/>{b} : {d}%"
         },
         legend: {
-          x: 'left',
+          show:false,
+          x: 'center',
           y: 'bottom',
-          orient: 'vertical',
-          data: ['原材料', '外购零件', '工具量具', '工装火具', '办公耗材', '劳保清洁品']
+          orient:'horizontal',
+          data: ['原材料', '外购零件', '工具量具', '工装火具', '办公耗材', '劳保清洁品'],
+          textStyle: {
+            color: '#fff',
+            fontSize: 20
+          },
+          padding:[100,0,0,0]
         },
         toolbox: {
           show: true,
@@ -315,19 +349,36 @@ export default {
         legend: {
           x: 'center',
           y: 'bottom',
+          orient:'horizontal',
           data: ['原材料', '外购零件', '工具量具', '工装火具', '办公耗材'],
+          textStyle: {
+            color: '#fff',
+            fontSize: 20
+          },
         },
         grid: {
-          left: '32%',
+          left: 0,
           right: '10%',
           bottom: '8%',
-          width: 500,
+          width: 900,
           containLabel: true
         },
         xAxis: [
           {
             type: 'category',
-            data: ['2015', '2016', '2017', '2018']
+            data: ['2015', '2016', '2017', '2018'],
+           nameTextStyle: {
+            color: "#fff",
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#ddd",
+            },
+          },
+          axisLabel: {
+            color: "#ddd",
+            fontSize: 18,
+          }
           }
         ],
         yAxis: [
@@ -335,7 +386,16 @@ export default {
             type: 'value',
             min: 0,
             max: 300,
-            interval: 50
+            interval: 50,
+            axisLine: {
+              lineStyle: {
+                color: "#ddd",
+              }
+            },
+            axisLabel: {
+              color: "#ddd",
+              fontSize: 18,
+            }
           }
         ],
         series: [
@@ -375,761 +435,945 @@ export default {
 
         ]
       })
-    },
-    importantCaigouEchartF() {
-      this.importantCaigouEchart = echarts.init(
-        document.getElementById("importantCaigouEchart"),
-        "mythemes"
-      );
-      this.importantCaigouEchart.setOption({
-        title: {
+  },
+  importantCaigouEchartF() {
+    this.importantCaigouEchart = echarts.init(
+      document.getElementById("importantCaigouEchart"),
+      "mythemes"
+    );
+    this.importantCaigouEchart.setOption({
+      title: {
+      },
+      tooltip: {
+        trigger: 'axis',
+      },
+      legend: {
+        x: "right",
+        y: 'top',
+        data: ['直流电机', '交流电机', '动平衡仪', '粗糙度仪', '涡流探伤仪', '接触器', '滚珠丝杆'],
+        textStyle: {
+          color: '#fff',
+          fontSize: 20
         },
-        tooltip: {
-          trigger: 'axis',
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '8%',
+        containLabel: true
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: ['2015', '2016', '2017', '2018'],
+        nameTextStyle: {
+          color: "#fff",
         },
-        legend: {
-          y: 'bottom',
-          data: ['直流电机', '交流电机', '动平衡仪', '粗糙度仪', '涡流探伤仪', '接触器', '滚珠丝杆']
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '8%',
-          containLabel: true
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
-        xAxis: {
-          type: 'category',
-          data: ['2015', '2016', '2017', '2018']
-        },
-        yAxis: {
-          type: 'value',
-          min: 0,
-          max: 20,
-          interval: 2,
-          axisLabel: {
-            formatter: '{value} 万元'
-          }
-        },
-        series: [
-          {
-            name: '直流电机',
-            type: 'line',
-            data: [5, 4.5, 6, 5.8],
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            },
+        axisLine: {
+          lineStyle: {
+            color: "#ddd",
           },
-          {
-            name: '交流电机',
-            type: 'line',
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            },
-            data: [0.3, 0.5, 0.6, 0.55]
-          },
-          {
-            name: '动平衡仪',
-            type: 'line',
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            },
-            data: [2.6, 2.8, 2.7, 3]
-          },
-          {
-            name: '粗糙度仪',
-            type: 'line',
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            },
-            data: [1.8, 2.8, 2.5, 3]
-          },
-          {
-            name: '涡流探伤仪',
-            type: 'line',
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            },
-            data: [10, 13, 12, 15]
-          },
-
-          {
-            name: '接触器',
-            type: 'line',
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            },
-            data: [0.5, 0.48, 0.55, 0.58]
-          },
-          {
-            name: '滚珠丝杆',
-            type: 'line',
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            },
-            data: [1.2, 1.5, 1.4, 1.7]
-          },
-
-        ]
-      })
-    },
-    commitGoodsEchartF() {
-      this.commitGoodsEchart = echarts.init(
-        document.getElementById("commitGoodsEchart"),
-        "mythemes"
-      );
-      var value = 0.55
-      var data = []
-      data.push(value)
-      data.push(value)
-      data.push(value)
-      data.push(value)
-      data.push(value)
-      this.commitGoodsEchart.setOption({
-        // backgroundColor: '#1b2735',
-        title: {
         },
-        series: [{
-          type: 'liquidFill',
-          radius: '80%',
-          data: data,
-          backgroundStyle: {
-            borderWidth: 3,
-            borderColor: '#32C0E3',
-            color: 'rgb(255,0,255,0.01)'
-          },
-          label: {
-            normal: {
-              formatter: (value * 100).toFixed(2) + '%',
-              textStyle: {
-                fontSize: 50
-              }
-            }
-          }
-        }]
-      })
-    },
-    commitGoodsTimeEchartF() {
-      this.commitGoodsTimeEchart = echarts.init(
-        document.getElementById("commitGoodsTimeEchart"),
-        "mythemes"
-      );
-      var value = 0.55
-      var data = []
-      data.push(value)
-      data.push(value)
-      data.push(value)
-      data.push(value)
-      data.push(value)
-      this.commitGoodsTimeEchart.setOption({
-        // backgroundColor: '#1b2735',
-        title: {
-
+        axisLabel: {
+          color: "#ddd",
+          fontSize: 18,
+        }
+      },
+      yAxis: {
+        type: 'value',
+        min: 0,
+        max: 20,
+        interval: 2,
+        axisLabel: {
+          formatter: '{value} 万元'
         },
-        series: [{
-          type: 'liquidFill',
-          radius: '80%',
-          data: data,
-          backgroundStyle: {
-            borderWidth: 3,
-            borderColor: '#32C0E3',
-            color: 'rgb(255,0,255,0.01)'
-          },
-          label: {
-            normal: {
-              formatter: (value * 100).toFixed(2) + '%',
-              textStyle: {
-                fontSize: 50
-              }
-            }
-          }
-        }]
-      })
-    },
-    mainGongyingEchartF() {
-      this.mainGongyingEchart = echarts.init(
-        document.getElementById("mainGongyingEchart"),
-        "mythemes"
-      );
-      var worldCloudoption = {
-        title: {
-        },
-        tooltip: {
-          show: true
-        },
-        series: [{
-          name: '研发部邮件主题分析',
-          type: 'wordCloud',
-          sizeRange: [6, 66],
-          rotationRange: [-45, 90],
-          textPadding: 0,
-          autoSize: {
-            enable: true,
-            minSize: 6
-          },
-          textStyle: {
-            normal: {
-              color: function() {
-                let colorArr = ['#3fb1e3', '#6be6c1', '#e3b67f', '#aaa0e6', '#c4ebad', '#96dee8'];
-                let colorIndex = Math.ceil(Math.random() * 3);
-                return colorArr[colorIndex];
+        axisLine: {
+              lineStyle: {
+                color: "#ddd",
               }
             },
-            emphasis: {
-              shadowBlur: 10,
-              shadowColor: '#333'
-            }
-          },
-          data: [{
-            name: "Jayfee",
-            value: 666
-          }, {
-            name: "Nancy",
-            value: 520
-          }]
-        }]
-      };
-
-      var JosnList = [];
-
-      JosnList.push({ name: '日本康太克', value: '1' }, { name: 'ABB', value: '2' }, { name: '太安', value: '3' }, { name: '东旗', value: '4' },
-        { name: '西安西玛电机', value: '5' }, { name: '瑞士TESA', value: '6' }, { name: '迪博自控技术', value: '7' }, { name: '仪和贸易', value: '8' }, { name: '光明仪表', value: '9' },
-        { name: '西门子', value: '10' }, { name: '南通远东', value: '11' }, { name: '海德汉光学', value: '12' }, { name: '五金机械', value: '13' }, { name: '伸格公司', value: '14' },
-        { name: '西门子', value: '15' }, { name: '上海跃进', value: '16' }, { name: '西门子', value: '10' }, { name: '南通远东', value: '11' }, { name: '海德汉光学', value: '12' }, { name: '五金机械', value: '13' }, { name: '伸格公司', value: '14' },
-        { name: '西门子', value: '15' }, { name: '上海跃进', value: '16' }, { name: '日本康太克', value: '1' }, { name: 'ABB', value: '2' }, { name: '太安', value: '3' }, { name: '东旗', value: '4' },
-        { name: '西安西玛电机', value: '5' }, { name: '瑞士TESA', value: '6' }, { name: '迪博自控技术', value: '7' }, { name: '仪和贸易', value: '8' }, { name: '光明仪表', value: '9' },
-        { name: '西门子', value: '10' }, { name: '南通远东', value: '11' }, { name: '海德汉光学', value: '12' }, { name: '五金机械', value: '13' }, { name: '伸格公司', value: '14' },
-        { name: '西门子', value: '15' }, { name: '上海跃进', value: '16' }, { name: '西门子', value: '10' }, { name: '南通远东', value: '11' }, { name: '海德汉光学', value: '12' }, { name: '五金机械', value: '13' }, { name: '伸格公司', value: '14' },
-        { name: '西门子', value: '15' }, { name: '上海跃进', value: '16' });
-      worldCloudoption.series[0].data = JosnList;
-
-      this.mainGongyingEchart.setOption(worldCloudoption);
-
-    },
-    rightEchartF1() {
-      this.rightEchart1 = echarts.init(
-        document.getElementById("rightEchart1"),
-        "mythemes"
-      );
-      this.rightEchart1.setOption({
-        title: {
-          show: false
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985'
-            },
-          }
-        },
-        legend: {
-          data: ['生产计划大纲按时生产完成率', '同期客户增长率', '同期最终客户占比率'],
-          y: 'bottom'
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '10%',
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: 'category',
-            boundaryGap: false,
-            data: ['2014年', '2015年', '2016年', '2017年', '2018年'],
-          }
-        ],
-        yAxis: [
-          {
-            name: '比率',
-            type: 'value',
             axisLabel: {
-              formatter: '{value} %'
-            },
-            min: '0',
-            max: '300'
+              color: "#ddd",
+              fontSize: 18,
+            }
+      },
+      series: [
+        {
+          name: '直流电机',
+          type: 'line',
+          data: [5, 4.5, 6, 5.8],
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' },
+              { type: 'min', name: '最小值' }
+            ]
+          },
+        },
+        {
+          name: '交流电机',
+          type: 'line',
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' },
+              { type: 'min', name: '最小值' }
+            ]
+          },
+          data: [0.3, 0.5, 0.6, 0.55]
+        },
+        {
+          name: '动平衡仪',
+          type: 'line',
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' },
+              { type: 'min', name: '最小值' }
+            ]
+          },
+          data: [2.6, 2.8, 2.7, 3]
+        },
+        {
+          name: '粗糙度仪',
+          type: 'line',
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' },
+              { type: 'min', name: '最小值' }
+            ]
+          },
+          data: [1.8, 2.8, 2.5, 3]
+        },
+        {
+          name: '涡流探伤仪',
+          type: 'line',
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' },
+              { type: 'min', name: '最小值' }
+            ]
+          },
+          data: [10, 13, 12, 15]
+        },
+
+        {
+          name: '接触器',
+          type: 'line',
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' },
+              { type: 'min', name: '最小值' }
+            ]
+          },
+          data: [0.5, 0.48, 0.55, 0.58]
+        },
+        {
+          name: '滚珠丝杆',
+          type: 'line',
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' },
+              { type: 'min', name: '最小值' }
+            ]
+          },
+          data: [1.2, 1.5, 1.4, 1.7]
+        },
+
+      ]
+    })
+  },
+  commitGoodsEchartF() {
+    this.commitGoodsEchart = echarts.init(
+      document.getElementById("commitGoodsEchart"),
+      "mythemes"
+    );
+    var value = 0.95
+    var data = []
+    data.push(value)
+    data.push(value)
+    data.push(value)
+    data.push(value)
+    data.push(value)
+    this.commitGoodsEchart.setOption({
+      // backgroundColor: '#1b2735',
+      title: {
+      },
+      series: [{
+        type: 'liquidFill',
+        radius: '80%',
+        data: data,
+        backgroundStyle: {
+          borderWidth: 3,
+          borderColor: '#32C0E3',
+          color: 'rgb(255,0,255,0.01)'
+        },
+        label: {
+          normal: {
+            formatter: (value * 100).toFixed(2) + '%',
+            textStyle: {
+              fontSize: 50
+            }
           }
-        ],
-        series: [
-          {
-            name: '生产计划大纲按时生产完成率',
-            type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [95, 90, 200, 97, 150],
-            markPoint: {
-              data: [
-                {
-                  name: '最大值',
-                  type: 'max'
-                },
-                { name: '最小值', type: 'min' }
-              ]
+        }
+      }]
+    })
+  },
+  commitGoodsTimeEchartF() {
+    this.commitGoodsTimeEchart = echarts.init(
+      document.getElementById("commitGoodsTimeEchart"),
+      "mythemes"
+    );
+    var value = 0.62
+    var data = []
+    data.push(value)
+    data.push(value)
+    data.push(value)
+    data.push(value)
+    data.push(value)
+    this.commitGoodsTimeEchart.setOption({
+      // backgroundColor: '#1b2735',
+      title: {
+
+      },
+      series: [{
+        type: 'liquidFill',
+        radius: '80%',
+        data: data,
+        backgroundStyle: {
+          borderWidth: 3,
+          borderColor: '#32C0E3',
+          color: 'rgb(255,0,255,0.01)'
+        },
+        label: {
+          normal: {
+            formatter: (value * 100).toFixed(2) + '%',
+            textStyle: {
+              fontSize: 50
+            }
+          }
+        }
+      }]
+    })
+  },
+  mainGongyingEchartF() {
+    this.mainGongyingEchart = echarts.init(
+      document.getElementById("mainGongyingEchart"),
+      "mythemes"
+    );
+    var worldCloudoption = {
+      title: {
+      },
+      tooltip: {
+        show: true
+      },
+      series: [{
+        name: '研发部邮件主题分析',
+        type: 'wordCloud',
+        sizeRange: [6, 66],
+        rotationRange: [-45, 90],
+        textPadding: 0,
+        autoSize: {
+          enable: true,
+          minSize: 6
+        },
+        textStyle: {
+          normal: {
+            color: function() {
+              let colorArr = ['#3fb1e3', '#6be6c1', '#e3b67f', '#aaa0e6', '#c4ebad', '#96dee8'];
+              let colorIndex = Math.ceil(Math.random() * 3);
+              return colorArr[colorIndex];
             }
           },
-          {
-            name: '同期客户增长率',
-            stack: '总量',
-            type: 'line',
-            areaStyle: {},
-            data: [60, 80, 50, 30, 10]
-          },
-          {
-            name: '同期最终客户占比率',
-            type: 'line',
-            stack: '总量',
-            label: {
-              normal: {
-                show: true,
-                position: 'top'
-              }
-            },
-            areaStyle: { normal: {} },
-            data: [30, 20, 50, 70, 90]
+          emphasis: {
+            shadowBlur: 10,
+            shadowColor: '#333'
           }
-        ]
-      })
-    },
-    productF1() {
-      this.product1 = echarts.init(
-        document.getElementById("product1"),
-        "mythemes"
-      );
-      this.product1.setOption({
-        title: {
-          text: '销售计划完成率',
-          x: 'center',
-          y: 'bottom'
         },
-        tooltip: {
-          show: true,
+        data: [{
+          name: "Jayfee",
+          value: 666
+        }, {
+          name: "Nancy",
+          value: 520
+        }]
+      }]
+    };
 
-        },
-        angleAxis: {
-          name: '完成率',
-          min: 0,
-          max: 220,
-          interval: 50,
-          show: false,
-          clockwise: false,
-          startAngle: 90,
-        },
-        radiusAxis: {
-          type: 'category',
-          data: ['2015年', '2016年', '2017年', '2018年'],
-          z: 10,
-          show: false
-        },
-        polar: {
-        },
-        series: [{
-          type: 'bar',
-          data: [
-            {
-              value: 93,
-              name: '2015年销售计划完成率',
-              itemStyle: {
+    var JosnList = [];
 
-              },
-            },
-            {
-              value: 197,
-              name: '2016年销售计划完成率'
-            },
-            {
-              value: 100,
-              name: '2017年销售计划完成率'
-            },
-            {
-              value: 107,
-              name: '2018年销售计划完成率'
-            },],
-          coordinateSystem: 'polar',
-          name: '销售计划完成率',
+    JosnList.push({ name: '日本康太克', value: '100' }, { name: 'ABB', value: '150' }, { name: '太安', value: '151' }, { name: '东旗', value: '40' },
+      { name: '西安西玛电机', value: '151' }, { name: '瑞士TESA', value: '151' }, { name: '迪博自控技术', value: '100' }, { name: '仪和贸易', value: '151' }, { name: '光明仪表', value: '151' },
+      { name: '西门子', value: '151' }, { name: '南通远东', value: '151' }, { name: '海德汉光学', value: '151' }, { name: '五金机械', value: '151' }, { name: '伸格公司', value: '151' },
+      { name: '西门子', value: '151' }, { name: '上海跃进', value: '151' }, );
+    worldCloudoption.series[0].data = JosnList;
+
+    this.mainGongyingEchart.setOption(worldCloudoption);
+
+  },
+  rightEchartF1() {
+    this.rightEchart1 = echarts.init(
+      document.getElementById("rightEchart1"),
+      "mythemes"
+    );
+    this.rightEchart1.setOption({
+      title: {
+        show: false
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
           label: {
-            normal: {
-              show: true,
-
-            },
-          }
-        },]
-      })
-
-
-    },
-    productF2() {
-      this.product2 = echarts.init(
-        document.getElementById("product2"),
-        "mythemes"
-      );
-      this.product2.setOption({
-        title: {
-          text: '轧辊磨床累计交货数量',
-          show: true,
-          x: 'center',
-          y: 'center'
+            backgroundColor: '#6a7985'
+          },
+        }
+      },
+      legend: {
+        x: "right",
+        data: ['生产计划大纲按时生产完成率', '同期客户增长率', '同期最终客户占比率'],
+        y: 'top',
+        textStyle: {
+          color: '#fff',
+          fontSize: 20
         },
-        tooltip: {
-          trigger: 'item',
-          formatter: "{a} <br/>{b}: {c} ({d}%)"
-        },
-        legend: {
-          show: false,
-          data: ['2015年', '2016年', '2017年', '2018年']
-        },
-        series: [
-          {
-            name: '2015年',
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              normal: {
-                show: true,
-                position: 'outside',
-                formatter: "{b}: {c} (台)"
-              },
-              emphasis: {
-                show: true,
-                textStyle: {
-                  fontSize: '30',
-                  fontWeight: 'bold'
-                }
-              }
-            },
-            labelLine: {
-              normal: {
-                show: true
-              }
-            },
-            data: [
-              { value: 153, name: '2015年' },
-              { value: 180, name: '2016年' },
-              { value: 166, name: '2017年' },
-              { value: 178, name: '2018年', selected: true },
-            ]
-          }
-        ]
-      })
-    },
-    productF3() {
-      this.product3 = echarts.init(
-        document.getElementById("product3"),
-        "mythemes"
-      );
-      this.product3.setOption({
-        title: {
-          text: '轧辊磨床客户订购累计台数',
-          show: true,
-          x: 'center',
-          y: 'center'
-        },
-        tooltip: {
-          trigger: 'item',
-          formatter: "{a} <br/>{b}: {c} ({d}%)"
-        },
-        legend: {
-          show: false,
-          data: ['2015年', '2016年', '2017年', '2018年']
-        },
-        series: [
-          {
-            name: '2015年',
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              normal: {
-                show: true,
-                position: 'outside',
-                formatter: "{b}: {c} (台)"
-              },
-              emphasis: {
-                show: true,
-                textStyle: {
-                  fontSize: '30',
-                  fontWeight: 'bold'
-                }
-              }
-            },
-            labelLine: {
-              normal: {
-                show: true
-              }
-            },
-            data: [
-              { value: 153, name: '2015年' },
-              { value: 180, name: '2016年' },
-              { value: 166, name: '2017年' },
-              { value: 178, name: '2018年', selected: true },
-            ]
-          }
-        ]
-      })
-    },
-    productF4() {
-      this.product4 = echarts.init(
-        document.getElementById("product4"),
-        "mythemes"
-      );
-      this.product4.setOption({
-        title: {
-          text: '无心磨床客户订购累计台数',
-          show: true,
-          x: 'center',
-          y: 'center'
-        },
-        tooltip: {
-          trigger: 'item',
-          formatter: "{a} <br/>{b}: {c} ({d}%)"
-        },
-        legend: {
-          show: false,
-          data: ['2015年', '2016年', '2017年', '2018年']
-        },
-        series: [
-          {
-            name: '2015年',
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              normal: {
-                show: true,
-                position: 'outside',
-                formatter: "{b}: {c} (台)"
-              },
-              emphasis: {
-                show: true,
-                textStyle: {
-                  fontSize: '30',
-                  fontWeight: 'bold'
-                }
-              }
-            },
-            labelLine: {
-              normal: {
-                show: true
-              }
-            },
-            data: [
-              { value: 97, name: '2015年' },
-              { value: 112, name: '2016年' },
-              { value: 117, name: '2017年' },
-              { value: 130, name: '2018年', selected: true },
-            ]
-          }
-        ]
-      })
-    },
-    productF5() {
-      this.product5 = echarts.init(
-        document.getElementById("product5"),
-        "mythemes"
-      );
-      this.product5.setOption({
-        title: {
-          text: '无心磨床客户订购累计台数',
-          show: true,
-          x: 'center',
-          y: 'center'
-        },
-        tooltip: {
-          trigger: 'item',
-          formatter: "{a} <br/>{b}: {c} ({d}%)"
-        },
-        legend: {
-          show: false,
-          data: ['2015年', '2016年', '2017年', '2018年']
-        },
-        series: [
-          {
-            name: '2015年',
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              normal: {
-                show: true,
-                position: 'outside',
-                formatter: "{b}: {c} (台)"
-              },
-              emphasis: {
-                show: true,
-                textStyle: {
-                  fontSize: '30',
-                  fontWeight: 'bold'
-                }
-              }
-            },
-            labelLine: {
-              normal: {
-                show: true
-              }
-            },
-            data: [
-              { value: 97, name: '2015年' },
-              { value: 112, name: '2016年' },
-              { value: 117, name: '2017年' },
-              { value: 130, name: '2018年', selected: true },
-            ]
-          }
-        ]
-      })
-    },
-    rightLastEchartF() {
-      this.rightLastEchart = echarts.init(
-        document.getElementById("rightLastEchart"),
-        "mythemes"
-      );
-      this.rightLastEchart.setOption({
-        title: {
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross'
-          }
-        },
-        legend: {
-          data: ['订单签单率', '销售产品完成率', '销售回款回笼率', '销售收入增加率']
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {}
-          }
-        },
-        xAxis: {
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '10%',
+        containLabel: true
+      },
+      xAxis: [
+        {
           type: 'category',
           boundaryGap: false,
-          data: ['2012年', '2013年', '2014年', '2015年', '2016年', '2017年', '2018年']
-        },
-        yAxis: {
+          data: ['2014年', '2015年', '2016年', '2017年', '2018年'],
+          nameTextStyle: {
+            color: "#fff",
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#ddd",
+            },
+          },
+          axisLabel: {
+            color: "#ddd",
+            fontSize: 18,
+          }
+        }
+      ],
+      yAxis: [
+        {
+          name: '比率',
           type: 'value',
           axisLabel: {
             formatter: '{value} %'
+          },
+          min: '0',
+          max: '300',
+          axisLine: {
+              lineStyle: {
+                color: "#fff",
+                fontSize:'18px'
+              }
+            },
+            axisLabel: {
+              color: "#ddd",
+              fontSize: 18,
+            }
+        }
+      ],
+      series: [
+        {
+          name: '生产计划大纲按时生产完成率',
+          type: 'line',
+          stack: '总量',
+          areaStyle: {},
+          data: [95, 90, 200, 97, 150],
+          markPoint: {
+            data: [
+              {
+                name: '最大值',
+                type: 'max'
+              },
+              { name: '最小值', type: 'min' }
+            ]
           }
         },
-        series: [
+        {
+          name: '同期客户增长率',
+          stack: '总量',
+          type: 'line',
+          areaStyle: {},
+          data: [60, 80, 50, 30, 10]
+        },
+        {
+          name: '同期最终客户占比率',
+          type: 'line',
+          stack: '总量',
+          label: {
+            normal: {
+              show: true,
+              position: 'top'
+            }
+          },
+          areaStyle: { normal: {} },
+          data: [30, 20, 50, 70, 90]
+        }
+      ]
+    })
+  },
+  productF1() {
+    this.product1 = echarts.init(
+      document.getElementById("product1"),
+      "mythemes"
+    );
+    // this.product1.setOption({
+    //   color: ['#3fb1e3', '#6be6c1', '#e3b67f', '#aaa0e6', '#c4ebad', '#96dee8'],
+
+    //   legend: {
+    //     x: 'right',
+    //     y: "top",
+    //   },
+    //   tooltip: {
+    //     show: true,
+    //     trigger: 'item',
+    //     formatter: "{a} : <br />{c}%",
+    //   },
+    //   polar: {
+    //     center: ['50%', '50%'],
+    //     radius: '300%' //图形大小
+    //   },
+    //   angleAxis: {
+    //     show: false,
+    //     startAngle: 90,
+    //     min: 0,
+    //     max: 100
+    //   },
+    //   radiusAxis: {
+    //     type: 'category',
+    //     show: false,
+    //     data: ['2015年', '2016年', '2017年', '2018年']
+    //   },
+    //   series: [
+
+    //     {
+    //       type: "bar",
+    //       name: "2015年",
+    //       coordinateSystem: "polar",
+    //       barWidth: 20, //宽度
+    //       barCategoryGap: "40%",
+    //       // data: ["76.25","47.09","22.09"],
+    //       data: [" 93"],
+    //     },
+    //     {
+    //       type: "bar",
+    //       name: "2016年",
+    //       coordinateSystem: "polar",
+    //       barWidth: 20,
+    //       barCategoryGap: "40%",
+    //       // data: ["14.09","55.09","27.09"]
+    //       data: ["197"]
+    //     },
+    //     {
+    //       type: "bar",
+    //       name: "2017年",
+    //       coordinateSystem: "polar",
+    //       barWidth: 20,
+    //       barCategoryGap: "40%",
+    //       // data: ["9.66","23.09","53.09"]
+    //       data: ["100"]
+    //     },
+    //     {
+    //       type: "bar",
+    //       name: "2018年",
+    //       coordinateSystem: "polar",
+    //       barWidth: 20,
+    //       barCategoryGap: "40%",
+    //       // data: ["9.66","23.09","53.09"]
+    //       data: ["107"]
+    //     }
+    //   ]
+
+
+    // })
+    this.product1.setOption({
+      title: {
+
+      },
+      legend: {
+        x: 'right',
+        y: 'top',
+        textStyle: {
+          color: '#fff',
+          fontSize: 20
+        },
+      },
+      tooltip: {
+        show: true,
+
+      },
+      angleAxis: {
+        name: '完成率',
+        min: 0,
+        max: 220,
+        interval: 50,
+        show: false,
+        clockwise: false,
+        startAngle: 90,
+      },
+      radiusAxis: {
+        type: 'category',
+        data: ['2015年', '2016年', '2017年', '2018年'],
+        show: false
+      },
+      polar: {
+      },
+      series: [{
+        type: 'bar',
+        data: [
           {
-            name: '订单签单率',
-            type: 'line',
-            data: [95, 95, 80, 95, 100, 89, 90],
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' }
-              ]
+            value: 93,
+            name: '2015年销售计划完成率',
+            itemStyle: {
+
             },
           },
           {
-            name: '销售产品完成率',
-            type: 'line',
-            data: [85, 80, 91, 95, 120, 80, 64],
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' }
-              ]
-            },
+            value: 197,
+            name: '2016年销售计划完成率'
           },
           {
-            name: '销售回款回笼率',
-            type: 'line',
-            data: [65, 70, 55, 60, 75, 91, 90],
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' }
-              ]
-            },
+            value: 100,
+            name: '2017年销售计划完成率'
+          },
+          {
+            value: 107,
+            name: '2018年销售计划完成率'
+          },],
+        coordinateSystem: 'polar',
+        name: '销售计划完成率',
+        label: {
+          normal: {
+            show: true,
 
           },
-          {
-            name: '销售收入增加率',
-            type: 'line',
-            data: [15, 10, 20, 30, 15, 7, 6],
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' }
-              ]
-            },
-          }
-        ]
-      })
-    },
-
+        }
+      },]
+    })
 
 
   },
-  mounted: function() {
-    this.caigouEchartF();
-    this.caigouKindsEchartF();
-    this.overCaigouKindsEchartF();
-    this.importantCaigouEchartF();
-    this.commitGoodsEchartF();
-    this.commitGoodsTimeEchartF();
-    this.mainGongyingEchartF();
-    this.rightEchartF1();
-    this.productF1();
-    this.productF2();
-    this.productF3();
-    this.productF4();
-    this.productF5();
+  productF2() {
+    this.product2 = echarts.init(
+      document.getElementById("product2"),
+      "mythemes"
+    );
+    this.product2.setOption({
+      title: {
+        text: '轧辊磨床累计\n交货数量',
+        show: true,
+        x: 'center',
+        y: 'center',
+        textStyle:{
+          lineHeight:25,
+          fontWeight:"lighter"
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+      },
+      legend: {
+        show: false,
+        data: ['2015年', '2016年', '2017年', '2018年'],
+        textStyle: {
+          color: '#fff',
+          fontSize: 20
+        },
+      },
+      series: [
+        {
+          name: '2015年',
+          type: 'pie',
+          radius: ['50%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: true,
+              position: 'outside',
+              formatter: "{b}: {c} (台)"
+            },
+            emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '30',
+                fontWeight: 'bold'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              show: true
+            }
+          },
+          data: [
+            { value: 153, name: '2015年' },
+            { value: 180, name: '2016年' },
+            { value: 166, name: '2017年' },
+            { value: 178, name: '2018年', selected: true },
+          ]
+        }
+      ]
+    })
+  },
+  productF3() {
+    this.product3 = echarts.init(
+      document.getElementById("product3"),
+      "mythemes"
+    );
+    this.product3.setOption({
+      title: {
+        text: '轧辊磨床客户\n 订购累计台数',
+        show: true,
+        x: 'center',
+        y: 'center',
+        textStyle:{
+          lineHeight:25,
+          fontWeight:"lighter"
+        }
+
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+      },
+      legend: {
+        show: false,
+        data: ['2015年', '2016年', '2017年', '2018年'],
+        textStyle: {
+          color: '#fff',
+          fontSize: 20
+        },
+
+      },
+      series: [
+        {
+          name: '2015年',
+          type: 'pie',
+          radius: ['50%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: true,
+              position: 'outside',
+              formatter: "{b}: {c} (台)"
+            },
+            emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '30',
+                fontWeight: 'bold'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              show: true
+            }
+          },
+          data: [
+            { value: 153, name: '2015年' },
+            { value: 180, name: '2016年' },
+            { value: 166, name: '2017年' },
+            { value: 178, name: '2018年', selected: true },
+          ]
+        }
+      ]
+    })
+  },
+  productF4() {
+    this.product4 = echarts.init(
+      document.getElementById("product4"),
+      "mythemes"
+    );
+    this.product4.setOption({
+      title: {
+        text: '无心磨床客户订购\n累计台数',
+        show: true,
+        x: 'center',
+        y: 'center',
+        textStyle:{
+          lineHeight:25,
+          fontWeight:"lighter"
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+      },
+      legend: {
+        show: false,
+        data: ['2015年', '2016年', '2017年', '2018年'],
+        textStyle: {
+          color: '#fff',
+          fontSize: 20
+        },
+      },
+      series: [
+        {
+          name: '2015年',
+          type: 'pie',
+          radius: ['50%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: true,
+              position: 'outside',
+              formatter: "{b}: {c} (台)"
+            },
+            emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '30',
+                fontWeight: 'bold'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              show: true
+            }
+          },
+          data: [
+            { value: 97, name: '2015年' },
+            { value: 112, name: '2016年' },
+            { value: 117, name: '2017年' },
+            { value: 130, name: '2018年', selected: true },
+          ]
+        }
+      ]
+    })
+  },
+  productF5() {
+    this.product5 = echarts.init(
+      document.getElementById("product5"),
+      "mythemes"
+    );
+    this.product5.setOption({
+      title: {
+        text: '无心磨床客户订购\n累计台数',
+        show: true,
+        x: 'center',
+        y: 'center',
+        textStyle:{
+           lineHeight:25,
+          fontWeight:"lighter"
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+      },
+      legend: {
+        show: false,
+        data: ['2015年', '2016年', '2017年', '2018年'],
+        textStyle: {
+          color: '#fff',
+          fontSize: 20
+        },
+      },
+      series: [
+        {
+          name: '2015年',
+          type: 'pie',
+          radius: ['50%', '70%'],
+          avoidLabelOverlap: false,
+          label: {
+            normal: {
+              show: true,
+              position: 'outside',
+              formatter: "{b}: {c} (台)"
+            },
+            emphasis: {
+              show: true,
+              textStyle: {
+                fontSize: '30',
+                fontWeight: 'bold'
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              show: true
+            }
+          },
+          data: [
+            { value: 97, name: '2015年' },
+            { value: 112, name: '2016年' },
+            { value: 117, name: '2017年' },
+            { value: 130, name: '2018年', selected: true },
+          ]
+        }
+      ]
+    })
+  },
+  rightLastEchartF() {
+    this.rightLastEchart = echarts.init(
+      document.getElementById("rightLastEchart"),
+      "mythemes"
+    );
+    this.rightLastEchart.setOption({
+      title: {
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross'
+        }
+      },
+      legend: {
+        x: 'right',
+        y: 'top',
+        data: ['订单签单率', '销售产品完成率', '销售回款回笼率', '销售收入增加率'],
+        textStyle: {
+          color: '#fff',
+          fontSize: 20
+        },
+        padding:[0,0,60,0]
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2012年', '2013年', '2014年', '2015年', '2016年', '2017年', '2018年'],
+        nameTextStyle: {
+          color: "#fff",
+        },
+        axisLine: {
+          lineStyle: {
+            color: "#ddd",
+          },
+        },
+        axisLabel: {
+          color: "#ddd",
+          fontSize: 18,
+        }
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: {
+          formatter: '{value} %'
+        },
+        axisLine: {
+              lineStyle: {
+                color: "#ddd",
+              }
+            },
+            axisLabel: {
+              color: "#ddd",
+              fontSize: 18,
+            }
+      },
+      series: [
+        {
+          name: '订单签单率',
+          type: 'line',
+          data: [95, 95, 80, 95, 100, 89, 90],
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' }
+            ]
+          },
+        },
+        {
+          name: '销售产品完成率',
+          type: 'line',
+          data: [85, 80, 91, 95, 120, 80, 64],
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' }
+            ]
+          },
+        },
+        {
+          name: '销售回款回笼率',
+          type: 'line',
+          data: [65, 70, 55, 60, 75, 91, 90],
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' }
+            ]
+          },
+
+        },
+        {
+          name: '销售收入增加率',
+          type: 'line',
+          data: [15, 10, 20, 30, 15, 7, 6],
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' }
+            ]
+          },
+        }
+      ]
+    })
+  },
+
+
+
+},
+mounted: function() {
+  this.caigouEchartF();
+  this.caigouKindsEchartF();
+  this.overCaigouKindsEchartF();
+  this.importantCaigouEchartF();
+  this.commitGoodsEchartF();
+  this.commitGoodsTimeEchartF();
+  this.mainGongyingEchartF();
+  this.rightEchartF1();
+  this.productF1();
+  this.productF2();
+  this.productF3();
+  this.productF4();
+  this.productF5();
   this.rightLastEchartF();
-    
-  },
-  created: function() {
-    this.caigouEchartF();
-    this.caigouKindsEchartF();
-    this.overCaigouKindsEchartF();
-    this.importantCaigouEchartF();
-    this.commitGoodsEchartF();
-    this.commitGoodsTimeEchartF();
-    this.mainGongyingEchartF();
-    this.rightEchartF1();
-    this.productF1();
-    this.productF2();
-    this.productF3();
-    this.productF4();
-    this.productF5();
-    this.rightLastEchartF();
-  }
+
+},
+created: function() {
+  this.caigouEchartF();
+  this.caigouKindsEchartF();
+  this.overCaigouKindsEchartF();
+  this.importantCaigouEchartF();
+  this.commitGoodsEchartF();
+  this.commitGoodsTimeEchartF();
+  this.mainGongyingEchartF();
+  this.rightEchartF1();
+  this.productF1();
+  this.productF2();
+  this.productF3();
+  this.productF4();
+  this.productF5();
+  this.rightLastEchartF();
+}
 }
 </script>
 
@@ -1208,6 +1452,10 @@ export default {
 }
 
 
+
+
+
+
 /* .total-price {
   width: 382.3px !important;
   height: 300px !important;
@@ -1220,12 +1468,14 @@ export default {
   padding: 20px;
   animation: loading 2s linear infinite;
 } */
+
 .total-price {
   width: 382.3px !important;
   height: 300px !important;
   border-radius: 50%;
   background: url('./../assets/2.svg');
   padding: 20px;
+  position: relative;
   animation: loading 2s linear infinite;
 }
 
@@ -1234,9 +1484,26 @@ export default {
   height: 100% !important;
   border: 5px solid transparent;
   border-radius: 50%;
-   background: url('./../assets/1.svg');
+  background: url('./../assets/1.svg');
   box-sizing: border-box;
   animation: loading1 1s linear infinite;
+}
+
+.font-part {
+  width: 220px !important;
+  height: 200px !important;
+  position: absolute;
+  border-radius: 50%;
+  top: 350px;
+  left: 160px;
+  text-align: center;
+  line-height: 200px;
+  background: url('./../assets/bgad.png');
+}
+
+.font-part img {
+  width: 90%;
+  margin-left: 10px;
 }
 
 @-webkit-keyframes loading {
@@ -1283,6 +1550,10 @@ export default {
 
 
 
+
+
+
+
 /* 横线 */
 
 .transverseLine {
@@ -1302,17 +1573,25 @@ export default {
 
 
 
+
+
+
+
 /* 竖线 */
 
 .longLine {
   text-align: center;
-  height: 650px;
+  height: 500px;
 }
 
 .longLine img {
   width: 2%;
   height: 100%;
 }
+
+
+
+
 
 
 
@@ -1373,11 +1652,19 @@ export default {
 
 
 
+
+
+
+
 /* 重要物资历史采购价格趋势部分 */
 
 #importantCaigouEchart {
   height: 500px;
 }
+
+
+
+
 
 
 
@@ -1445,6 +1732,10 @@ export default {
 
 
 
+
+
+
+
 /* 右边部分 */
 
 .right-part1,
@@ -1462,14 +1753,16 @@ export default {
 .right-part1-main>div {
   width: 526px;
   height: 93px;
-  margin-top:20px;
+  line-height: 93px;
+  margin-top: 20px;
   background: rgba(109, 156, 235, 0.25);
-  border: 1px solid rgba(210, 228, 255, 1);
+  border: 1px solid rgba(210, 228, 255, 0.4);
   border-radius: 6px;
 }
 
 .right-part1-main>div:nth-of-type(2) {
   margin-left: 146px;
+  opacity: 1;
 }
 
 .right-part1-main>div>span:nth-of-type(1) {
@@ -1478,6 +1771,7 @@ export default {
   font-family: FZLTHK--GBK1-0;
   font-weight: 400;
   color: rgba(30, 198, 239, 1);
+  opacity: 1;
 }
 
 .right-part1-main>div>span:nth-of-type(2) {
@@ -1491,27 +1785,34 @@ export default {
   margin-left: 20px;
   font-size: 30px;
   border: 3px solid #FE8346;
+  opacity: 1;
 }
 
 .right-part1-main>div>span:nth-of-type(3) {
-  font-size: 60px;
-  font-family: LetsgoDigital-Regular;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 1);
-  margin-left: 10px;
-}
-
-.right-part1-main>div>span:nth-of-type(4) {
   font-size: 40px;
   font-family: LetsgoDigital-Regular;
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.right-part1-main>div>span:nth-of-type(4) {
+  font-size: 24px;
+  font-family: LetsgoDigital-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  opacity: 1;
 }
 
 
 #rightEchart1 {
   height: 600px;
 }
+
+
+
+
 
 
 
@@ -1560,6 +1861,8 @@ export default {
 
 
 #rightLastEchart {
-  height: 600px;
+  height: 700px;
+
 }
+
 </style>
