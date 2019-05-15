@@ -154,7 +154,7 @@
 
         <div class="right-part4">
           <div class="sub-title">
-            <img class="arrows" src="../assets/标题样式.png" alt>订单签单率
+            <img class="arrows" src="../assets/标题样式.png" alt>销售数据
           </div>
           <div id='rightLastEchart'></div>
         </div>
@@ -295,12 +295,15 @@ export default {
           data: ['原材料', '外购零件', '工具量具', '工装火具', '办公耗材', '劳保清洁品'],
           textStyle: {
             color: '#fff',
-            fontSize: 20
+            fontSize: 20,
           },
-          padding:[100,0,0,0]
+          
+        },
+         grid: {
+          bottom: '30%',
         },
         toolbox: {
-          show: true,
+          show: false,
           feature: {
             mark: { show: true },
             dataView: { show: true, readOnly: false },
@@ -318,6 +321,9 @@ export default {
             name: '采购金额占比',
             type: 'pie',
             radius: [30, 160],
+            label:{
+              fontSize:24,
+            },
             center: ['50%', '50%'],
             roseType: 'area',
             data: [
@@ -355,11 +361,12 @@ export default {
             color: '#fff',
             fontSize: 20
           },
+          padding:[100,0,0,0]
         },
         grid: {
           left: 0,
           right: '10%',
-          bottom: '8%',
+          bottom: '12%',
           width: 900,
           containLabel: true
         },
@@ -459,10 +466,12 @@ export default {
       grid: {
         left: '3%',
         right: '4%',
-        bottom: '8%',
+        bottom: '2%',
+        width:1595,
         containLabel: true
       },
       toolbox: {
+        show:false,
         feature: {
           saveAsImage: {}
         }
@@ -739,7 +748,9 @@ export default {
           fontSize: 20
         },
       },
+
       toolbox: {
+        show:false,
         feature: {
           saveAsImage: {}
         }
@@ -747,7 +758,8 @@ export default {
       grid: {
         left: '3%',
         right: '4%',
-        bottom: '10%',
+        bottom: '2%',
+        width:1595,
         containLabel: true
       },
       xAxis: [
@@ -1009,12 +1021,13 @@ export default {
             normal: {
               show: true,
               position: 'outside',
-              formatter: "{b}: {c} (台)"
+              formatter: "{b}: {c} (台)",
+                fontSize: "18",
             },
             emphasis: {
               show: true,
               textStyle: {
-                fontSize: '30',
+                fontSize: '20',
                 fontWeight: 'bold'
               }
             }
@@ -1074,12 +1087,14 @@ export default {
             normal: {
               show: true,
               position: 'outside',
-              formatter: "{b}: {c} (台)"
+              formatter: "{b}: {c} (台)",
+               fontSize: '18',
             },
+           
             emphasis: {
               show: true,
               textStyle: {
-                fontSize: '30',
+                fontSize: '20',
                 fontWeight: 'bold'
               }
             }
@@ -1137,12 +1152,14 @@ export default {
             normal: {
               show: true,
               position: 'outside',
-              formatter: "{b}: {c} (台)"
+              formatter: "{b}: {c} (台)",
+              fontSize: '18',
             },
+            
             emphasis: {
               show: true,
               textStyle: {
-                fontSize: '30',
+                fontSize: '20',
                 fontWeight: 'bold'
               }
             }
@@ -1200,12 +1217,14 @@ export default {
             normal: {
               show: true,
               position: 'outside',
-              formatter: "{b}: {c} (台)"
+              formatter: "{b}: {c} (台)",
+              fontSize: "18",
             },
+            
             emphasis: {
               show: true,
               textStyle: {
-                fontSize: '30',
+                fontSize: '20',
                 fontWeight: 'bold'
               }
             }
@@ -1250,12 +1269,15 @@ export default {
         padding:[0,0,60,0]
       },
       grid: {
+        top:'15%',
         left: '3%',
         right: '4%',
         bottom: '3%',
+        width:1595,
         containLabel: true
       },
       toolbox: {
+        show:false,
         feature: {
           saveAsImage: {}
         }
@@ -1379,7 +1401,7 @@ created: function() {
 
 <style scoped>
 .echart-container {
-  width: 3800px;
+  width: 3745px;
   display: flex;
   justify-content: space-between;
 }
@@ -1684,6 +1706,13 @@ created: function() {
   justify-content: space-between;
 }
 
+.caigou-part4 .longLine{
+ height:650px !important;
+}
+.caigou-part4 .longLine img {
+  width: 2%;
+  height: 100%;
+}
 
 .commit-goods {
   width: 100%;
@@ -1841,12 +1870,12 @@ created: function() {
 }
 
 .right-part3-main>div:nth-of-type(1) {
-  width: 40%;
+  width: 30%;
   height: 100%;
 }
 
 .right-part3-main>div:nth-of-type(2) {
-  width: 60%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
