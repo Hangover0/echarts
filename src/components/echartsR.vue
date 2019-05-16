@@ -847,75 +847,6 @@ export default {
       document.getElementById("product1"),
       "mythemes"
     );
-    // this.product1.setOption({
-    //   color: ['#3fb1e3', '#6be6c1', '#e3b67f', '#aaa0e6', '#c4ebad', '#96dee8'],
-
-    //   legend: {
-    //     x: 'right',
-    //     y: "top",
-    //   },
-    //   tooltip: {
-    //     show: true,
-    //     trigger: 'item',
-    //     formatter: "{a} : <br />{c}%",
-    //   },
-    //   polar: {
-    //     center: ['50%', '50%'],
-    //     radius: '300%' //图形大小
-    //   },
-    //   angleAxis: {
-    //     show: false,
-    //     startAngle: 90,
-    //     min: 0,
-    //     max: 100
-    //   },
-    //   radiusAxis: {
-    //     type: 'category',
-    //     show: false,
-    //     data: ['2015年', '2016年', '2017年', '2018年']
-    //   },
-    //   series: [
-
-    //     {
-    //       type: "bar",
-    //       name: "2015年",
-    //       coordinateSystem: "polar",
-    //       barWidth: 20, //宽度
-    //       barCategoryGap: "40%",
-    //       // data: ["76.25","47.09","22.09"],
-    //       data: [" 93"],
-    //     },
-    //     {
-    //       type: "bar",
-    //       name: "2016年",
-    //       coordinateSystem: "polar",
-    //       barWidth: 20,
-    //       barCategoryGap: "40%",
-    //       // data: ["14.09","55.09","27.09"]
-    //       data: ["197"]
-    //     },
-    //     {
-    //       type: "bar",
-    //       name: "2017年",
-    //       coordinateSystem: "polar",
-    //       barWidth: 20,
-    //       barCategoryGap: "40%",
-    //       // data: ["9.66","23.09","53.09"]
-    //       data: ["100"]
-    //     },
-    //     {
-    //       type: "bar",
-    //       name: "2018年",
-    //       coordinateSystem: "polar",
-    //       barWidth: 20,
-    //       barCategoryGap: "40%",
-    //       // data: ["9.66","23.09","53.09"]
-    //       data: ["107"]
-    //     }
-    //   ]
-
-
-    // })
     this.product1.setOption({
       title: {
 
@@ -980,6 +911,9 @@ export default {
         }
       },]
     })
+
+
+    
 
 
   },
