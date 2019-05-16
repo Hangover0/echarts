@@ -5,17 +5,17 @@
       <div class="title title1">设备情况看板</div>
       <div>
         <div class="subtitle subtitle1">
-          <img class="arrows" src="../assets/标题样式.png" alt>设备故障统计
+          <img class="arrows" src="../assets/Headingstyles.png" alt>设备故障统计
         </div>
         <div id="echart1"></div>
       </div>
       <div class="transverseLine">
-        <img src="../assets/横线.svg" alt>
+        <img src="../assets/transverseLine.svg" alt>
       </div>
       <div class="boxL-center">
         <div>
           <div class="subtitle">
-            <img class="arrows" src="../assets/标题样式.png" alt>每月故障时间分布
+            <img class="arrows" src="../assets/Headingstyles.png" alt>每月故障时间分布
           </div>
           <div>
             <div id="echart2"></div>
@@ -23,7 +23,7 @@
         </div>
         <div>
           <div class="subtitle">
-            <img class="arrows" src="../assets/标题样式.png" alt>每月故障时间分布
+            <img class="arrows" src="../assets/Headingstyles.png" alt>每月故障时间分布
           </div>
           <div>
             <div id="echart3"></div>
@@ -31,11 +31,11 @@
         </div>
       </div>
       <div class="transverseLine">
-        <img src="../assets/横线.svg" alt>
+        <img src="../assets/transverseLine.svg" alt>
       </div>
       <div>
         <div class="subtitle">
-          <img class="arrows" src="../assets/标题样式.png" alt>故障分布车间
+          <img class="arrows" src="../assets/Headingstyles.png" alt>故障分布车间
         </div>
         <div class="haloBox">
           <div class="halo1">
@@ -160,23 +160,23 @@
     </div>
     <!-- 竖线 -->
     <div class="longLine">
-      <img src="../assets/竖线.svg" alt>
+      <img src="../assets/longstring.svg" alt>
     </div>
     <!-- 右边echarts -->
     <div class="boxR">
       <div class="title">生产KPI</div>
       <div>
         <div class="subtitle subtitle1">
-          <img class="arrows" src="../assets/标题样式.png" alt>完成工时统计
+          <img class="arrows" src="../assets/Headingstyles.png" alt>完成工时统计
         </div>
         <div id="echart5"></div>
       </div>
       <div class="transverseLine">
-        <img src="../assets/横线.svg" alt>
+        <img src="../assets/transverseLine.svg" alt>
       </div>
       <div>
         <div class="subtitle">
-          <img class="arrows" src="../assets/标题样式.png" alt>完成率统计
+          <img class="arrows" src="../assets/Headingstyles.png" alt>完成率统计
         </div>
         <div class="echart6Box">
           <div id="echart6"></div>
@@ -201,7 +201,6 @@ export default {
       echart1: "",
       echart2: "",
       echart3: "",
-      echart4: "",
       echart5: "",
       echart6: ""
     };
@@ -311,25 +310,49 @@ export default {
             name: "设备故障次数",
             type: "bar",
             yAxisIndex: 0,
-            data: [10, 13, 15, 16, 12, 20, 9, 12, 7, 15, 12, 13]
+            data: [10, 13, 15, 16, 12, 20, 9, 12, 7, 15, 12, 13],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
           },
           {
             name: "设备维护保养问题数",
             yAxisIndex: 0,
             type: "bar",
-            data: [12, 16, 13, 15, 10, 17, 25, 30, 10, 15, 25, 35]
+            data: [12, 16, 13, 15, 10, 17, 25, 30, 10, 15, 25, 35],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
           },
           {
             name: "平均响应时长",
             type: "line",
             yAxisIndex: 1,
-            data: [48, 51, 35, 32, 36, 34, 35, 30, 20, 27, 28, 16]
+            data: [48, 51, 35, 32, 36, 34, 35, 30, 20, 27, 28, 16],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
           },
           {
             name: "故障设备台数",
             type: "line",
             yAxisIndex: 0,
-            data: [4, 5, 7, 2, 3, 3, 5, 6, 3, 3, 5, 1]
+            data: [4, 5, 7, 2, 3, 3, 5, 6, 3, 3, 5, 1],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
           }
         ]
       });
@@ -538,12 +561,24 @@ export default {
           {
             name: "月份完成工时",
             type: "bar",
-            data: [100, 120, 120, 140, 160, 100, 70, 75, 120, 140, 160, 160]
+            data: [100, 120, 120, 140, 160, 100, 70, 75, 120, 140, 160, 160],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
           },
           {
             name: "同期完成工时",
             type: "bar",
-            data: [80, 120, 120, 130, 165, 110, 85, 90, 135, 120, 140, 150]
+            data: [80, 120, 120, 130, 165, 110, 85, 90, 135, 120, 140, 150],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
           },
           {
             name: "本年完成工时",
@@ -628,8 +663,8 @@ export default {
             label: {
               fontSize: 24
             },
-            radius: 190,
-            center: ["30%", "18%"],
+            radius: 220,
+            center: ["30%", "17%"],
             // No encode specified, by default, it is '生产供应处'.
             itemStyle: {
               emphasis: {
@@ -727,7 +762,7 @@ export default {
   },
   updated: function() {
     this.drawCharts();
-  }
+  },
 };
 </script>
 
@@ -738,7 +773,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 1);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(0, 255, 255, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(0, 255, 255, 0.9);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.8);
@@ -749,7 +784,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(0, 255, 255, 0.6);
+    box-shadow: 0px 0px 15px 0px rgba(0, 255, 255, 0.6);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.5);
@@ -760,7 +795,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(0, 255, 255, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(0, 255, 255, 0.4);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.3);
@@ -771,7 +806,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(0, 255, 255, 0.2);
+    box-shadow: 0px 0px 15px 0px rgba(0, 255, 255, 0.2);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.1);
@@ -783,7 +818,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgb(30,189,223,1);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(30,189,223, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(30,189,223, 0.9);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.8);
@@ -794,7 +829,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(30,189,223, 0.6);
+    box-shadow: 0px 0px 15px 0px rgba(30,189,223, 0.6);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.5);
@@ -805,7 +840,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(30,189,223, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(30,189,223, 0.4);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.3);
@@ -816,7 +851,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(30,189,223, 0.2);
+    box-shadow: 0px 0px 15px 0px rgba(30,189,223, 0.2);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.1);
@@ -828,7 +863,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(229,183,132, 1);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(229,183,132, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(229,183,132, 0.9);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.8);
@@ -839,7 +874,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(229,183,132, 0.6);
+    box-shadow: 0px 0px 15px 0px rgba(229,183,132, 0.6);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.5);
@@ -850,7 +885,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(229,183,132, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(229,183,132, 0.4);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.3);
@@ -861,7 +896,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(229,183,132, 0.2);
+    box-shadow: 0px 0px 15px 0px rgba(229,183,132, 0.2);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.1);
@@ -873,7 +908,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(107,230,193, 1);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(107,230,193, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(107,230,193, 0.9);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.8);
@@ -884,7 +919,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(107,230,193, 0.6);
+    box-shadow: 0px 0px 15px 0px rgba(107,230,193, 0.6);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.5);
@@ -895,7 +930,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(107,230,193, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(107,230,193, 0.4);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.3);
@@ -906,7 +941,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(107,230,193, 0.2);
+    box-shadow: 0px 0px 15px 0px rgba(107,230,193, 0.2);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.1);
@@ -918,7 +953,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(234,131,138, 1);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(234,131,138, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(234,131,138, 0.9);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.8);
@@ -929,7 +964,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(234,131,138, 0.6);
+    box-shadow: 0px 0px 15px 0px rgba(234,131,138, 0.6);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.5);
@@ -940,7 +975,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(234,131,138, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(234,131,138, 0.4);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.3);
@@ -951,7 +986,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 10px 0px rgba(234,131,138, 0.2);
+    box-shadow: 0px 0px 15px 0px rgba(234,131,138, 0.2);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.1);
@@ -1148,8 +1183,8 @@ export default {
 .five {
   display: flex;
   position: absolute;
-  top: 50px;
-  left: 700px;
+  top: 0px;
+  left: 750px;
 }
 .five4 {
   animation: GoldTwo1 2s linear infinite;
