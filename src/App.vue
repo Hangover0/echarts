@@ -4,10 +4,10 @@
       <img class="headImg" src="./assets/head.png" alt>
     </div>
     <div class="data">
-      <p>{{data.toLocaleDateString()}}</p>
-      <p>{{data.toLocaleTimeString()}}</p>
-      <p>{{weather.weather}}</p>
-      <p>{{weather.temperature}}℃</p>
+      <p>{{date.loc}}</p>
+      <img :src="nameSuffix">
+      <p>{{weather.cond_txt}}</p>
+      <p>{{weather.tmp}}℃</p>
     </div>
     <div class="content">
       <echartsL/>
@@ -31,38 +31,26 @@ export default {
   },
   data() {
     return {
-      data: new Date(),
+      date: "",
       weather: "",
+      nameSuffix: "",
     };
   },
   created() {
-    this.$axios
-      .get("https://restapi.amap.com/v3/weather/weatherInfo?parameters", {
-        params: {
-          city: "510100",
-          key: "977140f03634a89cee0099bb9681cf8c"
-        }
+     this.$axios
+      .get("https://free-api.heweather.net/s6/weather/now?location=chengdu&key=b17f9b7ff3a0415bac3c171a2a2943ba", {
+        params: {}
       })
       .then(res => {
-        this.weather = res.data.lives[0];
+        this.weather = res.data.HeWeather6[0].now;
+        this.date = res.data.HeWeather6[0].update;
+        let name = this.weather.cond_code;
+        let suffix = ".png";
+        this.nameSuffix = require("./assets/" + name + suffix);
       })
       .catch(error => {
         console.log(error);
-      });
-    //  this.$axios
-    //   .get("https://free-api.heweather.net/s6/weather/now?", {
-    //     params: {
-    //       location: "chengdu",
-    //       key: "HE1905131121461811"
-    //     }
-    //   })
-    //   .then(res => {
-    //     console.log(res);
-    //     // this.weather = res.data.lives[0];
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   }); 
+      }); 
   }
 };
 </script>
@@ -76,12 +64,12 @@ p {
   padding: 0px;
 }
 #app {
-  width: 9600px;
+  width: 7680px;
   height: 3240px;
-  min-width: 9600px;
+  min-width: 7680px;
   min-height: 3240px;
   font-family: "Microsoft YaHei";
-  background: url("./assets/背景.jpg");
+  background: url("./assets/background3.jpg");
   position: relative;
 }
 /* 版权样式 */
@@ -92,7 +80,7 @@ p {
   bottom: 47px;
   opacity: 0.8;
 }
-/* 时间样式 */
+/* 时间天气样式 */
 .data {
   display: flex;
   color: #ffffff;
@@ -103,9 +91,16 @@ p {
 .data p {
   margin-right: 30px;
 }
+.data img{
+  vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 30px;
+}
 .content {
-  margin: 38px 20px 0 1920px;
+  margin: 38px 20px 0 0;
   box-sizing: border-box;
+  /* background: url("./assets/背景1.jpg"); */
   display: flex;
   justify-content: space-around;
 }
@@ -117,5 +112,9 @@ p {
 .headImg {
   width: 4582px;
   height: 247px;
+  margin-right: 1850px;
+}
+.dialog-footer {
+  padding-bottom:30px !important;
 }
 </style>
