@@ -5,6 +5,9 @@ import App from './App'
 // 全局安装echarts
 import echarts from "echarts";
 Vue.use(echarts);
+
+import scroll from 'vue-seamless-scroll';
+Vue.use(scroll);
 import "echarts/theme/mythemes"
 Vue.config.productionTip = false
 // 导入axios

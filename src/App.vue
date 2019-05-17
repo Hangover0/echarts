@@ -114,4 +114,7 @@ p {
   height: 247px;
   margin-right: 1850px;
 }
+.dialog-footer {
+  padding-bottom:30px !important;
+}
 </style>

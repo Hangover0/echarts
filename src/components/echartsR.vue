@@ -99,20 +99,37 @@
           <div class="sub-title">
             <img class="arrows" src="../assets/Headingstyles.png" alt>采购费用分析
           </div>
-          <div class="right-part1-main">
-            <div>
-              <span>合同总额</span>
-              <span>￥</span>
-              <span>1.65</span>
-              <span>亿元</span>
-            </div>
-            <div>
-              <span>销售总额</span>
-              <span>￥</span>
-              <span>1.32</span>
-              <span>亿元</span>
-            </div>
-          </div>
+          <!-- <div class="right-part1-main">
+                      <div>
+                        <span>合同总额</span>
+                        <span>￥</span>
+                        <span>1.65</span>
+                        <span>亿元</span>
+                      </div>
+                      <div>
+                        <span>销售总额</span>
+                        <span>￥</span>
+                        <span>1.32</span>
+                        <span>亿元</span>
+                      </div>
+                    </div> -->
+          <vue-seamless-scroll :data="listData" :class-option="optionSingleHeight" class="seamless-warp">
+            <ul class="item">
+              <li v-for="(item,index) in listData" :key="index">
+                <div class='table-container'>
+                  <img src="../assets/leftBorder.png" alt="">
+                  <span class="title" v-text="item.year"></span>
+                  <span class="date" v-text="item.name"></span>
+                  <span class="date" v-text="item.price"></span>
+                  <span class="date" v-text="item.danwei"></span>
+                  <span class="date" v-text="item.name1"></span>
+                  <span class="date" v-text="item.price1"></span>
+                  <span class="date" v-text="item.danwei1"></span>
+                  <img src="../assets/rightBorder.png" alt="">
+                </div>
+              </li>
+            </ul>
+          </vue-seamless-scroll>
         </div>
         <!--客户增长  -->
         <div class="right-part2">
@@ -176,8 +193,325 @@ export default {
       product3: "",
       product4: "",
       product5: "",
-      rightLastEchart: ""
-    };
+      rightLastEchart: "",
+      listData: [{
+        year: '2015年',
+        name: '销售合同额',
+        price: 1.23,
+        danwei: '亿',
+        name1: '销售收入额',
+        price1: 0.93,
+        danwei1: '亿'
+      }, {
+        year: '2016年',
+        name: '销售合同额',
+        price: 2.35,
+        danwei: '亿',
+        name1: '销售收入额',
+        price1: 1.89,
+        danwei1: '亿'
+      }, {
+        year: '2017年',
+        name: '销售合同额',
+        price: 1.78,
+        danwei: '亿',
+        name1: '销售收入额',
+        price1: 1.51,
+        danwei1: '亿'
+      }, {
+        'title': '2018年销售合同额亿销售收入额',
+        'date': '0.93亿',
+        year: '2018年',
+        name: '销售合同额',
+        price: 1.65,
+        danwei: '亿',
+        name1: '销售收入额',
+        price1: 1.32,
+        danwei1: '亿'
+      },],
+      mainData: [[
+        { name: "日本康太克", value: "9000" },
+        { name: "ABB", value: "8581" },
+        { name: "太安", value: "8086" },
+        { name: "东旗", value: "7555" },
+        { name: "西安西玛电机", value: "7067" },
+        { name: "瑞士TESA", value: "6544" },
+        { name: "迪博自控技术", value: "6098" },
+        { name: "仪和贸易", value: "5584" },
+        { name: "光明仪表", value: "5012" },
+        { name: "西门子", value: "4565" },
+        { name: "南通远东", value: "4047" },
+        { name: "海德汉光学", value: "3582" },
+        { name: "五金机械", value: "3055" },
+        { name: "伸格公司", value: "2550" },
+        { name: "西门子", value: "2062" },
+        { name: "上海跃进", value: "1566" },
+        { name: "日本康太克", value: "9000" },
+        { name: "ABB", value: "8581" },
+        { name: "太安", value: "8086" },
+        { name: "东旗", value: "7555" },
+        { name: "西安西玛电机", value: "7067" },
+        { name: "瑞士TESA", value: "6544" },
+        { name: "迪博自控技术", value: "6098" },
+        { name: "仪和贸易", value: "5584" },
+        { name: "光明仪表", value: "5012" },
+        { name: "西门子", value: "4565" },
+        { name: "南通远东", value: "4047" },
+        { name: "海德汉光学", value: "3582" },
+        { name: "五金机械", value: "3055" },
+        { name: "伸格公司", value: "2550" },
+        { name: "西门子", value: "2062" },
+        { name: "上海跃进", value: "1566" },
+        { name: "日本康太克", value: "1000" },
+        { name: "ABB", value: "981" },
+        { name: "太安", value: "886" },
+        { name: "东旗", value: "755" },
+        { name: "西安西玛电机", value: "667" },
+        { name: "瑞士TESA", value: "644" },
+        { name: "迪博自控技术", value: "598" },
+        { name: "仪和贸易", value: "584" },
+        { name: "光明仪表", value: "512" },
+        { name: "西门子", value: "465" },
+        { name: "南通远东", value: "404" },
+        { name: "海德汉光学", value: "382" },
+        { name: "五金机械", value: "305" },
+        { name: "伸格公司", value: "255" },
+        { name: "西门子", value: "206" },
+        { name: "上海跃进", value: "156" },
+        { name: "日本康太克", value: "1000" },
+        { name: "ABB", value: "981" },
+        { name: "太安", value: "886" },
+        { name: "东旗", value: "755" },
+        { name: "西安西玛电机", value: "667" },
+        { name: "瑞士TESA", value: "644" },
+        { name: "迪博自控技术", value: "598" },
+        { name: "仪和贸易", value: "584" },
+        { name: "光明仪表", value: "512" },
+        { name: "西门子", value: "465" },
+        { name: "南通远东", value: "404" },
+        { name: "海德汉光学", value: "382" },
+        { name: "五金机械", value: "305" },
+        { name: "伸格公司", value: "255" },
+        { name: "西门子", value: "206" },
+        { name: "上海跃进", value: "156" },
+      ], [
+        { name: "日本康太克", value: "9000" },
+        { name: "ABB", value: "8581" },
+        { name: "太安", value: "8086" },
+        { name: "东旗", value: "7555" },
+        { name: "西安西玛电机", value: "7067" },
+        { name: "瑞士TESA", value: "6544" },
+        { name: "迪博自控技术", value: "6098" },
+        { name: "仪和贸易", value: "5584" },
+        { name: "光明仪表", value: "5012" },
+        { name: "西门子", value: "4565" },
+        { name: "南通远东", value: "4047" },
+        { name: "海德汉光学", value: "3582" },
+        { name: "五金机械", value: "3055" },
+        { name: "伸格公司", value: "2550" },
+        { name: "西门子", value: "2062" },
+        { name: "上海跃进", value: "1566" },
+        { name: "日本康太克", value: "9000" },
+        { name: "ABB", value: "8581" },
+        { name: "太安", value: "8086" },
+        { name: "东旗", value: "7555" },
+        { name: "西安西玛电机", value: "7067" },
+        { name: "瑞士TESA", value: "6544" },
+        { name: "迪博自控技术", value: "6098" },
+        { name: "仪和贸易", value: "5584" },
+        { name: "光明仪表", value: "5012" },
+        { name: "西门子", value: "4565" },
+        { name: "南通远东", value: "4047" },
+        { name: "海德汉光学", value: "3582" },
+        { name: "五金机械", value: "3055" },
+        { name: "伸格公司", value: "2550" },
+        { name: "西门子", value: "2062" },
+        { name: "上海跃进", value: "1566" },
+        { name: "日本康太克", value: "1000" },
+        { name: "ABB", value: "981" },
+        { name: "太安", value: "886" },
+        { name: "东旗", value: "755" },
+        { name: "西安西玛电机", value: "667" },
+        { name: "瑞士TESA", value: "644" },
+        { name: "迪博自控技术", value: "598" },
+        { name: "仪和贸易", value: "584" },
+        { name: "光明仪表", value: "512" },
+        { name: "西门子", value: "465" },
+        { name: "南通远东", value: "404" },
+        { name: "海德汉光学", value: "382" },
+        { name: "五金机械", value: "305" },
+        { name: "伸格公司", value: "255" },
+        { name: "西门子", value: "206" },
+        { name: "上海跃进", value: "156" },
+        { name: "日本康太克", value: "1000" },
+        { name: "ABB", value: "981" },
+        { name: "太安", value: "886" },
+        { name: "东旗", value: "755" },
+        { name: "西安西玛电机", value: "667" },
+        { name: "瑞士TESA", value: "644" },
+        { name: "迪博自控技术", value: "598" },
+        { name: "仪和贸易", value: "584" },
+        { name: "光明仪表", value: "512" },
+        { name: "西门子", value: "465" },
+        { name: "南通远东", value: "404" },
+        { name: "海德汉光学", value: "382" },
+        { name: "五金机械", value: "305" },
+        { name: "伸格公司", value: "255" },
+        { name: "西门子", value: "206" },
+        { name: "上海跃进", value: "156" },
+      ], [
+        { name: "日本康太克", value: "9000" },
+        { name: "ABB", value: "8581" },
+        { name: "太安", value: "8086" },
+        { name: "东旗", value: "7555" },
+        { name: "西安西玛电机", value: "7067" },
+        { name: "瑞士TESA", value: "6544" },
+        { name: "迪博自控技术", value: "6098" },
+        { name: "仪和贸易", value: "5584" },
+        { name: "光明仪表", value: "5012" },
+        { name: "西门子", value: "4565" },
+        { name: "南通远东", value: "4047" },
+        { name: "海德汉光学", value: "3582" },
+        { name: "五金机械", value: "3055" },
+        { name: "伸格公司", value: "2550" },
+        { name: "西门子", value: "2062" },
+        { name: "上海跃进", value: "1566" },
+        { name: "日本康太克", value: "9000" },
+        { name: "ABB", value: "8581" },
+        { name: "太安", value: "8086" },
+        { name: "东旗", value: "7555" },
+        { name: "西安西玛电机", value: "7067" },
+        { name: "瑞士TESA", value: "6544" },
+        { name: "迪博自控技术", value: "6098" },
+        { name: "仪和贸易", value: "5584" },
+        { name: "光明仪表", value: "5012" },
+        { name: "西门子", value: "4565" },
+        { name: "南通远东", value: "4047" },
+        { name: "海德汉光学", value: "3582" },
+        { name: "五金机械", value: "3055" },
+        { name: "伸格公司", value: "2550" },
+        { name: "西门子", value: "2062" },
+        { name: "上海跃进", value: "1566" },
+        { name: "日本康太克", value: "1000" },
+        { name: "ABB", value: "981" },
+        { name: "太安", value: "886" },
+        { name: "东旗", value: "755" },
+        { name: "西安西玛电机", value: "667" },
+        { name: "瑞士TESA", value: "644" },
+        { name: "迪博自控技术", value: "598" },
+        { name: "仪和贸易", value: "584" },
+        { name: "光明仪表", value: "512" },
+        { name: "西门子", value: "465" },
+        { name: "南通远东", value: "404" },
+        { name: "海德汉光学", value: "382" },
+        { name: "五金机械", value: "305" },
+        { name: "伸格公司", value: "255" },
+        { name: "西门子", value: "206" },
+        { name: "上海跃进", value: "156" },
+        { name: "日本康太克", value: "1000" },
+        { name: "ABB", value: "981" },
+        { name: "太安", value: "886" },
+        { name: "东旗", value: "755" },
+        { name: "西安西玛电机", value: "667" },
+        { name: "瑞士TESA", value: "644" },
+        { name: "迪博自控技术", value: "598" },
+        { name: "仪和贸易", value: "584" },
+        { name: "光明仪表", value: "512" },
+        { name: "西门子", value: "465" },
+        { name: "南通远东", value: "404" },
+        { name: "海德汉光学", value: "382" },
+        { name: "五金机械", value: "305" },
+        { name: "伸格公司", value: "255" },
+        { name: "西门子", value: "206" },
+        { name: "上海跃进", value: "156" },
+      ]],
+      lastData:[
+        { name: "日本康太克", value: "9000" },
+        { name: "ABB", value: "8581" },
+        { name: "太安", value: "8086" },
+        { name: "东旗", value: "7555" },
+        { name: "西安西玛电机", value: "7067" },
+        { name: "瑞士TESA", value: "6544" },
+        { name: "迪博自控技术", value: "6098" },
+        { name: "仪和贸易", value: "5584" },
+        { name: "光明仪表", value: "5012" },
+        { name: "西门子", value: "4565" },
+        { name: "南通远东", value: "4047" },
+        { name: "海德汉光学", value: "3582" },
+        { name: "五金机械", value: "3055" },
+        { name: "伸格公司", value: "2550" },
+        { name: "西门子", value: "2062" },
+        { name: "上海跃进", value: "1566" },
+        { name: "日本康太克", value: "9000" },
+        { name: "ABB", value: "8581" },
+        { name: "太安", value: "8086" },
+        { name: "东旗", value: "7555" },
+        { name: "西安西玛电机", value: "7067" },
+        { name: "瑞士TESA", value: "6544" },
+        { name: "迪博自控技术", value: "6098" },
+        { name: "仪和贸易", value: "5584" },
+        { name: "光明仪表", value: "5012" },
+        { name: "西门子", value: "4565" },
+        { name: "南通远东", value: "4047" },
+        { name: "海德汉光学", value: "3582" },
+        { name: "五金机械", value: "3055" },
+        { name: "伸格公司", value: "2550" },
+        { name: "西门子", value: "2062" },
+        { name: "上海跃进", value: "1566" },
+        { name: "日本康太克", value: "1000" },
+        { name: "ABB", value: "981" },
+        { name: "太安", value: "886" },
+        { name: "东旗", value: "755" },
+        { name: "西安西玛电机", value: "667" },
+        { name: "瑞士TESA", value: "644" },
+        { name: "迪博自控技术", value: "598" },
+        { name: "仪和贸易", value: "584" },
+        { name: "光明仪表", value: "512" },
+        { name: "西门子", value: "465" },
+        { name: "南通远东", value: "404" },
+        { name: "海德汉光学", value: "382" },
+        { name: "五金机械", value: "305" },
+        { name: "伸格公司", value: "255" },
+        { name: "西门子", value: "206" },
+        { name: "上海跃进", value: "156" },
+        { name: "日本康太克", value: "1000" },
+        { name: "ABB", value: "981" },
+        { name: "太安", value: "886" },
+        { name: "东旗", value: "755" },
+        { name: "西安西玛电机", value: "667" },
+        { name: "瑞士TESA", value: "644" },
+        { name: "迪博自控技术", value: "598" },
+        { name: "仪和贸易", value: "584" },
+        { name: "光明仪表", value: "512" },
+        { name: "西门子", value: "465" },
+        { name: "南通远东", value: "404" },
+        { name: "海德汉光学", value: "382" },
+        { name: "五金机械", value: "305" },
+        { name: "伸格公司", value: "255" },
+        { name: "西门子", value: "206" },
+        { name: "上海跃进", value: "156" },
+      ]
+    }
+  },
+  computed: {
+    optionSingleHeight() {
+      return {
+        //                       （什么都不设置默认的）
+        // singleHeight: 65  ,   //（带停顿的）
+        // waitTime:10        // （停顿时间）
+        // direction: 0          （从上往下的）
+        // direction:2           （左右的）
+        //step:1                 （调整速度的）0
+        // hoverStop:false        (鼠标停留停止 离开继续运行（反之则停止）)
+        step: 1.2, // 数值越大速度滚动越快
+        limitMoveNum: 4, // 开始无缝滚动的数据量 this.dataList.length
+        hoverStop: false, // 是否开启鼠标悬停stop
+        direction: 1, // 0向下 1向上 2向左 3向右
+        // openWatch: true, // 开启数据实时监控刷新dom
+        singleHeight: 79, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction => 0/1
+        waitTime: 4000 // 单步运动停止的时间(默认值1000ms)
+      }
+    }
   },
   methods: {
     caigouEchartF() {
@@ -402,11 +736,11 @@ export default {
             stack: "采购金额",
             barWidth: 60,
             data: [110, 105, 100, 95],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
+            markPoint: {
+              data: [
+                { type: 'max', name: '最大值' },
+                { type: 'min', name: '最小值' }
+              ]
             },
           },
           {
@@ -426,11 +760,11 @@ export default {
             type: "bar",
             stack: "采购金额",
             data: [30, 40, 45, 30],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
+            markPoint: {
+              data: [
+                { type: 'max', name: '最大值' },
+                { type: 'min', name: '最小值' }
+              ]
             },
           },
           {
@@ -697,7 +1031,7 @@ export default {
                     "#c4ebad",
                     "#96dee8"
                   ];
-                  let colorIndex = Math.ceil(Math.random() * 6);
+                  let colorIndex = Math.ceil(Math.random() * 5);
                   return colorArr[colorIndex];
                 }
               },
@@ -706,72 +1040,7 @@ export default {
                 shadowColor: "#333"
               }
             },
-            data: [
-              { name: "日本康太克", value: "9000" },
-              { name: "ABB", value: "8581" },
-              { name: "太安", value: "8086" },
-              { name: "东旗", value: "7555" },
-              { name: "西安西玛电机", value: "7067" },
-              { name: "瑞士TESA", value: "6544" },
-              { name: "迪博自控技术", value: "6098" },
-              { name: "仪和贸易", value: "5584" },
-              { name: "光明仪表", value: "5012" },
-              { name: "西门子", value: "4565" },
-              { name: "南通远东", value: "4047" },
-              { name: "海德汉光学", value: "3582" },
-              { name: "五金机械", value: "3055" },
-              { name: "伸格公司", value: "2550" },
-              { name: "西门子", value: "2062" },
-              { name: "上海跃进", value: "1566" },
-              { name: "日本康太克", value: "9000" },
-              { name: "ABB", value: "8581" },
-              { name: "太安", value: "8086" },
-              { name: "东旗", value: "7555" },
-              { name: "西安西玛电机", value: "7067" },
-              { name: "瑞士TESA", value: "6544" },
-              { name: "迪博自控技术", value: "6098" },
-              { name: "仪和贸易", value: "5584" },
-              { name: "光明仪表", value: "5012" },
-              { name: "西门子", value: "4565" },
-              { name: "南通远东", value: "4047" },
-              { name: "海德汉光学", value: "3582" },
-              { name: "五金机械", value: "3055" },
-              { name: "伸格公司", value: "2550" },
-              { name: "西门子", value: "2062" },
-              { name: "上海跃进", value: "1566" },
-              { name: "日本康太克", value: "1000" },
-              { name: "ABB", value: "981" },
-              { name: "太安", value: "886" },
-              { name: "东旗", value: "755" },
-              { name: "西安西玛电机", value: "667" },
-              { name: "瑞士TESA", value: "644" },
-              { name: "迪博自控技术", value: "598" },
-              { name: "仪和贸易", value: "584" },
-              { name: "光明仪表", value: "512" },
-              { name: "西门子", value: "465" },
-              { name: "南通远东", value: "404" },
-              { name: "海德汉光学", value: "382" },
-              { name: "五金机械", value: "305" },
-              { name: "伸格公司", value: "255" },
-              { name: "西门子", value: "206" },
-              { name: "上海跃进", value: "156" },
-              { name: "日本康太克", value: "1000" },
-              { name: "ABB", value: "981" },
-              { name: "太安", value: "886" },
-              { name: "东旗", value: "755" },
-              { name: "西安西玛电机", value: "667" },
-              { name: "瑞士TESA", value: "644" },
-              { name: "迪博自控技术", value: "598" },
-              { name: "仪和贸易", value: "584" },
-              { name: "光明仪表", value: "512" },
-              { name: "西门子", value: "465" },
-              { name: "南通远东", value: "404" },
-              { name: "海德汉光学", value: "382" },
-              { name: "五金机械", value: "305" },
-              { name: "伸格公司", value: "255" },
-              { name: "西门子", value: "206" },
-              { name: "上海跃进", value: "156" },
-            ]
+            data: this.lastData
           }
         ]
       });
@@ -1440,13 +1709,20 @@ export default {
     }
   },
   mounted: function() {
+    this.mainGongyingEchartF();
+    let main = this.mainData;
+    let that = this;
+    setInterval(function() {
+      let random = parseInt(Math.random() * 3);
+      that.lastData= main[random]
+         that.mainGongyingEchartF();
+    }, 10000);
     this.caigouEchartF();
     this.caigouKindsEchartF();
     this.overCaigouKindsEchartF();
     this.importantCaigouEchartF();
     this.commitGoodsEchartF();
     this.commitGoodsTimeEchartF();
-    this.mainGongyingEchartF();
     this.rightEchartF1();
     this.productF1();
     this.productF2();
@@ -1454,6 +1730,7 @@ export default {
     this.productF4();
     this.productF5();
     this.rightLastEchartF();
+
   }
 };
 </script>
@@ -1491,19 +1768,19 @@ export default {
   padding: 0 0 50px 0;
 }
 
-.caigou-part > div:nth-of-type(2) {
+.caigou-part>div:nth-of-type(2) {
   display: flex;
   width: 100%;
   height: 80%;
   justify-content: flex-start;
 }
 
-.caigou-part > div:nth-of-type(2) > div:nth-of-type(1) {
+.caigou-part>div:nth-of-type(2)>div:nth-of-type(1) {
   width: 40%;
   height: 80%;
 }
 
-.caigou-part > div:nth-of-type(2) > div:nth-of-type(2) {
+.caigou-part>div:nth-of-type(2)>div:nth-of-type(2) {
   width: 60%;
   height: 80%;
 }
@@ -1521,7 +1798,7 @@ export default {
   padding-bottom: 10px;
 }
 
-.sub-title > img {
+.sub-title>img {
   margin-right: 20px;
 }
 
@@ -1605,7 +1882,13 @@ export default {
   }
 }
 
+
+
+
+
+
 /* 横线 */
+
 .transverseLine {
   padding-top: 50px;
 }
@@ -1614,7 +1897,13 @@ export default {
   width: 100%;
 }
 
+
+
+
+
+
 /* 竖线 */
+
 .longLine {
   text-align: center;
   height: 500px;
@@ -1625,28 +1914,34 @@ export default {
   height: 100%;
 }
 
+
+
+
+
+
 /* 采购KPI的第二部分 */
+
 .part2-box {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.part2-box > div:nth-of-type(1),
-.caigou-part4 > div:nth-of-type(1) {
+.part2-box>div:nth-of-type(1),
+.caigou-part4>div:nth-of-type(1) {
   width: 40%;
 }
 
-.part2-box > div:nth-of-type(1) {
+.part2-box>div:nth-of-type(1) {
   display: flex;
   justify-content: space-between;
 }
 
-.part2-box > div:nth-of-type(1) > div:nth-of-type(1) {
+.part2-box>div:nth-of-type(1)>div:nth-of-type(1) {
   width: 80%;
 }
 
-.part2-box > div:nth-of-type(1) > div:nth-of-type(2) {
+.part2-box>div:nth-of-type(1)>div:nth-of-type(2) {
   width: 20%;
 }
 
@@ -1654,8 +1949,8 @@ export default {
   height: 400px;
 }
 
-.part2-box > div:nth-of-type(2),
-.caigou-part4 > div:nth-of-type(2) {
+.part2-box>div:nth-of-type(2),
+.caigou-part4>div:nth-of-type(2) {
   width: 60%;
 }
 
@@ -1663,11 +1958,21 @@ export default {
   height: 423px;
 }
 
+
+
+
+
+
 /* 重要物资历史采购价格趋势部分 */
 
 #importantCaigouEchart {
   height: 500px;
 }
+
+
+
+
+
 
 /* 交货一次检验合格率  准时交货率 主要供应商*/
 
@@ -1680,6 +1985,7 @@ export default {
 .caigou-part4 .longLine {
   height: 730px !important;
 }
+
 .caigou-part4 .longLine img {
   width: 2%;
   height: 100%;
@@ -1692,11 +1998,11 @@ export default {
   justify-content: space-between;
 }
 
-.commit-goods > div:nth-of-type(1) {
+.commit-goods>div:nth-of-type(1) {
   width: 80%;
 }
 
-.commit-goods > div:nth-of-type(2) {
+.commit-goods>div:nth-of-type(2) {
   width: 20%;
 }
 
@@ -1712,6 +2018,11 @@ export default {
   height: 700px;
 }
 
+
+
+
+
+
 /* 右边部分 */
 
 .right-part1,
@@ -1726,7 +2037,7 @@ export default {
   justify-content: flex-start;
 }
 
-.right-part1-main > div {
+.right-part1-main>div {
   width: 526px;
   height: 93px;
   line-height: 93px;
@@ -1736,18 +2047,18 @@ export default {
   border-radius: 6px;
 }
 
-.right-part1-main > div:nth-of-type(2) {
+.right-part1-main>div:nth-of-type(2) {
   margin-left: 146px;
   opacity: 1;
 }
 
-.right-part1-main > div > span:nth-of-type(1) {
+.right-part1-main>div>span:nth-of-type(1) {
   font-size: 30px;
   margin-left: 40px;
   color: rgba(30, 198, 239, 1);
 }
 
-.right-part1-main > div > span:nth-of-type(2) {
+.right-part1-main>div>span:nth-of-type(2) {
   display: inline-block;
   width: 42px;
   height: 42px;
@@ -1761,7 +2072,7 @@ export default {
   opacity: 1;
 }
 
-.right-part1-main > div > span:nth-of-type(3) {
+.right-part1-main>div>span:nth-of-type(3) {
   font-size: 40px;
   font-family: LetsgoDigital-Regular;
   font-weight: 400;
@@ -1771,7 +2082,7 @@ export default {
   opacity: 1;
 }
 
-.right-part1-main > div > span:nth-of-type(4) {
+.right-part1-main>div>span:nth-of-type(4) {
   font-size: 24px;
   font-family: LetsgoDigital-Regular;
   font-weight: 400;
@@ -1783,6 +2094,11 @@ export default {
   height: 600px;
 }
 
+
+
+
+
+
 /* 产品数据 */
 
 .right-part3-main {
@@ -1791,12 +2107,12 @@ export default {
   height: 600px;
 }
 
-.right-part3-main > div:nth-of-type(1) {
+.right-part3-main>div:nth-of-type(1) {
   width: 30%;
   height: 100%;
 }
 
-.right-part3-main > div:nth-of-type(2) {
+.right-part3-main>div:nth-of-type(2) {
   width: 70%;
   display: flex;
   justify-content: space-between;
@@ -1804,12 +2120,100 @@ export default {
   height: 100%;
 }
 
-.right-part3-main > div:nth-of-type(2) > div {
+.right-part3-main>div:nth-of-type(2)>div {
   width: 50%;
   height: 50%;
 }
 
 #rightLastEchart {
-  height: 700px;
+  height: 600px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.seamless-warp {
+  height: 158px;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-left: 90px;
+}
+
+.table-container {
+  width: 1210px;
+  height: 65px;
+  line-height: 65px;
+  margin: 10px 0;
+  background: rgba(6, 49, 88, 1);
+  border: 1px solid rgba(15, 110, 169, 1);
+  position: relative;
+  font-weight: lighter;
+  padding-left: 47px;
+}
+
+
+/* .item div:nth-of-type(1) {
+margin-top:0;
+} */
+
+
+/* .seamless-warp div:nth-of-type(4) {
+margin-top:5px;
+} */
+
+.table-container>img:nth-of-type(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.table-container>img:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.table-container span {
+  display: inline-block;
+}
+
+.table-container>span:nth-of-type(1),
+.table-container>span:nth-of-type(2),
+.table-container>span:nth-of-type(5) {
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 30px;
+}
+
+.table-container>span:nth-of-type(2),
+.table-container>span:nth-of-type(5) {
+  padding-left: 150px;
+}
+
+
+/* .table-container > span:nth-of-type(5) {
+   padding-left:130px;
+} */
+
+.table-container>span:nth-of-type(3),
+.table-container>span:nth-of-type(4),
+.table-container>span:nth-of-type(6),
+.table-container>span:nth-of-type(7) {
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 36px;
+  color: #09F8CE;
+}
+
+.table-container>span:nth-of-type(3),
+.table-container>span:nth-of-type(6) {
+  padding-left: 60px;
+}
+
+.table-container>span:nth-of-type(4),
+.table-container>span:nth-of-type(7) {
+  font-size: 24px;
+  padding-left: 5px;
 }
 </style>
