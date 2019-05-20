@@ -97,22 +97,8 @@
         <!-- 采购费用分析 -->
         <div class="right-part1">
           <div class="sub-title">
-            <img class="arrows" src="../assets/Headingstyles.png" alt >采购费用分析
+            <img class="arrows" src="../assets/Headingstyles.png" alt>采购费用分析
           </div>
-          <!-- <div class="right-part1-main">
-                      <div>
-                        <span>合同总额</span>
-                        <span>￥</span>
-                        <span>1.65</span>
-                        <span>亿元</span>
-                      </div>
-                      <div>
-                        <span>销售总额</span>
-                        <span>￥</span>
-                        <span>1.32</span>
-                        <span>亿元</span>
-                      </div>
-                    </div> -->
           <vue-seamless-scroll :data="listData" :class-option="optionSingleHeight" class="seamless-warp">
             <ul class="item">
               <li v-for="(item,index) in listData" :key="index">
@@ -252,7 +238,7 @@ export default {
         { name: "东旗", value: "34" },
         { name: "西安西玛电机", value: "33" },
         { name: "瑞士TESA", value: "32" },
-        { name: "迪博自控技术", value: "26"},
+        { name: "迪博自控技术", value: "26" },
         { name: "仪和贸易", value: "24" },
         { name: "光明仪表", value: "22" },
         { name: "西门子", value: "21" },
@@ -262,7 +248,7 @@ export default {
         { name: "伸格公司", value: "20" },
         { name: "西门子", value: "22" },
         { name: "上海跃进", value: "18" },
-         { name: "日本康太克", value: "17" },
+        { name: "日本康太克", value: "17" },
         { name: "ABB", value: "15" },
         { name: "太安", value: "14" },
         { name: "东旗", value: "13" },
@@ -271,7 +257,7 @@ export default {
         { name: "迪博自控技术", value: "10" },
         { name: "仪和贸易", value: "9" },
         { name: "光明仪表", value: "8" },
-        { name: "西门子", value: "7 "},
+        { name: "西门子", value: "7 " },
         { name: "南通远东", value: "6" },
         { name: "海德汉光学", value: "5" },
         { name: "五金机械", value: "4" },
@@ -301,7 +287,7 @@ export default {
         { name: "东旗", value: "34" },
         { name: "西安西玛电机", value: "33" },
         { name: "瑞士TESA", value: "32" },
-        { name: "迪博自控技术", value: "26"},
+        { name: "迪博自控技术", value: "26" },
         { name: "仪和贸易", value: "24" },
         { name: "光明仪表", value: "22" },
         { name: "西门子", value: "21" },
@@ -311,7 +297,7 @@ export default {
         { name: "伸格公司", value: "20" },
         { name: "西门子", value: "22" },
         { name: "上海跃进", value: "18" },
-         { name: "日本康太克", value: "17" },
+        { name: "日本康太克", value: "17" },
         { name: "ABB", value: "15" },
         { name: "太安", value: "14" },
         { name: "东旗", value: "13" },
@@ -320,14 +306,14 @@ export default {
         { name: "迪博自控技术", value: "10" },
         { name: "仪和贸易", value: "9" },
         { name: "光明仪表", value: "8" },
-        { name: "西门子", value: "7 "},
+        { name: "西门子", value: "7 " },
         { name: "南通远东", value: "6" },
         { name: "海德汉光学", value: "5" },
         { name: "五金机械", value: "4" },
         { name: "伸格公司", value: "3" },
         { name: "西门子", value: "2" },
         { name: "上海跃进", value: "1" },
-      ],[
+      ], [
         { name: "日本康太克", value: "100" },
         { name: "ABB", value: "99" },
         { name: "太安", value: "98" },
@@ -350,7 +336,7 @@ export default {
         { name: "东旗", value: "34" },
         { name: "西安西玛电机", value: "33" },
         { name: "瑞士TESA", value: "32" },
-        { name: "迪博自控技术", value: "26"},
+        { name: "迪博自控技术", value: "26" },
         { name: "仪和贸易", value: "24" },
         { name: "光明仪表", value: "22" },
         { name: "西门子", value: "21" },
@@ -360,7 +346,7 @@ export default {
         { name: "伸格公司", value: "20" },
         { name: "西门子", value: "22" },
         { name: "上海跃进", value: "18" },
-         { name: "日本康太克", value: "17" },
+        { name: "日本康太克", value: "17" },
         { name: "ABB", value: "15" },
         { name: "太安", value: "14" },
         { name: "东旗", value: "13" },
@@ -369,7 +355,7 @@ export default {
         { name: "迪博自控技术", value: "10" },
         { name: "仪和贸易", value: "9" },
         { name: "光明仪表", value: "8" },
-        { name: "西门子", value: "7 "},
+        { name: "西门子", value: "7 " },
         { name: "南通远东", value: "6" },
         { name: "海德汉光学", value: "5" },
         { name: "五金机械", value: "4" },
@@ -377,8 +363,8 @@ export default {
         { name: "西门子", value: "2" },
         { name: "上海跃进", value: "1" },
       ]],
-      lastData:[
-        { name: "日本康太克", value: "100" },
+      lastData: [
+         { name: "日本康太克", value: "100" },
         { name: "ABB", value: "99" },
         { name: "太安", value: "98" },
         { name: "东旗", value: "97" },
@@ -394,22 +380,6 @@ export default {
         { name: "伸格公司", value: "56" },
         { name: "西门子", value: "54" },
         { name: "上海跃进", value: "40" },
-        { name: "日本康太克", value: "39" },
-        { name: "ABB", value: "36" },
-        { name: "太安", value: "35" },
-        { name: "东旗", value: "34" },
-        { name: "西安西玛电机", value: "33" },
-        { name: "瑞士TESA", value: "32" },
-        { name: "迪博自控技术", value: "26"},
-        { name: "仪和贸易", value: "24" },
-        { name: "光明仪表", value: "22" },
-        { name: "西门子", value: "21" },
-        { name: "南通远东", value: "20" },
-        { name: "海德汉光学", value: "32" },
-        { name: "五金机械", value: "35" },
-        { name: "伸格公司", value: "20" },
-        { name: "西门子", value: "22" },
-        { name: "上海跃进", value: "18" },
          { name: "日本康太克", value: "17" },
         { name: "ABB", value: "15" },
         { name: "太安", value: "14" },
@@ -417,15 +387,41 @@ export default {
         { name: "西安西玛电机", value: "12" },
         { name: "瑞士TESA", value: "11" },
         { name: "迪博自控技术", value: "10" },
-        { name: "仪和贸易", value: "9" },
-        { name: "光明仪表", value: "8" },
-        { name: "西门子", value: "7 "},
-        { name: "南通远东", value: "6" },
-        { name: "海德汉光学", value: "5" },
-        { name: "五金机械", value: "4" },
-        { name: "伸格公司", value: "3" },
-        { name: "西门子", value: "2" },
-        { name: "上海跃进", value: "1" },
+        { name: "仪和贸易", value: "0.9" },
+        { name: "光明仪表", value: "0.8" },
+        { name: "西门子", value: "0.7 " },
+        { name: "南通远东", value: "0.6" },
+        { name: "海德汉光学", value: "0.5" },
+        { name: "五金机械", value: "0.4" },
+        { name: "伸格公司", value: "0.3" },
+        { name: "西门子", value: "0.2" },
+        { name: "上海跃进", value: "0.1" }
+        ,
+        { name: "日本康太克", value: "17" },
+        { name: "ABB", value: "15" },
+        { name: "太安", value: "14" },
+        { name: "东旗", value: "13" },
+        { name: "西安西玛电机", value: "12" },
+        { name: "瑞士TESA", value: "11" },
+        { name: "迪博自控技术", value: "10" },
+        { name: "仪和贸易", value: "0.9" },
+        { name: "光明仪表", value: "0.8" },
+        { name: "西门子", value: "0.7 " },
+        { name: "南通远东", value: "0.6" },
+        { name: "海德汉光学", value: "0.5" },
+        { name: "五金机械", value: "0.4" },
+        { name: "伸格公司", value: "0.3" },
+        { name: "西门子", value: "0.2" },
+        { name: "上海跃进", value: "0.1" },
+           { name: "仪和贸易", value: "0.9" },
+        { name: "光明仪表", value: "0.8" },
+        { name: "西门子", value: "0.7 " },
+        { name: "南通远东", value: "0.6" },
+        { name: "海德汉光学", value: "0.5" },
+        { name: "五金机械", value: "0.4" },
+        { name: "伸格公司", value: "0.3" },
+        { name: "西门子", value: "0.2" },
+        { name: "上海跃进", value: "0.1" },
       ]
     }
   },
@@ -459,12 +455,13 @@ export default {
         title: {},
         legend: {
           x: "right",
-          y: "top",
+          y: "bottom",
           show: true,
           textStyle: {
             color: "#fff",
             fontSize: '10'
           },
+          show:false,
         },
         tooltip: {
           trigger: "axis",
@@ -474,10 +471,10 @@ export default {
           }
         },
         grid: {
-          top: 50,
+          top: 0,
           bottom: 10,
           width: 290,
-           height:65
+          height:80
         },
         xAxis: {
           type: "value",
@@ -519,6 +516,7 @@ export default {
           {
             name: "费用增长环比指数",
             type: "bar",
+
             label: {
               normal: {
                 show: true,
@@ -542,10 +540,10 @@ export default {
           formatter: "{a} <br/>{b} : {d}%"
         },
         grid: {
-         top:0,
-         bottom:0,
-         right:0,
-         left:0
+          top: 0,
+          bottom: 0,
+          right: 0,
+          left: 0
         },
         toolbox: {
           show: false,
@@ -580,8 +578,8 @@ export default {
               { value: 2, name: "劳保清洁品" }
             ],
             labelLine: {
-              length:3,
-              length2:3
+              length: 3,
+              length2: 3
             }
 
           }
@@ -603,7 +601,7 @@ export default {
           }
         },
         legend: {
-          show:false,
+          show: false,
           x: "right",
           y: "bottom",
           orient: "horizontal",
@@ -618,7 +616,7 @@ export default {
           left: 0,
           right: "10%",
           bottom: "0%",
-          height:80,
+          height: 80,
           containLabel: true
         },
         xAxis: [
@@ -663,14 +661,14 @@ export default {
             stack: "采购金额",
             // barGap: '10%',
             // barCategoryGap:40,
-            barMinHeight:12,
+            barMinHeight: 12,
             data: [110, 105, 100, 95],
-            // markPoint: {
-            //   data: [
-            //     { type: 'max', name: '最大值' },
-            //     { type: 'min', name: '最小值' }
-            //   ]
-            // },
+            markPoint: {
+              data: [
+                { type: 'max', name: '最大值' },
+                { type: 'min', name: '最小值' }
+              ]
+            },
           },
           {
             name: "外购零件",
@@ -682,27 +680,27 @@ export default {
             name: "工具量具",
             type: "bar",
             stack: "采购金额",
-             barMinHeight:15,
+            barMinHeight: 15,
             data: [20, 25, 30, 20]
           },
           {
             name: "工装火具",
             type: "bar",
             stack: "采购金额",
-             barMinHeight:5,
+            barMinHeight: 5,
             data: [30, 40, 45, 30],
-            // markPoint: {
-            //   data: [
-            //     { type: 'max', name: '最大值' },
-            //     { type: 'min', name: '最小值' }
-            //   ]
-            // },
+            markPoint: {
+              data: [
+                { type: 'max', name: '最大值' },
+                { type: 'min', name: '最小值' }
+              ]
+            },
           },
           {
             name: "办公耗材",
             type: "bar",
             stack: "采购金额",
-             barMinHeight:10,
+            barMinHeight: 10,
             data: [22, 25, 28, 18],
           }
         ]
@@ -740,7 +738,7 @@ export default {
           right: "4%",
           bottom: 0,
           width: 400,
-          height:80,
+          height: 80,
           containLabel: true
         },
         toolbox: {
@@ -1045,8 +1043,8 @@ export default {
         yAxis: [
           {
             name: "比率",
-            nameTextStyle:{
-              fontSize:8
+            nameTextStyle: {
+              fontSize: 8
             },
             type: "value",
             axisLabel: {
@@ -1137,11 +1135,11 @@ export default {
           // padding: [40, 0, 0, 180]
         },
         legend: {
-          show:false,
+          show: false,
           x: "left",
           y: "bottom",
           data: ["2015年", "2016年", "2017年", "2018年"],
-           orient:'horizontal',
+          orient: 'horizontal',
           textStyle: {
             color: "#ddd",
             fontSize: 10
@@ -1282,8 +1280,8 @@ export default {
           textStyle: {
             lineHeight: 10,
             fontWeight: "lighter",
-            fontSize:'6',
-            color:'#fff'
+            fontSize: '6',
+            color: '#fff'
           }
         },
         tooltip: {
@@ -1320,11 +1318,11 @@ export default {
               }
             },
             labelLine: {
-              
+
               normal: {
                 show: true,
-                 length:0,
-              length2:0,
+                length: 0,
+                length2: 0,
               }
             },
             data: [
@@ -1350,7 +1348,7 @@ export default {
           y: "center",
           textStyle: {
             lineHeight: 10,
-            fontSize:'6',
+            fontSize: '6',
             fontWeight: "lighter"
           }
         },
@@ -1392,8 +1390,8 @@ export default {
               normal: {
                 show: true,
                 show: true,
-                 length:0,
-              length2:0,
+                length: 0,
+                length2: 0,
               }
             },
             data: [
@@ -1419,7 +1417,7 @@ export default {
           y: "center",
           textStyle: {
             lineHeight: 10,
-            fontSize:"6",
+            fontSize: "6",
             fontWeight: "lighter"
           }
         },
@@ -1461,8 +1459,8 @@ export default {
               normal: {
                 show: true,
                 show: true,
-                 length:0,
-              length2:0,
+                length: 0,
+                length2: 0,
               }
             },
             data: [
@@ -1488,7 +1486,7 @@ export default {
           y: "center",
           textStyle: {
             lineHeight: 10,
-            fontSize:"6",
+            fontSize: "6",
             fontWeight: "lighter"
           }
         },
@@ -1530,8 +1528,8 @@ export default {
               normal: {
                 show: true,
                 show: true,
-                 length:0,
-              length2:0,
+                length: 0,
+                length2: 0,
               }
             },
             data: [
@@ -1610,7 +1608,7 @@ export default {
           },
           axisLabel: {
             color: "#ddd",
-            fontSize:8
+            fontSize: 8
           }
         },
         yAxis: {
@@ -1671,8 +1669,8 @@ export default {
     let that = this;
     setInterval(function() {
       let random = parseInt(Math.random() * 3);
-      that.lastData= main[random]
-         that.mainGongyingEchartF();
+      that.lastData = main[random]
+      that.mainGongyingEchartF();
     }, 10000);
     this.caigouEchartF();
     this.caigouKindsEchartF();
@@ -1695,7 +1693,7 @@ export default {
 <style scoped>
 .echart-container {
   /* width: 3745px; */
-    width: 936.25px;
+  width: 936.25px;
   display: flex;
   justify-content: space-between;
 }
@@ -1705,25 +1703,23 @@ export default {
   /* width: 1857px;
   height: 2839px; */
   width: 464.25px;
-  height:709.75px;
+  height: 709.75px;
   position: relative;
   color: #ffffff;
   background-image: url("../assets/bg2.png");
-  background-size:100% 100%;
+  background-size: 100% 100%;
   box-sizing: border-box;
   /* padding: 180px 100px 0; */
- padding: 45px 25px 0;
+  padding: 45px 25px 0;
   overflow: hidden;
 }
 
 .left-title {
   position: absolute;
-  /* top: 100px;
-  left: 855px; */
-   top: 20px;
-  left: 200px;
-  /* font-size: 48px; */
-   font-size: 20px;
+  position: absolute;
+  top: 24px;
+  left: 215px;
+  font-size: 14px;
   color: #ffffff;
   font-weight: bold;
 }
@@ -1756,12 +1752,12 @@ export default {
 .caigou-part4 {
   width: 100%;
   /* padding: 0 0 40px 0; */
-    padding: 0 0 10px 0;
+  padding: 0 0 10px 0;
 }
 
 .sub-title {
   /* font-size: 36px; */
-   font-size: 9px;
+  font-size: 9px;
   color: #fefefe;
   /* padding-bottom: 10px; */
   padding-bottom: 2.5px;
@@ -1770,7 +1766,7 @@ export default {
 .sub-title>img {
   /* margin-right: 20px; */
   width: 10.25px;
-  height:7.75px;
+  height: 7.75px;
   margin-right: 5px;
 }
 
@@ -1778,21 +1774,21 @@ export default {
   background: transparent;
   /* width: 1717px;
   height: 261px; */
-   width: 429.25px;
-  height:65x;
+  width: 429.25px;
+  height: 65x;
 }
 
 
 .total-price {
   /* width: 382.3px !important;
   height: 300px !important; */
-    width: 95.57px !important;
+  width: 95.57px !important;
   height: 75px !important;
   border-radius: 50%;
   background: url("./../assets/2.svg");
   /* padding: 20px;
    */
-     padding: 5x;
+  padding: 5x;
 
   position: relative;
   animation: loading 2s linear infinite;
@@ -1811,13 +1807,13 @@ export default {
 .font-part {
   /* width: 220px !important;
   height: 200px !important; */
-   width: 55px !important;
+  width: 55px !important;
   height: 50px !important;
   position: absolute;
   border-radius: 50%;
   /* top: 350px;
   left: 160px; */
-    top:87.5px;
+  top: 87.5px;
   left: 35px;
   text-align: center;
   line-height: 50px;
@@ -1826,7 +1822,7 @@ export default {
 
 .font-part img {
   width: 90%;
-    /* margin-left: 10px; */
+  /* margin-left: 10px; */
   margin-left: 2.5px;
 }
 
@@ -1871,17 +1867,18 @@ export default {
 
 
 
+
 /* 横线 */
 
 .transverseLine {
   /* padding-top: 50px; */
-    /* padding-top: 12.5px; */
-
+  /* padding-top: 12.5px; */
 }
 
 .transverseLine img {
   width: 100%;
 }
+
 
 
 
@@ -1900,6 +1897,7 @@ export default {
   width: 2px;
   height: 100%;
 }
+
 
 
 
@@ -1935,7 +1933,6 @@ export default {
 #caigouKindsEchart {
   /* height: 400px; */
   height: 100px;
-  
 }
 
 .part2-box>div:nth-of-type(2),
@@ -1945,9 +1942,10 @@ export default {
 
 #overCaigouKindsEchart {
   /* height: 423px; */
-  height:105.75px;
+  height: 105.75px;
   /*  */
 }
+
 
 
 
@@ -1966,6 +1964,7 @@ export default {
 
 
 
+
 /* 交货一次检验合格率  准时交货率 主要供应商*/
 
 .caigou-part4 {
@@ -1976,8 +1975,7 @@ export default {
 
 .caigou-part4 .longLine {
   /* height: 730px !important; */
-    height: 182.5px !important;
-
+  height: 182.5px !important;
 }
 
 .caigou-part4 .longLine img {
@@ -2007,15 +2005,14 @@ export default {
 
 #commitGoodsTimeEchart {
   /* height: 300px; */
-    height: 75px
-
+  height: 75px
 }
 
 #mainGongyingEchart {
   /* height: 700px; */
-    height: 175px;
-
+  height: 175px;
 }
+
 
 
 
@@ -2040,7 +2037,7 @@ export default {
 .right-part1-main>div {
   /* width: 526px;
   height: 93px; */
-   width: 131.5px;
+  width: 131.5px;
   height: 23.25px;
   line-height: 23.25px;
   /* margin-top: 20px; */
@@ -2059,7 +2056,7 @@ export default {
 .right-part1-main>div>span:nth-of-type(1) {
   font-size: 30px;
   /* margin-left: 40px; */
-    margin-left: 10px;
+  margin-left: 10px;
   color: rgba(30, 198, 239, 1);
 }
 
@@ -2067,7 +2064,7 @@ export default {
   display: inline-block;
   /* width: 42px;
   height: 42px; */
-   width: 10.5px;
+  width: 10.5px;
   height: 10.5px;
   /* line-height: 42px; */
   line-height: 10.5x;
@@ -2077,7 +2074,7 @@ export default {
   color: #fe8346;
   /* margin-left: 100px; */
   margin-left: 25px;
-  
+
   font-size: 30px;
   border: 3px solid #fe8346;
   opacity: 1;
@@ -2090,7 +2087,7 @@ export default {
   color: rgba(255, 255, 255, 1);
   /* margin-left: 10px;
   margin-right: 10px; */
-    margin-left: 2.5px;
+  margin-left: 2.5px;
   margin-right: 2.5px;
   opacity: 1;
 }
@@ -2105,9 +2102,9 @@ export default {
 
 #rightEchart1 {
   /* height: 600px; */
-  height: 150px; 
-  
+  height: 150px;
 }
+
 
 
 
@@ -2141,9 +2138,7 @@ export default {
 }
 
 #rightLastEchart {
-  /* height: 600px; */
   height: 150px;
-  
 }
 
 
@@ -2153,53 +2148,35 @@ export default {
 }
 
 .seamless-warp {
-  /* height: 158px; */
-  height:49px;
+
+  height: 49px;
   overflow: hidden;
-  /* margin-top: 30px;
-  margin-left: 90px; */
   margin-top: 7.5px;
   margin-left: 22.5px;
-  
 }
 
 .table-container {
-  /* width: 1210px;
-  height: 65px;
-  line-height: 65px;
-  margin: 10px 0; */
-
   width: 302.5px;
   height: 20px;
-  line-height: 20px;
+ 
   margin: 2.5px 0;
   background: rgba(6, 49, 88, 1);
   border: 1px solid rgba(15, 110, 169, 1);
   position: relative;
   font-weight: lighter;
-  /* padding-left: 47px; */
-   padding-left: 11.75px;
+  padding-left: 11.75px;
 }
 
 
-/* .item div:nth-of-type(1) {
-margin-top:0;
-} */
-
-
-/* .seamless-warp div:nth-of-type(4) {
-margin-top:5px;
-} */
-
 .table-container>img:nth-of-type(1) {
-  height:20px;
+  height: 20px;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .table-container>img:nth-of-type(2) {
-   height:20px;
+  height: 20px;
   position: absolute;
   top: 0;
   right: 0;
@@ -2207,6 +2184,8 @@ margin-top:5px;
 
 .table-container span {
   display: inline-block;
+   height: 100%;
+   vertical-align: middle;
 }
 
 .table-container>span:nth-of-type(1),
@@ -2218,10 +2197,9 @@ margin-top:5px;
 
 .table-container>span:nth-of-type(2),
 .table-container>span:nth-of-type(5) {
-  /* padding-left: 150px; */
   padding-left: 10px;
-  
 }
+
 
 
 /* .table-container > span:nth-of-type(5) {
@@ -2247,6 +2225,6 @@ margin-top:5px;
 .table-container>span:nth-of-type(7) {
   font-size: 6px;
   /* padding-left: 5px; */
-    padding-left: 1.25px; 
+  padding-left: 1.25px;
 }
 </style>
