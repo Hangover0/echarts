@@ -11,7 +11,7 @@
     </div>
     <div class="content">
       <echartsL/>
-      <!-- <echartsR/> -->
+      <echartsR/>
     </div>
     <div class="copy">
       <p>Designed By DELL Inc Powered By 贵阳中通华软件技术有限公司</p>
@@ -68,6 +68,7 @@ p {
   height: 810px;
   /* min-width: 7680px;
   min-height: 3240px; */
+  overflow: hidden;
   font-family: "Microsoft YaHei";
   background: url("./assets/background3.jpg");
   position: relative;
