@@ -11,7 +11,7 @@
     </div>
     <div class="content">
       <echartsL/>
-      <echartsR/>
+      <!-- <echartsR/> -->
     </div>
     <div class="copy">
       <p>Designed By DELL Inc Powered By 贵阳中通华软件技术有限公司</p>
@@ -64,20 +64,21 @@ p {
   padding: 0px;
 }
 #app {
-  width: 7680px;
-  height: 3240px;
-  min-width: 7680px;
-  min-height: 3240px;
+  width: 1920px;
+  height: 810px;
+  /* min-width: 7680px;
+  min-height: 3240px; */
   font-family: "Microsoft YaHei";
   background: url("./assets/background3.jpg");
   position: relative;
+  background-size: 1920px 810px;
 }
 /* 版权样式 */
 .copy {
   position: absolute;
   color: #fff;
-  right: 55px;
-  bottom: 47px;
+  right: 5px;
+  bottom: 8px;
   opacity: 0.8;
 }
 /* 时间天气样式 */
@@ -85,22 +86,21 @@ p {
   display: flex;
   color: #ffffff;
   position: absolute;
-  top: 79px;
-  right: 201px;
+  top: 10px;
+  right: 0px;
+  opacity: 0.8;
 }
 .data p {
-  margin-right: 30px;
+  margin-right: 5px;
 }
 .data img{
   vertical-align: middle;
     width: 20px;
     height: 20px;
-    margin-right: 30px;
+    margin-right: 5px;
 }
 .content {
-  margin: 38px 20px 0 0;
-  box-sizing: border-box;
-  /* background: url("./assets/背景1.jpg"); */
+  margin: 13px 20px 0 0;
   display: flex;
   justify-content: space-around;
 }
@@ -110,11 +110,7 @@ p {
   text-align: center;
 }
 .headImg {
-  width: 4582px;
-  height: 247px;
-  margin-right: 1850px;
-}
-.dialog-footer {
-  padding-bottom:30px !important;
+  height: 47px;
+  margin-right: 850px;
 }
 </style>

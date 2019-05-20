@@ -42,16 +42,16 @@
             <div class="halo2 halo">
               <div class="halo3 halo">
                 <div class="halo4 halo">
-                  <div class="halo5 halo">总装分厂</div>
+                  <div class="halo5 halo">总装<br/>分厂</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="GoldTwo">
+           <div class="GoldTwo">
             <div class="GoldTwo4 halo">
               <div class="GoldTwo3 halo">
                 <div class="GoldTwo2 halo">
-                  <div class="GoldTwo1 halo">金二分厂</div>
+                  <div class="GoldTwo1 halo">金二<br/>分厂</div>
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="Agold4 halo">
               <div class="Agold3 halo">
                 <div class="Agold2 halo">
-                  <div class="Agold1 halo">金一分厂</div>
+                  <div class="Agold1 halo">金一<br/>分厂</div>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@
             <div class="cast4 halo">
               <div class="cast3 halo">
                 <div class="cast2 halo">
-                  <div class="cast1 halo">段热铆分厂</div>
+                  <div class="cast1 halo">段热铆<br/>分&emsp;厂</div>
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@
             <div class="Heatforging4 halo">
               <div class="Heatforging3 halo">
                 <div class="Heatforging2 halo">
-                  <div class="Heatforging1 halo">铸造分厂</div>
+                  <div class="Heatforging1 halo">铸造<br/>分厂</div>
                 </div>
               </div>
             </div>
@@ -171,21 +171,22 @@
         </div>
         <div id="echart5"></div>
       </div>
-      <div class="transverseLine">
+       <div class="transverseLine">
         <img src="../assets/transverseLine.svg" alt>
       </div>
       <div>
         <div class="subtitle">
-          <img class="arrows" src="../assets/Headingstyles.png" alt>{{title}}
+          <img class="arrows" src="../assets/Headingstyles.png" alt>
+          {{title}}
         </div>
         <div class="echart6Box">
           <div id="echart6"></div>
           <div class="p">
-            <p class="p1">金一分厂</p>
-            <p class="p2">金二分厂</p>
-            <p class="p3">总装分厂</p>
-            <p class="p4">锻热铆分厂</p>
-            <p class="p5">铸造分厂</p>
+            <p class="p1">金一<br/>分厂</p>
+            <p class="p2">金二<br/>分厂</p>
+            <p class="p3">总装<br/>分厂</p>
+            <p class="p4">锻热铆<br/>分&emsp;厂</p>
+            <p class="p5">铸造<br/>分厂</p>
           </div>
         </div>
       </div>
@@ -244,7 +245,7 @@ export default {
             "锻热铆分厂",
             "铸造分厂"
           ],
-          ["完成率", 85, 88,87, 90, 82, 82],
+          ["完成率", 85, 88, 87, 90, 82, 82],
           ["未完成率", 5, 3, 5, 3, 6, 11],
           ["外部影响", 10, 9, 8, 7, 12, 7]
         ]
@@ -272,9 +273,8 @@ export default {
           x: "right",
           textStyle: {
             color: "#ddd",
-            fontSize: 20
           },
-          padding: [0, 170, 0, 0],
+          padding: [10,20,0,0],
           data: [
             "设备故障次数",
             "设备维护保养问题数",
@@ -312,7 +312,6 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18
             }
           }
         ],
@@ -333,7 +332,6 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18
             }
           },
           {
@@ -347,7 +345,6 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18
             }
           }
         ],
@@ -424,7 +421,10 @@ export default {
             name: "每月故障次数",
             type: "pie",
             label: {
-              fontSize: 22
+            },
+            labelLine: {
+              length: 5,
+              length2: 6,
             },
             radius: ["35%", "65%"],
             center: ["50%", "60%"],
@@ -472,7 +472,10 @@ export default {
             name: "每月故障次数",
             type: "pie",
             label: {
-              fontSize: 22
+            },
+            labelLine: {
+              length: 5,
+              length2: 6,
             },
             radius: ["35%", "65%"],
             center: ["50%", "60%"],
@@ -519,9 +522,8 @@ export default {
           x: "right",
           textStyle: {
             color: "#ddd",
-            fontSize: 20
           },
-          padding: [0, 170, 0, 0],
+          padding: [10,20,0,0],
           data: [
             "月份完成工时",
             "同期完成工时",
@@ -559,7 +561,6 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18
             }
           }
         ],
@@ -580,7 +581,6 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18
             }
           },
           {
@@ -599,7 +599,6 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18
             }
           }
         ],
@@ -679,9 +678,8 @@ export default {
           orient: "horizontal",
           textStyle: {
             color: "#ddd",
-            fontSize: 20,
-            lineHeight: 30
-          }
+          },
+          padding: [0,20,0,0]
         },
         tooltip: {
           trigger: "item",
@@ -694,10 +692,9 @@ export default {
           {
             type: "pie",
             label: {
-              fontSize: 24
             },
-            radius: 220,
-            center: ["30%", "17%"],
+            radius: 43,
+            center: ["30%", "23%"],
             // No encode specified, by default, it is '生产供应处'.
             itemStyle: {
               emphasis: {
@@ -705,16 +702,23 @@ export default {
                 shadowOffsetX: 0,
                 shadowColor: "rgba(0, 0, 0, 0.5)"
               }
+            },
+            labelLine: {
+              length: 5,
+              length2: 6,
             }
           },
           {
             name: "金一分厂",
             type: "pie",
             label: {
-              fontSize: 24
             },
-            radius: ["18%", "28%"],
-            center: ["70%", "17%"],
+            labelLine: {
+              length: 5,
+              length2: 6,
+            },
+            radius: ["15%", "25%"],
+            center: ["70%", "23%"],
             itemStyle: {
               emphasis: {
                 shadowBlur: 10,
@@ -731,10 +735,13 @@ export default {
             type: "pie",
             name: "金二分厂",
             label: {
-              fontSize: 24
             },
-            radius: ["18%", "28%"],
-            center: ["30%", "51%"],
+            labelLine: {
+              length: 5,
+              length2: 6,
+            },
+            radius: ["15%", "25%"],
+            center: ["30%", "55%"],
             encode: {
               itemName: "完成情况",
               value: "金二分厂"
@@ -744,10 +751,13 @@ export default {
             name: "总装分厂",
             type: "pie",
             label: {
-              fontSize: 24
             },
-            radius: ["18%", "28%"],
-            center: ["70%", "51%"],
+            labelLine: {
+              length: 5,
+              length2: 6,
+            },
+            radius: ["15%", "25%"],
+            center: ["70%", "55%"],
             encode: {
               itemName: "完成情况",
               value: "总装分厂"
@@ -757,10 +767,13 @@ export default {
             name: "段热铆分厂",
             type: "pie",
             label: {
-              fontSize: 24
             },
-            radius: ["18%", "28%"],
-            center: ["30%", "85%"],
+            labelLine: {
+              length: 5,
+              length2: 6,
+            },
+            radius: ["15%", "25%"],
+            center: ["30%", "87%"],
             encode: {
               itemName: "完成情况",
               value: "锻热铆分厂"
@@ -770,10 +783,13 @@ export default {
             name: "铸造分厂",
             type: "pie",
             label: {
-              fontSize: 24
             },
-            radius: ["18%", "28%"],
-            center: ["70%", "85%"],
+            labelLine: {
+              length: 5,
+              length2: 6,
+            },
+            radius: ["15%", "25%"],
+            center: ["70%", "87%"],
             encode: {
               itemName: "完成情况",
               value: "铸造分厂"
@@ -808,252 +824,41 @@ export default {
 </script>
 
 <style scoped>
-/* 1.定义动画 */
-@keyframes halos4 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 1);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(0, 255, 255, 0.9);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.8);
-  }
-}
-@keyframes halos3 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.7);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(0, 255, 255, 0.6);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.5);
-  }
-}
-@keyframes halos2 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.5);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(0, 255, 255, 0.4);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.3);
-  }
-}
-@keyframes halos1 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.3);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(0, 255, 255, 0.2);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.1);
-  }
-}
-/* 2.定义动画 */
-@keyframes GoldTwo4 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgb(30, 189, 223, 1);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(30, 189, 223, 0.9);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.8);
-  }
-}
-@keyframes GoldTwo3 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.7);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(30, 189, 223, 0.6);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.5);
-  }
-}
-@keyframes GoldTwo2 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.5);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(30, 189, 223, 0.4);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.3);
-  }
-}
-@keyframes GoldTwo1 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.3);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(30, 189, 223, 0.2);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.1);
-  }
-}
-/* 3.定义动画 */
-@keyframes Agold4 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 1);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(229, 183, 132, 0.9);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.8);
-  }
-}
-@keyframes Agold3 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.7);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(229, 183, 132, 0.6);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.5);
-  }
-}
-@keyframes Agold2 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.5);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(229, 183, 132, 0.4);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.3);
-  }
-}
-@keyframes Agold1 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.3);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(229, 183, 132, 0.2);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.1);
-  }
-}
-/* 4.定义动画 */
-@keyframes cast4 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 1);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(107, 230, 193, 0.9);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.8);
-  }
-}
-@keyframes cast3 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.7);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(107, 230, 193, 0.6);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.5);
-  }
-}
-@keyframes cast2 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.5);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(107, 230, 193, 0.4);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.3);
-  }
-}
-@keyframes cast1 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.3);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(107, 230, 193, 0.2);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.1);
-  }
-}
-/* 5.定义动画 */
-@keyframes Heatforging4 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 1);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(234, 131, 138, 0.9);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.8);
-  }
-}
-@keyframes Heatforging3 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.7);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(234, 131, 138, 0.6);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.5);
-  }
-}
-@keyframes Heatforging2 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.5);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(234, 131, 138, 0.4);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.3);
-  }
-}
-@keyframes Heatforging1 {
-  0% {
-    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.3);
-  }
-  70% {
-    box-shadow: 0px 0px 15px 0px rgba(234, 131, 138, 0.2);
-  }
-  100% {
-    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.1);
-  }
-}
 .haloBox {
-  width: 1700px;
-  height: 840px;
+  width: 450px;
+  height: 185px;
   overflow: hidden;
-  margin: 20px 0 0 50px;
   position: relative;
   color: #ffffff;
-  font-size: 36px;
+  font-size: 12px;
   text-align: center;
 }
 .halo1 {
   display: flex;
   position: absolute;
-  top: 80px;
-  left: 480px;
+  top: 6px;
+  left: 167px;
+}
+.halo2 {
+  animation: halos1 2s linear infinite;
+}
+.halo3 {
+  animation: halos2 2s linear infinite;
+}
+.halo4 {
+  animation: halos3 2s linear infinite;
+}
+.halo5 {
+  animation: halos4 1.5s linear infinite;
+  width: 35px;
+  height: 35px;
+  background: #118ede;
 }
 .GoldTwo {
   display: flex;
   position: absolute;
-  top: 320px;
-  left: 250px;
+  top: 58px;
+  left: 90px;
 }
 .GoldTwo4 {
   animation: GoldTwo1 2s linear infinite;
@@ -1065,17 +870,18 @@ export default {
   animation: GoldTwo3 2s linear infinite;
 }
 .GoldTwo1 {
-  line-height: 225px;
   animation: GoldTwo4 1.5s linear infinite;
-  width: 225px;
-  height: 225px;
-  background: #118ede;
+  width: 50px;
+  height: 50px;
+  background: #1ebddf;
+  padding: 6px 0 0 0;
+  box-sizing: border-box;
 }
 .Agold {
   display: flex;
   position: absolute;
-  top: 280px;
-  left: 650px;
+  top: 68px;
+  left: 192px;
 }
 .Agold4 {
   animation: Agold1 2s linear infinite;
@@ -1087,17 +893,18 @@ export default {
   animation: Agold3 2s linear infinite;
 }
 .Agold1 {
-  line-height: 175px;
   animation: Agold4 1.5s linear infinite;
-  width: 175px;
-  height: 175px;
+  width: 40px;
+  height: 40px;
   background: #e5b784;
+  padding: 1px 0 0 0;
+  box-sizing: border-box;
 }
 .cast {
   display: flex;
   position: absolute;
-  top: 50px;
-  left: 1000px;
+  top: 0px;
+  left: 280px;
 }
 .cast4 {
   animation: cast1 2s linear infinite;
@@ -1109,17 +916,18 @@ export default {
   animation: cast3 2s linear infinite;
 }
 .cast1 {
-  line-height: 250px;
   animation: cast4 1.5s linear infinite;
-  width: 250px;
-  height: 250px;
+  width: 55px;
+  height: 55px;
   background: #6be6c1;
+  padding: 11px 0 0 0;
+  box-sizing: border-box;
 }
 .Heatforging {
   display: flex;
   position: absolute;
-  top: 500px;
-  left: 900px;
+  top: 104px;
+  left: 247px;
 }
 .Heatforging4 {
   animation: Heatforging1 2s linear infinite;
@@ -1131,17 +939,18 @@ export default {
   animation: Heatforging3 2s linear infinite;
 }
 .Heatforging1 {
-  line-height: 200px;
   animation: Heatforging4 1.5s linear infinite;
-  width: 200px;
-  height: 200px;
+  width: 45px;
+  height: 45px;
   background: #ea838a;
+  padding: 5px 0 0 0;
+  box-sizing: border-box;
 }
 .one {
   display: flex;
   position: absolute;
-  top: 200px;
-  left: 330px;
+  top: 10px;
+  left: 123px;
 }
 .one4 {
   animation: cast1 2s linear infinite;
@@ -1154,15 +963,15 @@ export default {
 }
 .one1 {
   animation: cast4 1.5s linear infinite;
-  width: 30px;
-  height: 30px;
+  width: 5px;
+  height: 5px;
   background: #6be6c1;
 }
 .two {
   display: flex;
   position: absolute;
-  top: 380px;
-  left: 150px;
+  top: 80px;
+  left: 50px;
 }
 .two4 {
   animation: Agold1 2s linear infinite;
@@ -1175,15 +984,15 @@ export default {
 }
 .two1 {
   animation: Agold4 1.5s linear infinite;
-  width: 60px;
-  height: 60px;
+  width: 12px;
+  height: 12px;
   background: #e5b784;
 }
 .three {
   display: flex;
   position: absolute;
-  top: 370px;
-  left: 590px;
+  top: 70px;
+  left: 168px;
 }
 .three4 {
   animation: Heatforging1 2s linear infinite;
@@ -1196,15 +1005,15 @@ export default {
 }
 .three1 {
   animation: Heatforging4 1.5s linear infinite;
-  width: 15px;
-  height: 15px;
+  width: 4px;
+  height: 4px;
   background: #ea838a;
 }
 .four {
   display: flex;
   position: absolute;
-  top: 650px;
-  left: 650px;
+  top: 135px;
+  left: 162px;
 }
 .four4 {
   animation: cast1 2s linear infinite;
@@ -1217,15 +1026,15 @@ export default {
 }
 .four1 {
   animation: cast4 1.5s linear infinite;
-  width: 50px;
-  height: 50px;
+  width: 15px;
+  height: 15px;
   background: #6be6c1;
 }
 .five {
   display: flex;
   position: absolute;
   top: 0px;
-  left: 750px;
+  left: 246px;
 }
 .five4 {
   animation: GoldTwo1 2s linear infinite;
@@ -1238,15 +1047,15 @@ export default {
 }
 .five1 {
   animation: GoldTwo4 1.5s linear infinite;
-  width: 50px;
-  height: 50px;
+  width: 10px;
+  height: 10px;
   background: #1ebddf;
 }
 .six {
   display: flex;
   position: absolute;
-  top: 400px;
-  left: 1000px;
+  top: 70px;
+  left: 252px;
 }
 .six4 {
   animation: GoldTwo1 2s linear infinite;
@@ -1259,15 +1068,15 @@ export default {
 }
 .six1 {
   animation: GoldTwo4 1.5s linear infinite;
-  width: 40px;
-  height: 40px;
+  width: 8px;
+  height: 8px;
   background: #1ebddf;
 }
 .seven {
   display: flex;
   position: absolute;
-  top: 550px;
-  left: 1250px;
+  top: 107px;
+  left: 336px;
 }
 .seven4 {
   animation: GoldTwo1 2s linear infinite;
@@ -1280,15 +1089,15 @@ export default {
 }
 .seven1 {
   animation: GoldTwo4 1.5s linear infinite;
-  width: 45px;
-  height: 45px;
+  width: 10px;
+  height: 10px;
   background: #1ebddf;
 }
 .eight {
   display: flex;
   position: absolute;
-  top: 300px;
-  left: 1400px;
+  top: 30px;
+  left: 377px;
 }
 .eight4 {
   animation: Agold1 2s linear infinite;
@@ -1301,152 +1110,371 @@ export default {
 }
 .eight1 {
   animation: Agold4 1.5s linear infinite;
-  width: 50px;
-  height: 50px;
+  width: 8px;
+  height: 8px;
   background: #e5b784;
 }
 .halo {
-  margin: 15px;
+  margin: 3px;
   border-radius: 50%;
   border: transparent 1px solid;
 }
 .circle {
-  margin: 5px;
+  margin: 1px;
   border-radius: 50%;
   border: transparent 1px solid;
 }
-.halo2 {
-  animation: halos1 2s linear infinite;
-}
-.halo3 {
-  animation: halos2 2s linear infinite;
-}
-.halo4 {
-  animation: halos3 2s linear infinite;
-}
-.halo5 {
-  line-height: 150px;
-  animation: halos4 1.5s linear infinite;
-  width: 150px;
-  height: 150px;
-  background: #1ebddf;
-}
 .box {
-  width: 3852px;
-  height: 2839px;
+  width: 963px;
+  height: 709px;
   color: #ffffff;
   display: flex;
   justify-content: center;
   background: url("../assets/bg.png");
+  background-size: 963px 709px;
   box-sizing: border-box;
-  padding: 0 100px;
+  padding-left: 10px;
 }
 .boxL {
-  width: 50%;
+  width: 48%;
   height: 100%;
   position: relative;
 }
 .boxR {
-  width: 50%;
+  width: 48%;
   height: 100%;
   position: relative;
 }
 .title {
   position: absolute;
-  top: 100px;
-  left: 855px;
-  font-size: 48px;
+  top: 24px;
+  left: 215px;
+  font-size: 14px;
   color: #ffffff;
   font-weight: bold;
 }
 .title1 {
-  left: 788px;
+  left: 183px;
 }
 .subtitle1 {
-  margin: 231px 0 0 0;
+  margin: 50px 0 0 0;
 }
 .subtitle {
-  font-size: 36px;
+  font-size: 12px;
   color: #fefefe;
-  padding-bottom: 10px;
-  margin-left: 50px;
+  margin-left: 10px;
 }
 #echart1 {
-  background: transparent;
-  width: 1717px;
-  height: 600px;
+  width: 450px;
+  height: 250px;
+  margin-bottom: -40px;
 }
 #echart5 {
-  width: 1717px;
-  height: 600px;
+  width: 450px;
+  height: 250px;
+  margin-bottom: -40px;
 }
 .echart6Box {
   position: relative;
-  width: 1717px;
-  height: 1600px;
+  width: 450px;
+  height: 350px;
 }
 #echart6 {
-  width: 1717px;
-  height: 1600px;
-}
-/* echart6 文字定位 */
-.p {
-  font-size: 32px;
-  color: #e1ebef;
-}
-.p1 {
-  position: absolute;
-  bottom: 1310px;
-  right: 455px;
-}
-.p2 {
-  position: absolute;
-  bottom: 760px;
-  right: 1140px;
-}
-.p3 {
-  position: absolute;
-  bottom: 760px;
-  right: 450px;
-}
-.p4 {
-  position: absolute;
-  bottom: 220px;
-  right: 1120px;
-}
-.p5 {
-  position: absolute;
-  bottom: 220px;
-  right: 450px;
+  width: 450px;
+  height: 350px;
 }
 .boxL-center {
   display: flex;
 }
 #echart2 {
-  margin: 0 200px 0 80px;
+  margin: 0 0px 0 10px;
+  width: 210px;
 }
 #echart3 {
-  margin: 0 0 0 80px;
+  margin: 0 0px 0 10px;
+  width: 220px;
 }
 #echart2,
 #echart3 {
   text-align: center;
-  width: 650px;
-  height: 500px;
+  height: 125px;
+}
+/* echart6 文字定位 */
+.p {
+  font-size: 12px;
+  color: #e1ebef;
+}
+.p1 {
+  position: absolute;
+  bottom: 254px;
+  right: 122px;
+}
+.p2 {
+  position: absolute;
+  bottom: 142px;
+  right: 303px;
+}
+.p3 {
+  position: absolute;
+  bottom: 142px;
+  right: 123px;
+}
+.p4 {
+  position: absolute;
+  bottom: 29px;
+  right: 297px;
+}
+.p5 {
+  position: absolute;
+  bottom: 29px;
+  right: 123px;
 }
 /* 横线 */
 .transverseLine {
-  margin: 50px 0 105px 0;
+  text-align: center;
+  margin: 0px 0 14px 0;
+}
+.transverseLine img {
+  width: 430px;
+  height: 1px;
 }
 /* 竖线 */
 .longLine {
-  margin: 312px 62px 0 62px;
+  margin: 24px 5px 0 5px;
+}
+.longLine img{
+  height: 660px;
 }
 /* 箭头样式 */
 .arrows {
-  width: 41px;
-  height: 31px;
-  margin: 0 19px 0 0;
+  width: 10px;
+  height: 7px;
+  margin: 0 8px 0 0;
   vertical-align: middle;
+}
+/* 1.定义动画 */
+@keyframes halos4 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 1);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(0, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.8);
+  }
+}
+@keyframes halos3 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(0, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.5);
+  }
+}
+@keyframes halos2 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.5);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(0, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.3);
+  }
+}
+@keyframes halos1 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.3);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(0, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.1);
+  }
+}
+/* 2.定义动画 */
+@keyframes GoldTwo4 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgb(30, 189, 223, 1);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.9);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.8);
+  }
+}
+@keyframes GoldTwo3 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.7);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.5);
+  }
+}
+@keyframes GoldTwo2 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.5);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.4);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.3);
+  }
+}
+@keyframes GoldTwo1 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.3);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.2);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.1);
+  }
+}
+/* 3.定义动画 */
+@keyframes Agold4 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 1);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(229, 183, 132, 0.9);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.8);
+  }
+}
+@keyframes Agold3 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.7);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(229, 183, 132, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.5);
+  }
+}
+@keyframes Agold2 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.5);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(229, 183, 132, 0.4);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.3);
+  }
+}
+@keyframes Agold1 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.3);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(229, 183, 132, 0.2);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.1);
+  }
+}
+/* 4.定义动画 */
+@keyframes cast4 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 1);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(107, 230, 193, 0.9);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.8);
+  }
+}
+@keyframes cast3 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.7);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(107, 230, 193, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.5);
+  }
+}
+@keyframes cast2 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.5);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(107, 230, 193, 0.4);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.3);
+  }
+}
+@keyframes cast1 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.3);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(107, 230, 193, 0.2);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.1);
+  }
+}
+/* 5.定义动画 */
+@keyframes Heatforging4 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 1);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(234, 131, 138, 0.9);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.8);
+  }
+}
+@keyframes Heatforging3 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.7);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(234, 131, 138, 0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.5);
+  }
+}
+@keyframes Heatforging2 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.5);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(234, 131, 138, 0.4);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.3);
+  }
+}
+@keyframes Heatforging1 {
+  0% {
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.3);
+  }
+  70% {
+    box-shadow: 0px 0px 5px 0px rgba(234, 131, 138, 0.2);
+  }
+  100% {
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.1);
+  }
 }
 </style>
