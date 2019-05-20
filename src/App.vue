@@ -10,7 +10,7 @@
       <p>{{weather.tmp}}℃</p>
     </div>
     <div class="content">
-      <echartsL/>
+      <!-- <echartsL/> -->
       <echartsR/>
     </div>
     <div class="copy">
@@ -64,10 +64,13 @@ p {
   padding: 0px;
 }
 #app {
-  width: 7680px;
+  /* width: 7680px;
   height: 3240px;
   min-width: 7680px;
-  min-height: 3240px;
+  min-height: 3240px; */
+  width:1920px;
+  height:1000px;
+  overflow: hidden;
   font-family: "Microsoft YaHei";
   background: url("./assets/background3.jpg");
   position: relative;
