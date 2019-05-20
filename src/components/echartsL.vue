@@ -693,8 +693,8 @@ export default {
             type: "pie",
             label: {
             },
-            radius: 43,
-            center: ["30%", "23%"],
+            radius: 47,
+            center: ["30%", "20%"],
             // No encode specified, by default, it is '生产供应处'.
             itemStyle: {
               emphasis: {
@@ -718,7 +718,7 @@ export default {
               length2: 6,
             },
             radius: ["15%", "25%"],
-            center: ["70%", "23%"],
+            center: ["70%", "20%"],
             itemStyle: {
               emphasis: {
                 shadowBlur: 10,
@@ -741,7 +741,7 @@ export default {
               length2: 6,
             },
             radius: ["15%", "25%"],
-            center: ["30%", "55%"],
+            center: ["30%", "52%"],
             encode: {
               itemName: "完成情况",
               value: "金二分厂"
@@ -757,7 +757,7 @@ export default {
               length2: 6,
             },
             radius: ["15%", "25%"],
-            center: ["70%", "55%"],
+            center: ["70%", "52%"],
             encode: {
               itemName: "完成情况",
               value: "总装分厂"
@@ -773,7 +773,7 @@ export default {
               length2: 6,
             },
             radius: ["15%", "25%"],
-            center: ["30%", "87%"],
+            center: ["30%", "84%"],
             encode: {
               itemName: "完成情况",
               value: "锻热铆分厂"
@@ -789,7 +789,7 @@ export default {
               length2: 6,
             },
             radius: ["15%", "25%"],
-            center: ["70%", "87%"],
+            center: ["70%", "84%"],
             encode: {
               itemName: "完成情况",
               value: "铸造分厂"
@@ -826,18 +826,19 @@ export default {
 <style scoped>
 .haloBox {
   width: 450px;
-  height: 185px;
+  height: 195px;
   overflow: hidden;
   position: relative;
   color: #ffffff;
   font-size: 12px;
   text-align: center;
+  margin-top: 5px;
 }
 .halo1 {
   display: flex;
   position: absolute;
   top: 6px;
-  left: 167px;
+  left: 172px;
 }
 .halo2 {
   animation: halos1 2s linear infinite;
@@ -850,15 +851,17 @@ export default {
 }
 .halo5 {
   animation: halos4 1.5s linear infinite;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background: #118ede;
+  padding: 2px 0 0 0;
+  box-sizing: border-box;
 }
 .GoldTwo {
   display: flex;
   position: absolute;
-  top: 58px;
-  left: 90px;
+  top: 70px;
+  left: 71px;
 }
 .GoldTwo4 {
   animation: GoldTwo1 2s linear infinite;
@@ -871,17 +874,17 @@ export default {
 }
 .GoldTwo1 {
   animation: GoldTwo4 1.5s linear infinite;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   background: #1ebddf;
-  padding: 6px 0 0 0;
+  padding: 9px 0 0 0;
   box-sizing: border-box;
 }
 .Agold {
   display: flex;
   position: absolute;
-  top: 68px;
-  left: 192px;
+  top: 75px;
+  left: 179px;
 }
 .Agold4 {
   animation: Agold1 2s linear infinite;
@@ -894,17 +897,17 @@ export default {
 }
 .Agold1 {
   animation: Agold4 1.5s linear infinite;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   background: #e5b784;
-  padding: 1px 0 0 0;
+  padding: 3px 0 0 0;
   box-sizing: border-box;
 }
 .cast {
   display: flex;
   position: absolute;
   top: 0px;
-  left: 280px;
+  left: 290px;
 }
 .cast4 {
   animation: cast1 2s linear infinite;
@@ -917,16 +920,16 @@ export default {
 }
 .cast1 {
   animation: cast4 1.5s linear infinite;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   background: #6be6c1;
-  padding: 11px 0 0 0;
+  padding: 13px 0 0 0;
   box-sizing: border-box;
 }
 .Heatforging {
   display: flex;
   position: absolute;
-  top: 104px;
+  top: 115px;
   left: 247px;
 }
 .Heatforging4 {
@@ -940,10 +943,10 @@ export default {
 }
 .Heatforging1 {
   animation: Heatforging4 1.5s linear infinite;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   background: #ea838a;
-  padding: 5px 0 0 0;
+  padding: 7px 0 0 0;
   box-sizing: border-box;
 }
 .one {
@@ -971,7 +974,7 @@ export default {
   display: flex;
   position: absolute;
   top: 80px;
-  left: 50px;
+  left: 30px;
 }
 .two4 {
   animation: Agold1 2s linear infinite;
@@ -991,8 +994,8 @@ export default {
 .three {
   display: flex;
   position: absolute;
-  top: 70px;
-  left: 168px;
+  top: 77px;
+  left: 159px;
 }
 .three4 {
   animation: Heatforging1 2s linear infinite;
@@ -1055,7 +1058,7 @@ export default {
   display: flex;
   position: absolute;
   top: 70px;
-  left: 252px;
+  left: 264px;
 }
 .six4 {
   animation: GoldTwo1 2s linear infinite;
@@ -1076,7 +1079,7 @@ export default {
   display: flex;
   position: absolute;
   top: 107px;
-  left: 336px;
+  left: 345px;
 }
 .seven4 {
   animation: GoldTwo1 2s linear infinite;
@@ -1097,7 +1100,7 @@ export default {
   display: flex;
   position: absolute;
   top: 30px;
-  left: 377px;
+  left: 390px;
 }
 .eight4 {
   animation: Agold1 2s linear infinite;
@@ -1157,7 +1160,7 @@ export default {
   left: 183px;
 }
 .subtitle1 {
-  margin: 50px 0 0 0;
+  margin: 45px 0 0 0;
 }
 .subtitle {
   font-size: 12px;
@@ -1177,11 +1180,11 @@ export default {
 .echart6Box {
   position: relative;
   width: 450px;
-  height: 350px;
+  height: 380px;
 }
 #echart6 {
   width: 450px;
-  height: 350px;
+  height: 380px;
 }
 .boxL-center {
   display: flex;
@@ -1206,27 +1209,27 @@ export default {
 }
 .p1 {
   position: absolute;
-  bottom: 254px;
+  bottom: 289px;
   right: 122px;
 }
 .p2 {
   position: absolute;
-  bottom: 142px;
+  bottom: 167px;
   right: 303px;
 }
 .p3 {
   position: absolute;
-  bottom: 142px;
+  bottom: 167px;
   right: 123px;
 }
 .p4 {
   position: absolute;
-  bottom: 29px;
+  bottom: 43px;
   right: 297px;
 }
 .p5 {
   position: absolute;
-  bottom: 29px;
+  bottom: 43px;
   right: 123px;
 }
 /* 横线 */
@@ -1249,52 +1252,52 @@ export default {
 .arrows {
   width: 10px;
   height: 7px;
-  margin: 0 8px 0 0;
+  margin: 0 5px 0 0;
   vertical-align: middle;
 }
 /* 1.定义动画 */
 @keyframes halos4 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 1);
+    box-shadow: 0px 0px 1px 0px rgba(30,189,223,1);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(0, 255, 255, 0.9);
+    box-shadow: 0px 0px 5px 0px rgba(30,189,223,0.9);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.8);
+    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.8);
   }
 }
 @keyframes halos3 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.7);
+    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.7);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(0, 255, 255, 0.6);
+    box-shadow: 0px 0px 5px 0px rgba(30,189,223,0.6);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.5);
   }
 }
 @keyframes halos2 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.5);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(0, 255, 255, 0.4);
+    box-shadow: 0px 0px 5px 0px rgba(30,189,223,0.4);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.3);
   }
 }
 @keyframes halos1 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.3);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(0, 255, 255, 0.2);
+    box-shadow: 0px 0px 5px 0px rgba(30,189,223,0.2);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(0, 255, 255, 0.1);
+    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.1);
   }
 }
 /* 2.定义动画 */
@@ -1303,7 +1306,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgb(30, 189, 223, 1);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.9);
+    box-shadow: 0px 0px 5px 0px rgba(30,189,223, 0.9);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.8);
