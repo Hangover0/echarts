@@ -176,7 +176,7 @@
       </div>
       <div>
         <div class="subtitle">
-          <img class="arrows" src="../assets/Headingstyles.png" alt>完成率统计
+          <img class="arrows" src="../assets/Headingstyles.png" alt>{{title}}
         </div>
         <div class="echart6Box">
           <div id="echart6"></div>
@@ -202,7 +202,53 @@ export default {
       echart2: "",
       echart3: "",
       echart5: "",
-      echart6: ""
+      echart6: "",
+      arr: [
+        [
+          "完成情况",
+          "生产供应处",
+          "金一分厂",
+          "金二分厂",
+          "总装分厂",
+          "锻热铆分厂",
+          "铸造分厂"
+        ],
+        ["完成率", 8326, 8671, 8671, 9091, 8324, 8324],
+        ["未完成率", 717, 166, 498, 606, 559, 559],
+        ["外部影响", 957, 1163, 831, 303, 1117, 1117]
+      ],
+      name: ["本月完成率", "本季完成率"],
+      title: "本月完成率",
+      source: [
+        [
+          [
+            "完成情况",
+            "生产供应处",
+            "金一分厂",
+            "金二分厂",
+            "总装分厂",
+            "锻热铆分厂",
+            "铸造分厂"
+          ],
+          ["完成率", 8326, 8671, 8671, 9091, 8324, 8324],
+          ["未完成率", 717, 166, 498, 606, 559, 559],
+          ["外部影响", 957, 1163, 831, 303, 1117, 1117]
+        ],
+        [
+          [
+            "完成情况",
+            "生产供应处",
+            "金一分厂",
+            "金二分厂",
+            "总装分厂",
+            "锻热铆分厂",
+            "铸造分厂"
+          ],
+          ["完成率", 85, 88,87, 90, 82, 82],
+          ["未完成率", 5, 3, 5, 3, 6, 11],
+          ["外部影响", 10, 9, 8, 7, 12, 7]
+        ]
+      ]
     };
   },
   methods: {
@@ -225,10 +271,10 @@ export default {
           y: "top",
           x: "right",
           textStyle: {
-            color: '#ddd',
+            color: "#ddd",
             fontSize: 20
           },
-          padding:[0,170,0,0],
+          padding: [0, 170, 0, 0],
           data: [
             "设备故障次数",
             "设备维护保养问题数",
@@ -257,16 +303,16 @@ export default {
               type: "shadow"
             },
             nameTextStyle: {
-              color: "#fff",
+              color: "#fff"
             },
             axisLine: {
               lineStyle: {
-                color: "#ddd",
-              },
+                color: "#ddd"
+              }
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18,
+              fontSize: 18
             }
           }
         ],
@@ -282,12 +328,12 @@ export default {
             },
             axisLine: {
               lineStyle: {
-                color: "#ddd",
+                color: "#ddd"
               }
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18,
+              fontSize: 18
             }
           },
           {
@@ -301,7 +347,7 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18,
+              fontSize: 18
             }
           }
         ],
@@ -311,48 +357,48 @@ export default {
             type: "bar",
             yAxisIndex: 0,
             data: [10, 13, 15, 16, 12, 20, 9, 12, 7, 15, 12, 13],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
-            },
+            markPoint: {
+              data: [
+                { type: "max", name: "最大值" },
+                { type: "min", name: "最小值" }
+              ]
+            }
           },
           {
             name: "设备维护保养问题数",
             yAxisIndex: 0,
             type: "bar",
             data: [12, 16, 13, 15, 10, 17, 25, 30, 10, 15, 25, 35],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
-            },
+            markPoint: {
+              data: [
+                { type: "max", name: "最大值" },
+                { type: "min", name: "最小值" }
+              ]
+            }
           },
           {
             name: "平均响应时长",
             type: "line",
             yAxisIndex: 1,
             data: [48, 51, 35, 32, 36, 34, 35, 30, 20, 27, 28, 16],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
-            },
+            markPoint: {
+              data: [
+                { type: "max", name: "最大值" },
+                { type: "min", name: "最小值" }
+              ]
+            }
           },
           {
             name: "故障设备台数",
             type: "line",
             yAxisIndex: 0,
             data: [4, 5, 7, 2, 3, 3, 5, 6, 3, 3, 5, 1],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
-            },
+            markPoint: {
+              data: [
+                { type: "max", name: "最大值" },
+                { type: "min", name: "最小值" }
+              ]
+            }
           }
         ]
       });
@@ -472,10 +518,10 @@ export default {
           y: "top",
           x: "right",
           textStyle: {
-            color: '#ddd',
-            fontSize: 20,
+            color: "#ddd",
+            fontSize: 20
           },
-          padding:[0,170,0,0],
+          padding: [0, 170, 0, 0],
           data: [
             "月份完成工时",
             "同期完成工时",
@@ -504,16 +550,16 @@ export default {
               type: "shadow"
             },
             nameTextStyle: {
-              color: "#fff",
+              color: "#fff"
             },
             axisLine: {
               lineStyle: {
-                color: "#ddd",
-              },
+                color: "#ddd"
+              }
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18,
+              fontSize: 18
             }
           }
         ],
@@ -529,12 +575,12 @@ export default {
             },
             axisLine: {
               lineStyle: {
-                color: "#ddd",
+                color: "#ddd"
               }
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18,
+              fontSize: 18
             }
           },
           {
@@ -548,12 +594,12 @@ export default {
             },
             axisLine: {
               lineStyle: {
-                color: "#ddd",
+                color: "#ddd"
               }
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 18,
+              fontSize: 18
             }
           }
         ],
@@ -562,23 +608,23 @@ export default {
             name: "月份完成工时",
             type: "bar",
             data: [100, 120, 120, 140, 160, 100, 70, 75, 120, 140, 160, 160],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
-            },
+            markPoint: {
+              data: [
+                { type: "max", name: "最大值" },
+                { type: "min", name: "最小值" }
+              ]
+            }
           },
           {
             name: "同期完成工时",
             type: "bar",
             data: [80, 120, 120, 130, 165, 110, 85, 90, 135, 120, 140, 150],
-            markPoint : {
-                data : [
-                    {type : 'max', name: '最大值'},
-                    {type : 'min', name: '最小值'}
-                ]
-            },
+            markPoint: {
+              data: [
+                { type: "max", name: "最大值" },
+                { type: "min", name: "最小值" }
+              ]
+            }
           },
           {
             name: "本年完成工时",
@@ -632,30 +678,17 @@ export default {
           x: "right",
           orient: "horizontal",
           textStyle: {
-            color: '#ddd',
+            color: "#ddd",
             fontSize: 20,
-            lineHeight: 30,
-          }, 
+            lineHeight: 30
+          }
         },
         tooltip: {
           trigger: "item",
           formatter: "{a} <br/>{b} : {d}%"
         },
         dataset: {
-          source: [
-            [
-              "完成情况",
-              "生产供应处",
-              "金一分厂",
-              "金二分厂",
-              "总装分厂",
-              "锻热铆分厂",
-              "铸造分厂"
-            ],
-            ["完成率", 8326, 8671, 8671, 9091, 8324, 8324],
-            ["未完成率", 717, 166, 498, 606, 559, 559],
-            ["外部影响", 957, 1163, 831, 303, 1117, 1117]
-          ]
+          source: this.arr
         },
         series: [
           {
@@ -758,11 +791,19 @@ export default {
     }
   },
   mounted: function() {
-    this.drawCharts();
+    var that = this;
+    setInterval(function() {
+      // that.arr = [];
+      var idx = parseInt(Math.random() * 2);
+      that.arr = that.source[idx];
+      that.title = that.name[idx];
+      that.drawChart6();
+    }, 5000);
+    that.drawCharts();
   },
   updated: function() {
     this.drawCharts();
-  },
+  }
 };
 </script>
 
@@ -815,181 +856,181 @@ export default {
 /* 2.定义动画 */
 @keyframes GoldTwo4 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgb(30,189,223,1);
+    box-shadow: 0px 0px 1px 0px rgb(30, 189, 223, 1);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(30,189,223, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(30, 189, 223, 0.9);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.8);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.8);
   }
 }
 @keyframes GoldTwo3 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.7);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(30,189,223, 0.6);
+    box-shadow: 0px 0px 15px 0px rgba(30, 189, 223, 0.6);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.5);
   }
 }
 @keyframes GoldTwo2 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(30,189,223, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(30, 189, 223, 0.4);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.3);
   }
 }
 @keyframes GoldTwo1 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(30,189,223, 0.2);
+    box-shadow: 0px 0px 15px 0px rgba(30, 189, 223, 0.2);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223, 0.1);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.1);
   }
 }
 /* 3.定义动画 */
 @keyframes Agold4 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(229,183,132, 1);
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 1);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(229,183,132, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(229, 183, 132, 0.9);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.8);
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.8);
   }
 }
 @keyframes Agold3 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.7);
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(229,183,132, 0.6);
+    box-shadow: 0px 0px 15px 0px rgba(229, 183, 132, 0.6);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.5);
   }
 }
 @keyframes Agold2 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(229,183,132, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(229, 183, 132, 0.4);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.3);
   }
 }
 @keyframes Agold1 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(229,183,132, 0.2);
+    box-shadow: 0px 0px 15px 0px rgba(229, 183, 132, 0.2);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(229,183,132, 0.1);
+    box-shadow: 0px 0px 1px 0px rgba(229, 183, 132, 0.1);
   }
 }
 /* 4.定义动画 */
 @keyframes cast4 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(107,230,193, 1);
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 1);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(107,230,193, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(107, 230, 193, 0.9);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.8);
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.8);
   }
 }
 @keyframes cast3 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.7);
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(107,230,193, 0.6);
+    box-shadow: 0px 0px 15px 0px rgba(107, 230, 193, 0.6);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.5);
   }
 }
 @keyframes cast2 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(107,230,193, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(107, 230, 193, 0.4);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.3);
   }
 }
 @keyframes cast1 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(107,230,193, 0.2);
+    box-shadow: 0px 0px 15px 0px rgba(107, 230, 193, 0.2);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(107,230,193, 0.1);
+    box-shadow: 0px 0px 1px 0px rgba(107, 230, 193, 0.1);
   }
 }
 /* 5.定义动画 */
 @keyframes Heatforging4 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(234,131,138, 1);
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 1);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(234,131,138, 0.9);
+    box-shadow: 0px 0px 15px 0px rgba(234, 131, 138, 0.9);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.8);
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.8);
   }
 }
 @keyframes Heatforging3 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.7);
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(234,131,138, 0.6);
+    box-shadow: 0px 0px 15px 0px rgba(234, 131, 138, 0.6);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.5);
   }
 }
 @keyframes Heatforging2 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.5);
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(234,131,138, 0.4);
+    box-shadow: 0px 0px 15px 0px rgba(234, 131, 138, 0.4);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.3);
   }
 }
 @keyframes Heatforging1 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 15px 0px rgba(234,131,138, 0.2);
+    box-shadow: 0px 0px 15px 0px rgba(234, 131, 138, 0.2);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(234,131,138, 0.1);
+    box-shadow: 0px 0px 1px 0px rgba(234, 131, 138, 0.1);
   }
 }
 .haloBox {
@@ -1115,7 +1156,7 @@ export default {
   animation: cast4 1.5s linear infinite;
   width: 30px;
   height: 30px;
-  background: #6BE6C1;
+  background: #6be6c1;
 }
 .two {
   display: flex;
@@ -1136,7 +1177,7 @@ export default {
   animation: Agold4 1.5s linear infinite;
   width: 60px;
   height: 60px;
-  background: #E5B784;
+  background: #e5b784;
 }
 .three {
   display: flex;
@@ -1157,7 +1198,7 @@ export default {
   animation: Heatforging4 1.5s linear infinite;
   width: 15px;
   height: 15px;
-  background: #EA838A;
+  background: #ea838a;
 }
 .four {
   display: flex;
@@ -1178,7 +1219,7 @@ export default {
   animation: cast4 1.5s linear infinite;
   width: 50px;
   height: 50px;
-  background: #6BE6C1;
+  background: #6be6c1;
 }
 .five {
   display: flex;
@@ -1199,7 +1240,7 @@ export default {
   animation: GoldTwo4 1.5s linear infinite;
   width: 50px;
   height: 50px;
-  background: #1EBDDF;
+  background: #1ebddf;
 }
 .six {
   display: flex;
@@ -1220,7 +1261,7 @@ export default {
   animation: GoldTwo4 1.5s linear infinite;
   width: 40px;
   height: 40px;
-  background: #1EBDDF;
+  background: #1ebddf;
 }
 .seven {
   display: flex;
@@ -1241,7 +1282,7 @@ export default {
   animation: GoldTwo4 1.5s linear infinite;
   width: 45px;
   height: 45px;
-  background: #1EBDDF;
+  background: #1ebddf;
 }
 .eight {
   display: flex;
@@ -1262,14 +1303,14 @@ export default {
   animation: Agold4 1.5s linear infinite;
   width: 50px;
   height: 50px;
-  background: #E5B784;
+  background: #e5b784;
 }
-.halo{
+.halo {
   margin: 15px;
   border-radius: 50%;
   border: transparent 1px solid;
 }
-.circle{
+.circle {
   margin: 5px;
   border-radius: 50%;
   border: transparent 1px solid;
