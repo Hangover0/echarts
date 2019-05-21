@@ -273,8 +273,12 @@ export default {
           x: "right",
           textStyle: {
             color: "#ddd",
+                         fontSize : 8,
           },
-          padding: [10,20,0,0],
+          itemWidth: 8,  // 设置宽度
+      　　itemHeight: 8, // 设置高度
+      　　itemGap: -15, // 设置间距
+          padding: [10,0,0,0],
           data: [
             "设备故障次数",
             "设备维护保养问题数",
@@ -354,48 +358,24 @@ export default {
             type: "bar",
             yAxisIndex: 0,
             data: [10, 13, 15, 16, 12, 20, 9, 12, 7, 15, 12, 13],
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            }
           },
           {
             name: "设备维护保养问题数",
             yAxisIndex: 0,
             type: "bar",
             data: [12, 16, 13, 15, 10, 17, 25, 30, 10, 15, 25, 35],
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            }
           },
           {
             name: "平均响应时长",
             type: "line",
             yAxisIndex: 1,
             data: [48, 51, 35, 32, 36, 34, 35, 30, 20, 27, 28, 16],
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            }
           },
           {
             name: "故障设备台数",
             type: "line",
             yAxisIndex: 0,
             data: [4, 5, 7, 2, 3, 3, 5, 6, 3, 3, 5, 1],
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            }
           }
         ]
       });
@@ -421,10 +401,11 @@ export default {
             name: "每月故障次数",
             type: "pie",
             label: {
+              fontSize: 8,
             },
             labelLine: {
-              length: 5,
-              length2: 6,
+              length: 2,
+              length2: 5,
             },
             radius: ["35%", "65%"],
             center: ["50%", "60%"],
@@ -472,10 +453,11 @@ export default {
             name: "每月故障次数",
             type: "pie",
             label: {
+              fontSize: 8,
             },
             labelLine: {
-              length: 5,
-              length2: 6,
+              length: 2,
+              length2: 5,
             },
             radius: ["35%", "65%"],
             center: ["50%", "60%"],
@@ -522,8 +504,12 @@ export default {
           x: "right",
           textStyle: {
             color: "#ddd",
+            fontSize : 8,
           },
-          padding: [10,20,0,0],
+          itemWidth: 8,  // 设置宽度
+      　　itemHeight: 8, // 设置高度
+      　　itemGap: -10, // 设置间距
+          padding: [10,0,0,0],
           data: [
             "月份完成工时",
             "同期完成工时",
@@ -607,23 +593,11 @@ export default {
             name: "月份完成工时",
             type: "bar",
             data: [100, 120, 120, 140, 160, 100, 70, 75, 120, 140, 160, 160],
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            }
           },
           {
             name: "同期完成工时",
             type: "bar",
             data: [80, 120, 120, 130, 165, 110, 85, 90, 135, 120, 140, 150],
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            }
           },
           {
             name: "本年完成工时",
@@ -678,7 +652,12 @@ export default {
           orient: "horizontal",
           textStyle: {
             color: "#ddd",
+                        fontSize : 8,
+
           },
+          itemWidth: 8,  // 设置宽度
+      　　itemHeight: 8, // 设置高度
+      　　itemGap: -8, // 设置间距
           padding: [0,20,0,0]
         },
         tooltip: {
@@ -692,6 +671,7 @@ export default {
           {
             type: "pie",
             label: {
+              fontSize: 8,
             },
             radius: 47,
             center: ["30%", "20%"],
@@ -712,6 +692,7 @@ export default {
             name: "金一分厂",
             type: "pie",
             label: {
+              fontSize: 8,
             },
             labelLine: {
               length: 5,
@@ -735,6 +716,7 @@ export default {
             type: "pie",
             name: "金二分厂",
             label: {
+              fontSize: 8,
             },
             labelLine: {
               length: 5,
@@ -751,6 +733,7 @@ export default {
             name: "总装分厂",
             type: "pie",
             label: {
+              fontSize: 8,
             },
             labelLine: {
               length: 5,
@@ -767,6 +750,7 @@ export default {
             name: "段热铆分厂",
             type: "pie",
             label: {
+              fontSize: 8,
             },
             labelLine: {
               length: 5,
@@ -783,6 +767,7 @@ export default {
             name: "铸造分厂",
             type: "pie",
             label: {
+              fontSize: 8,
             },
             labelLine: {
               length: 5,
@@ -1190,11 +1175,11 @@ export default {
   display: flex;
 }
 #echart2 {
-  margin: 0 0px 0 10px;
-  width: 210px;
+  margin: 0 0px 0 0px;
+  width: 220px;
 }
 #echart3 {
-  margin: 0 0px 0 10px;
+  margin: 0 0px 0 0px;
   width: 220px;
 }
 #echart2,

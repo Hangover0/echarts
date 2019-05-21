@@ -5,7 +5,7 @@
     </div>
     <div class="data">
       <p>{{date.loc}}</p>
-      <img :src="nameSuffix">
+      <!-- <img :src="nameSuffix"> -->
       <p>{{weather.cond_txt}}</p>
       <p>{{weather.tmp}}℃</p>
     </div>
