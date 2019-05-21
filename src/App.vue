@@ -81,6 +81,7 @@ p {
   right: 5px;
   bottom: 8px;
   opacity: 0.8;
+  font-size: 12px;
 }
 /* 时间天气样式 */
 .data {
@@ -93,6 +94,7 @@ p {
 }
 .data p {
   margin-right: 5px;
+  font-size: 12px;
 }
 .data img{
   vertical-align: middle;
@@ -101,9 +103,9 @@ p {
     margin-right: 5px;
 }
 .content {
-  margin: 13px 20px 0 0;
+  margin: 3px 0 0 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 /* 头部图片样式 */
 .img {
@@ -112,6 +114,6 @@ p {
 }
 .headImg {
   height: 47px;
-  margin-right: 850px;
+  margin-right: 457px;
 }
 </style>
