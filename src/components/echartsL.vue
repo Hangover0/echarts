@@ -4,7 +4,7 @@
     <div class="boxL">
       <div class="title title1">设备情况看板</div>
       <div>
-        <div class="subtitle subtitle1">
+        <div class="subtitle subtitle1 subtitle3">
           <img class="arrows" src="../assets/Headingstyles.png" alt>设备故障统计
         </div>
         <div id="echart1"></div>
@@ -14,7 +14,7 @@
       </div>
       <div class="boxL-center">
         <div>
-          <div class="subtitle">
+          <div class="subtitle subtitle2">
             <img class="arrows" src="../assets/Headingstyles.png" alt>每月故障时间分布
           </div>
           <div>
@@ -22,7 +22,7 @@
           </div>
         </div>
         <div>
-          <div class="subtitle">
+          <div class="subtitle subtitle2">
             <img class="arrows" src="../assets/Headingstyles.png" alt>每月故障时间分布
           </div>
           <div>
@@ -34,7 +34,7 @@
         <img src="../assets/transverseLine.svg" alt>
       </div>
       <div>
-        <div class="subtitle">
+        <div class="subtitle subtitle3">
           <img class="arrows" src="../assets/Headingstyles.png" alt>故障分布车间
         </div>
         <div class="haloBox">
@@ -42,7 +42,7 @@
             <div class="halo2 halo">
               <div class="halo3 halo">
                 <div class="halo4 halo">
-                  <div class="halo5 halo">总装<br/>分厂</div>
+                  <div class="halo5 halo"><span class="smallCharacter">总装<br/>分厂</span></div>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="GoldTwo4 halo">
               <div class="GoldTwo3 halo">
                 <div class="GoldTwo2 halo">
-                  <div class="GoldTwo1 halo">金二<br/>分厂</div>
+                  <div class="GoldTwo1 halo"><span class="smallCharacter">金二<br/>分厂</span></div>
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="Agold4 halo">
               <div class="Agold3 halo">
                 <div class="Agold2 halo">
-                  <div class="Agold1 halo">金一<br/>分厂</div>
+                  <div class="Agold1 halo"><span class="smallCharacter">金一<br/>分厂</span></div>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@
             <div class="cast4 halo">
               <div class="cast3 halo">
                 <div class="cast2 halo">
-                  <div class="cast1 halo">段热铆<br/>分&emsp;厂</div>
+                  <div class="cast1 halo"><span class="smallCharacter">段热铆<br/>分&emsp;厂</span></div>
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@
             <div class="Heatforging4 halo">
               <div class="Heatforging3 halo">
                 <div class="Heatforging2 halo">
-                  <div class="Heatforging1 halo">铸造<br/>分厂</div>
+                  <div class="Heatforging1 halo"><span class="smallCharacter">铸造<br/>分厂</span></div>
                 </div>
               </div>
             </div>
@@ -182,11 +182,11 @@
         <div class="echart6Box">
           <div id="echart6"></div>
           <div class="p">
-            <p class="p1">金一<br/>分厂</p>
-            <p class="p2">金二<br/>分厂</p>
-            <p class="p3">总装<br/>分厂</p>
-            <p class="p4">锻热铆<br/>分&emsp;厂</p>
-            <p class="p5">铸造<br/>分厂</p>
+            <p class="p1 smallCharacter">金一<br/>分厂</p>
+            <p class="p2 smallCharacter">金二<br/>分厂</p>
+            <p class="p3 smallCharacter">总装<br/>分厂</p>
+            <p class="p4 smallCharacter">锻热铆<br/>分&emsp;厂</p>
+            <p class="p5 smallCharacter">铸造<br/>分厂</p>
           </div>
         </div>
       </div>
@@ -266,6 +266,10 @@ export default {
             crossStyle: {
               color: "#999"
             }
+          },
+          textStyle: {
+            fontSize: 5,
+            fontWeight: 'normal',
           }
         },
         legend: {
@@ -277,7 +281,7 @@ export default {
           },
           itemWidth: 8,  // 设置宽度
       　　itemHeight: 8, // 设置高度
-      　　itemGap: -15, // 设置间距
+      　　itemGap: 2, // 设置间距
           padding: [10,0,0,0],
           data: [
             "设备故障次数",
@@ -316,31 +320,35 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
+              fontSize: 8
             }
           }
         ],
         yAxis: [
           {
             type: "value",
-            name: "数量（次/台）",
+            name: "数量(次/台)",
             min: 0,
             max: 50,
             interval: 10,
             axisLabel: {
-              formatter: "{value} "
+              formatter: "{value}",
             },
             axisLine: {
               lineStyle: {
-                color: "#ddd"
+                color: "#ddd",
               }
             },
             axisLabel: {
               color: "#ddd",
+              fontSize: 8
+            },
+            nameTextStyle: {
+              fontSize: 8
             }
           },
           {
             type: "value",
-            name: "时长",
             min: 0,
             max: 100,
             interval: 20,
@@ -349,6 +357,7 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
+              fontSize: 8
             }
           }
         ],
@@ -388,7 +397,10 @@ export default {
       this.echart2.setOption({
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {d}%"
+          formatter: "{a} <br/>{b} : {d}%",
+          textStyle: {
+            fontSize: 8
+          }
         },
         legend: {
           show: "false",
@@ -408,7 +420,7 @@ export default {
               length2: 5,
             },
             radius: ["35%", "65%"],
-            center: ["50%", "60%"],
+            center: ["50%", "58%"],
             data: [
               { value: 263, name: "CAK50143DJ" },
               { value: 263, name: "CAK50142DJ" },
@@ -440,7 +452,10 @@ export default {
       this.echart3.setOption({
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {d}%"
+          formatter: "{a} <br/>{b} : {d}%",
+          textStyle: {
+            fontSize: 8
+          }
         },
         legend: {
           show: "false",
@@ -460,7 +475,7 @@ export default {
               length2: 5,
             },
             radius: ["35%", "65%"],
-            center: ["50%", "60%"],
+            center: ["50%", "58%"],
             data: [
               { value: 263, name: "CAK50143DJ" },
               { value: 263, name: "CAK50142DJ" },
@@ -497,6 +512,9 @@ export default {
             crossStyle: {
               color: "#999"
             }
+          },
+          textStyle: {
+            fontSize: 8
           }
         },
         legend: {
@@ -508,7 +526,7 @@ export default {
           },
           itemWidth: 8,  // 设置宽度
       　　itemHeight: 8, // 设置高度
-      　　itemGap: -10, // 设置间距
+      　　itemGap: 2, // 设置间距
           padding: [10,0,0,0],
           data: [
             "月份完成工时",
@@ -547,6 +565,7 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
+              fontSize: 8
             }
           }
         ],
@@ -567,11 +586,14 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
+              fontSize: 8
+            },
+            nameTextStyle: {
+              fontSize: 8
             }
           },
           {
             type: "value",
-            name: "工时",
             min: 0,
             max: 1500,
             interval: 300,
@@ -585,6 +607,7 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
+              fontSize: 8
             }
           }
         ],
@@ -657,12 +680,15 @@ export default {
           },
           itemWidth: 8,  // 设置宽度
       　　itemHeight: 8, // 设置高度
-      　　itemGap: -8, // 设置间距
+      　　itemGap: 2, // 设置间距
           padding: [0,20,0,0]
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {d}%"
+          formatter: "{a} <br/>{b} : {d}%",
+          textStyle: {
+            fontSize: 8
+          }
         },
         dataset: {
           source: this.arr
@@ -809,6 +835,10 @@ export default {
 </script>
 
 <style scoped>
+.smallCharacter {
+  display: inline-block;
+  transform: scale(0.66);
+}
 .haloBox {
   width: 450px;
   height: 195px;
@@ -1135,22 +1165,33 @@ export default {
 }
 .title {
   position: absolute;
-  top: 24px;
-  left: 215px;
-  font-size: 14px;
+  top: 26px;
+  left: 218px;
+  font-size: 12px;
   color: #ffffff;
   font-weight: bold;
 }
 .title1 {
-  left: 183px;
+  left: 189px;
 }
 .subtitle1 {
   margin: 45px 0 0 0;
 }
+.subtitle2 {
+  width: 220px !important;
+  margin-left: -10px !important;
+}
+.subtitle3 {
+  margin-left: -28px !important;
+}
 .subtitle {
+  width: 450px;
   font-size: 12px;
   color: #fefefe;
-  margin-left: 10px;
+  transform: scale(0.83);
+  margin-right: 30px;
+  box-sizing: border-box;
+  margin-left: -15px;
 }
 #echart1 {
   width: 450px;
@@ -1173,6 +1214,7 @@ export default {
 }
 .boxL-center {
   display: flex;
+  width: 450px;
 }
 #echart2 {
   margin: 0 0px 0 0px;
@@ -1209,12 +1251,12 @@ export default {
 }
 .p4 {
   position: absolute;
-  bottom: 43px;
+  bottom: 45px;
   right: 297px;
 }
 .p5 {
   position: absolute;
-  bottom: 43px;
+  bottom: 45px;
   right: 123px;
 }
 /* 横线 */

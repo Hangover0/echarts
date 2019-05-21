@@ -13,9 +13,9 @@
       <echartsL/>
       <echartsR/>
     </div>
-    <div class="copy">
+    <!-- <div class="copy">
       <p>Designed By DELL Inc Powered By 贵阳中通华软件技术有限公司</p>
-    </div>
+    </div> -->
   </div>
 </template>
 
