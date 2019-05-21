@@ -435,12 +435,12 @@ export default {
         // direction:2           （左右的）
         //step:1                 （调整速度的）0
         // hoverStop:false        (鼠标停留停止 离开继续运行（反之则停止）)
-        step: 1.2, // 数值越大速度滚动越快
+        step: 1, // 数值越大速度滚动越快
         limitMoveNum: 4, // 开始无缝滚动的数据量 this.dataList.length
         hoverStop: false, // 是否开启鼠标悬停stop
         direction: 1, // 0向下 1向上 2向左 3向右
         // openWatch: true, // 开启数据实时监控刷新dom
-        singleHeight: 25, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction => 0/1
+        singleHeight: 30, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction => 0/1
         waitTime: 4000 // 单步运动停止的时间(默认值1000ms)
       }
     }
@@ -516,7 +516,7 @@ export default {
           {
             name: "费用增长环比指数",
             type: "bar",
-
+            center:["50%","70%"],
             label: {
               normal: {
                 show: true,
@@ -663,12 +663,7 @@ export default {
             // barCategoryGap:40,
             barMinHeight: 12,
             data: [110, 105, 100, 95],
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            },
+           
           },
           {
             name: "外购零件",
@@ -689,12 +684,7 @@ export default {
             stack: "采购金额",
             barMinHeight: 5,
             data: [30, 40, 45, 30],
-            markPoint: {
-              data: [
-                { type: 'max', name: '最大值' },
-                { type: 'min', name: '最小值' }
-              ]
-            },
+          
           },
           {
             name: "办公耗材",
@@ -730,15 +720,19 @@ export default {
           ],
           textStyle: {
             color: "#fff",
-            fontSize: 8
-          }
+            fontSize: 6
+          },
+          itemWidth:6,
+          itemHeight:6,
+          padding:[5,0,0,0],
+          itemGap:-5
         },
         grid: {
-          left: "3%",
+          left: "1%",
           right: "4%",
-          bottom: 0,
+          bottom: "0%",
           width: 400,
-          height: 80,
+          height: 125,
           containLabel: true
         },
         toolbox: {
@@ -786,78 +780,37 @@ export default {
             name: "直流电机",
             type: "line",
             data: [5, 4.5, 6, 5.8],
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            }
+           
           },
           {
             name: "交流电机",
             type: "line",
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            },
             data: [0.3, 0.5, 0.6, 0.55]
           },
           {
             name: "动平衡仪",
             type: "line",
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            },
             data: [2.6, 2.8, 2.7, 3]
           },
           {
             name: "粗糙度仪",
             type: "line",
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            },
             data: [1.8, 2.8, 2.5, 3]
           },
           {
             name: "涡流探伤仪",
             type: "line",
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            },
             data: [10, 13, 12, 15]
           },
 
           {
             name: "接触器",
             type: "line",
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            },
             data: [0.5, 0.48, 0.55, 0.58]
           },
           {
             name: "滚珠丝杆",
             type: "line",
-            markPoint: {
-              data: [
-                { type: "max", name: "最大值" },
-                { type: "min", name: "最小值" }
-              ]
-            },
             data: [1.2, 1.5, 1.4, 1.7]
           }
         ]
@@ -881,18 +834,28 @@ export default {
         series: [
           {
             type: "liquidFill",
-            radius: "80%",
+            radius: "85%",
             data: data,
             backgroundStyle: {
               borderWidth: 3,
+               
               borderColor: "#32C0E3",
-              color: "rgb(255,0,255,0.01)"
+              color: "rgb(255,0,255,0.01)",
+              fontWeight:'lighter',
+               radius: "60%",
             },
+              outline: {
+                        //show: true , //是否显示轮廓 布尔值
+                        borderDistance: 6, //外部轮廓与图表的距离 数字
+                        itemStyle:{
+                            borderWidth:3,  //边框的宽度                           
+                        }
+                    },
             label: {
               normal: {
                 formatter: (value * 100).toFixed(2) + "%",
                 textStyle: {
-                  fontSize: 10
+                  fontSize:6,
                 }
               }
             }
@@ -918,18 +881,27 @@ export default {
         series: [
           {
             type: "liquidFill",
-            radius: "80%",
+            radius: "85%",
             data: data,
+             outline: {
+                        //show: true , //是否显示轮廓 布尔值
+                        borderDistance: 6, //外部轮廓与图表的距离 数字
+                        itemStyle:{
+                            borderWidth:3,  //边框的宽度                           
+                        }
+                    },
             backgroundStyle: {
               borderWidth: 3,
               borderColor: "#32C0E3",
-              color: "rgb(255,0,255,0.01)"
+              color: "rgb(255,0,255,0.01)",
+              fontWeight:'lighter',
+               radius: "60%",
             },
             label: {
               normal: {
                 formatter: (value * 100).toFixed(2) + "%",
                 textStyle: {
-                  fontSize: 10
+                  fontSize: 6
                 }
               }
             }
@@ -1005,7 +977,10 @@ export default {
           textStyle: {
             color: "#fff",
             fontSize: 8
-          }
+          },
+          itemWidth:8,
+          itemHeight:9,
+          padding:[5,0,0,0],
         },
 
         toolbox: {
@@ -1015,10 +990,11 @@ export default {
           }
         },
         grid: {
-          left: "3%",
-          right: "4%",
-          bottom: "2%",
+          left:0,
+          top:'25%',
+          right:'4%',
           width: 370,
+          height:130,
           containLabel: true
         },
         xAxis: [
@@ -1042,10 +1018,6 @@ export default {
         ],
         yAxis: [
           {
-            name: "比率",
-            nameTextStyle: {
-              fontSize: 8
-            },
             type: "value",
             axisLabel: {
               formatter: "{value} %"
@@ -1071,15 +1043,6 @@ export default {
             stack: "总量",
             areaStyle: {},
             data: [95, 90, 200, 97, 150],
-            markPoint: {
-              data: [
-                {
-                  name: "最大值",
-                  type: "max"
-                },
-                { name: "最小值", type: "min" }
-              ]
-            }
           },
           {
             name: "同期客户增长率",
@@ -1132,7 +1095,7 @@ export default {
             fontFamily: "Microsoft YaHei",
             fontWeight: "normal"
           },
-          // padding: [40, 0, 0, 180]
+          padding: [10, 0, 0, 0]
         },
         legend: {
           show: false,
@@ -1144,13 +1107,17 @@ export default {
             color: "#ddd",
             fontSize: 10
           },
-          // padding: [0, 0, 40, 0]
+          padding: [30, 0, 0, 0]
+        },
+        grid:{
+          top:'middle'
         },
         series: [
           {
             name: "Line 1",
             type: "pie",
             clockWise: false,
+            center:['50%','60%'],
             radius: [10, 20],
             label: {
               normal: {
@@ -1180,6 +1147,7 @@ export default {
             name: "Line 2",
             type: "pie",
             clockWise: false,
+            center:['50%','60%'],
             radius: [20, 30],
             label: {
               normal: {
@@ -1209,6 +1177,7 @@ export default {
             name: "Line 3",
             type: "pie",
             clockWise: false,
+            center:['50%','60%'],
             radius: [30, 40],
             label: {
               normal: {
@@ -1238,6 +1207,7 @@ export default {
             name: "Line 4",
             type: "pie",
             clockWise: false,
+            center:['50%','60%'],
             radius: [40, 50],
             label: {
               normal: {
@@ -1568,13 +1538,16 @@ export default {
             color: "#fff",
             fontSize: 8
           },
-          padding: [0, 0, 60, 0]
+          padding: [10, 0, 0, 0],
+          itemWidth:8,
+          itemHeight:8,
         },
         grid: {
-          top: "30%",
+          top: "20%",
           left: "3%",
           right: "4%",
           bottom: "3%",
+          height:110,
           width: 375,
           containLabel: true
         },
@@ -1631,33 +1604,21 @@ export default {
             name: "订单签单率",
             type: "line",
             data: [95, 95, 80, 95, 100, 89, 90],
-            markPoint: {
-              data: [{ type: "max", name: "最大值" }]
-            }
           },
           {
             name: "销售产品完成率",
             type: "line",
             data: [85, 80, 91, 95, 120, 80, 64],
-            markPoint: {
-              data: [{ type: "max", name: "最大值" }]
-            }
           },
           {
             name: "销售回款回笼率",
             type: "line",
             data: [65, 70, 55, 60, 75, 91, 90],
-            markPoint: {
-              data: [{ type: "max", name: "最大值" }]
-            }
           },
           {
             name: "销售收入增加率",
             type: "line",
             data: [15, 10, 20, 30, 15, 7, 6],
-            markPoint: {
-              data: [{ type: "max", name: "最大值" }]
-            }
           }
         ]
       });
@@ -1914,7 +1875,7 @@ export default {
 
 .part2-box>div:nth-of-type(1),
 .caigou-part4>div:nth-of-type(1) {
-  width: 40%;
+  width: 42%;
 }
 
 .part2-box>div:nth-of-type(1) {
@@ -1937,7 +1898,7 @@ export default {
 
 .part2-box>div:nth-of-type(2),
 .caigou-part4>div:nth-of-type(2) {
-  width: 60%;
+  width: 58%;
 }
 
 #overCaigouKindsEchart {
@@ -1956,7 +1917,7 @@ export default {
 
 #importantCaigouEchart {
   /* height: 500px; */
-  height: 125px;
+  height:150px;
 }
 
 
@@ -1975,7 +1936,7 @@ export default {
 
 .caigou-part4 .longLine {
   /* height: 730px !important; */
-  height: 182.5px !important;
+  height: 160px !important;
 }
 
 .caigou-part4 .longLine img {
@@ -2000,17 +1961,17 @@ export default {
 
 #commitGoodsEchart {
   /* height: 300px; */
-  height: 75px
+  height: 60px
 }
 
 #commitGoodsTimeEchart {
   /* height: 300px; */
-  height: 75px
+  height: 60px
 }
 
 #mainGongyingEchart {
   /* height: 700px; */
-  height: 175px;
+  height: 140px;
 }
 
 
@@ -2102,7 +2063,7 @@ export default {
 
 #rightEchart1 {
   /* height: 600px; */
-  height: 150px;
+  height: 170px;
 }
 
 
@@ -2138,7 +2099,7 @@ export default {
 }
 
 #rightLastEchart {
-  height: 150px;
+  height: 170px;
 }
 
 
@@ -2148,8 +2109,7 @@ export default {
 }
 
 .seamless-warp {
-
-  height: 49px;
+  height:30px;
   overflow: hidden;
   margin-top: 7.5px;
   margin-left: 22.5px;
@@ -2157,8 +2117,8 @@ export default {
 
 .table-container {
   width: 302.5px;
-  height: 20px;
- 
+  height: 25px;
+  line-height: 25px;
   margin: 2.5px 0;
   background: rgba(6, 49, 88, 1);
   border: 1px solid rgba(15, 110, 169, 1);
@@ -2169,14 +2129,14 @@ export default {
 
 
 .table-container>img:nth-of-type(1) {
-  height: 20px;
+  height: 25px;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .table-container>img:nth-of-type(2) {
-  height: 20px;
+  height: 25px;
   position: absolute;
   top: 0;
   right: 0;
