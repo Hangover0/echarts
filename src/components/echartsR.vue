@@ -5,14 +5,21 @@
       <div class="left-title">采购KPI</div>
       <!--采购费用分析  -->
       <div class="caigou-part">
-        <div class="sub-title" style='margin-left:-30px;'>
+        <!-- style='margin-left:-30px;' -->
+        <div class="sub-title" > 
           <img class="arrows" src="../assets/Headingstyles.png" alt>采购费用分析
         </div>
         <div>
           <div class="total-price">
             <div class="sub-total"></div>
           </div>
+           <div class="total-price">
+            <div class="sub-total"></div>
+          </div>
           <div class="font-part">
+            <img src="../assets/totalPrice.png" alt>
+          </div>
+           <div class="font-part1">
             <img src="../assets/totalPrice.png" alt>
           </div>
           <div id="caigouEchart"></div>
@@ -27,7 +34,8 @@
           <!-- 各类物资采购金额占比 -->
           <div>
             <div class="caigou-kinds">
-              <div class="sub-title" style='margin-left:-5px;'>
+              <!-- style='margin-left:-5px;' -->
+              <div class="sub-title" >
                 <img class="arrows" src="../assets/Headingstyles.png" alt>各类物资采购金额占比
               </div>
               <div id="caigouKindsEchart"></div>
@@ -39,7 +47,8 @@
           </div>
           <!--历年各类物资采购金额占比  -->
           <div>
-            <div class="sub-title" style='margin-left:-5px;'>
+            <!-- style='margin-left:-5px;' -->
+            <div class="sub-title" >
               <img class="arrows" src="../assets/Headingstyles.png" alt>历年各类物资采购金额占比
             </div>
             <div id="overCaigouKindsEchart"></div>
@@ -53,7 +62,8 @@
       </div>
 
       <div class="caigou-part3">
-        <div class="sub-title" style='margin-left:-30px;'>
+        <!-- style='margin-left:-30px;' -->
+        <div class="sub-title" >
           <img class="arrows" src="../assets/Headingstyles.png" alt>重要物资历史采购价格趋势
         </div>
         <div id="importantCaigouEchart"></div>
@@ -66,14 +76,16 @@
         <div class="commit-goods">
           <div>
             <div>
-              <div class="sub-title" style='margin-left:-7px;'>
-                <img class="arrows" src="../assets/Headingstyles.png" alt>交货一次检验合格率
+              <!-- style='margin-left:-7px;' -->
+              <div class="sub-title" >
+                <img class="arrows" src="../assets/Headingstyles.png" alt>当年综合交货一次检验合格率
               </div>
               <div id="commitGoodsEchart"></div>
             </div>
             <div>
-              <div class="sub-title" style='margin-left:-7px;'>
-                <img class="arrows" src="../assets/Headingstyles.png" alt>准时交货率
+              <!-- style='margin-left:-7px;' -->
+              <div class="sub-title" >
+                <img class="arrows" src="../assets/Headingstyles.png" alt>当年综合准时交货率
               </div>
               <div id="commitGoodsTimeEchart"></div>
             </div>
@@ -83,7 +95,8 @@
           </div>
         </div>
         <div class="main-gongying">
-          <div class="sub-title" style='margin-left:-30px;'>
+          <!-- style='margin-left:-7px;' -->
+          <div class="sub-title" >
             <img class="arrows" src="../assets/Headingstyles.png" alt>主要供应商
           </div>
           <div id="mainGongyingEchart"></div>
@@ -96,8 +109,9 @@
       <div>
         <!-- 采购费用分析 -->
         <div class="right-part1">
-          <div class="sub-title" style='margin-left:-30px;'>
-            <img class="arrows" src="../assets/Headingstyles.png" alt>采购费用分析
+          <!-- style='margin-left:-30px;' -->
+          <div class="sub-title" >
+            <img class="arrows" src="../assets/Headingstyles.png" alt>销售额
           </div>
           <vue-seamless-scroll :data="listData" :class-option="optionSingleHeight" class="seamless-warp">
             <ul class="item">
@@ -119,7 +133,8 @@
         </div>
         <!--客户增长  -->
         <div class="right-part2">
-          <div class="sub-title" style='margin-left:-30px;'>
+          <!-- style='margin-left:-30px;' -->
+          <div class="sub-title" >
             <img class="arrows" src="../assets/Headingstyles.png" alt>客户增长
           </div>
           <div id="rightEchart1"></div>
@@ -130,8 +145,9 @@
 
         <!--产品数据  -->
         <div class="right-part3">
-          <div class="sub-title" style='margin-left:-30px;'>
-            <img class="arrows" src="../assets/Headingstyles.png" alt>产品数据
+          <!-- style='margin-left:-30px;' -->
+          <div class="sub-title" >
+            <img class="arrows" src="../assets/Headingstyles.png" alt>产品销售完成率
           </div>
           <div class="right-part3-main">
             <div id="product1"></div>
@@ -148,7 +164,8 @@
         </div>
 
         <div class="right-part4">
-          <div class="sub-title" style='margin-left:-30px;'>
+          <!-- style='margin-left:-30px;' -->
+          <div class="sub-title" >
             <img class="arrows" src="../assets/Headingstyles.png" alt>销售数据
           </div>
           <div id="rightLastEchart"></div>
@@ -215,37 +232,7 @@ export default {
         price1: 1.32,
         danwei1: '亿'
       },],
-      mainData: [ [{
-        name: '日本康太克',
-        value: 10000,
-      }, {
-        name: 'ABB',
-        value: 6181
-      }, {
-        name: '太安',
-        value: 4386
-      }, {
-        name: '东旗',
-        value: 4055
-      }, {
-        name: '西安西玛电机',
-        value: 2467
-      }, {
-        name: '瑞士TESA',
-        value: 2244
-      }, {
-        name: '迪博自控技术',
-        value: 1898
-      }, {
-        name: '仪和贸易',
-        value: 1484
-      }, {
-        name: '光明仪表',
-        value: 90
-      }, {
-        name: '西门子',
-        value: 80
-      },{
+      mainData: [[{
         name: '日本康太克',
         value: 10000,
       }, {
@@ -276,119 +263,6 @@ export default {
         name: '西门子',
         value: 80
       }, {
-        name: '南通远东',
-        value: 70
-      },{
-        name: '瑞士TESA',
-        value: 60
-      }, {
-        name: '迪博自控技术',
-        value: 50
-      }, {
-        name: '仪和贸易',
-        value: 40
-      }, {
-        name: '光明仪表',
-        value: 30
-      }, {
-        name: '西门子',
-        value: 20
-      }, {
-        name: '南通远东',
-        value: 10
-      },
-       {
-        name: '太安',
-        value: 600
-      }, {
-        name: '东旗',
-        value: 500
-      }, {
-        name: '西安西玛电机',
-        value: 400
-      }, {
-        name: '瑞士TESA',
-        value: 300
-      }, {
-        name: '迪博自控技术',
-        value: 200
-      }, {
-        name: '仪和贸易',
-        value: 100
-      }, {
-        name: '南通远东',
-        value: 70
-      },{
-        name: '瑞士TESA',
-        value: 60
-      }, {
-        name: '迪博自控技术',
-        value: 50
-      }, {
-        name: '仪和贸易',
-        value: 40
-      }, {
-        name: '光明仪表',
-        value: 30
-      }, {
-        name: '西门子',
-        value: 20
-      }, {
-        name: '南通远东',
-        value: 10
-      },
-       {
-        name: '太安',
-        value: 600
-      }, {
-        name: '东旗',
-        value: 500
-      }, {
-        name: '西安西玛电机',
-        value: 400
-      }, {
-        name: '瑞士TESA',
-        value: 300
-      }, {
-        name: '迪博自控技术',
-        value: 200
-      }, {
-        name: '仪和贸易',
-        value: 100
-      },{
-        name: '光明仪表',
-        value: 90
-      }, {
-        name: '西门子',
-        value: 80
-      }, {
-        name: '南通远东',
-        value: 70
-      },{
-        name: '瑞士TESA',
-        value: 60
-      }, {
-        name: '迪博自控技术',
-        value: 50
-      }, {
-        name: '仪和贸易',
-        value: 40
-      }, {
-        name: '光明仪表',
-        value: 30
-      }, {
-        name: '西门子',
-        value: 20
-      }, {
-        name: '南通远东',
-        value: 10
-      },],  [{
-        name: '日本康太克',
-        value: 10000,
-      }, {
-        name: 'ABB',
-        value: 6181
-      },{
         name: '日本康太克',
         value: 10000,
       }, {
@@ -421,7 +295,7 @@ export default {
       }, {
         name: '南通远东',
         value: 70
-      },{
+      }, {
         name: '瑞士TESA',
         value: 60
       }, {
@@ -440,7 +314,7 @@ export default {
         name: '南通远东',
         value: 10
       },
-       {
+      {
         name: '太安',
         value: 600
       }, {
@@ -459,33 +333,9 @@ export default {
         name: '仪和贸易',
         value: 100
       }, {
-        name: '太安',
-        value: 4386
-      }, {
-        name: '东旗',
-        value: 4055
-      }, {
-        name: '西安西玛电机',
-        value: 2467
-      }, {
-        name: '瑞士TESA',
-        value: 2244
-      }, {
-        name: '迪博自控技术',
-        value: 1898
-      }, {
-        name: '仪和贸易',
-        value: 1484
-      }, {
-        name: '光明仪表',
-        value: 90
-      }, {
-        name: '西门子',
-        value: 80
-      }, {
         name: '南通远东',
         value: 70
-      },{
+      }, {
         name: '瑞士TESA',
         value: 60
       }, {
@@ -504,7 +354,7 @@ export default {
         name: '南通远东',
         value: 10
       },
-       {
+      {
         name: '太安',
         value: 600
       }, {
@@ -514,15 +364,15 @@ export default {
         name: '西安西玛电机',
         value: 400
       }, {
+        value: 300,
         name: '瑞士TESA',
-        value: 300
       }, {
         name: '迪博自控技术',
         value: 200
       }, {
         name: '仪和贸易',
         value: 100
-      },{
+      }, {
         name: '光明仪表',
         value: 90
       }, {
@@ -531,7 +381,7 @@ export default {
       }, {
         name: '南通远东',
         value: 70
-      },{
+      }, {
         name: '瑞士TESA',
         value: 60
       }, {
@@ -549,13 +399,7 @@ export default {
       }, {
         name: '南通远东',
         value: 10
-      },],  [{
-        name: '日本康太克',
-        value: 10000,
-      }, {
-        name: 'ABB',
-        value: 6181
-      },{
+      },], [{
         name: '日本康太克',
         value: 10000,
       }, {
@@ -586,45 +430,11 @@ export default {
         name: '西门子',
         value: 80
       }, {
-        name: '南通远东',
-        value: 70
-      },{
-        name: '瑞士TESA',
-        value: 60
+        name: '日本康太克',
+        value: 10000,
       }, {
-        name: '迪博自控技术',
-        value: 50
-      }, {
-        name: '仪和贸易',
-        value: 40
-      }, {
-        name: '光明仪表',
-        value: 30
-      }, {
-        name: '西门子',
-        value: 20
-      }, {
-        name: '南通远东',
-        value: 10
-      },
-       {
-        name: '太安',
-        value: 600
-      }, {
-        name: '东旗',
-        value: 500
-      }, {
-        name: '西安西玛电机',
-        value: 400
-      }, {
-        name: '瑞士TESA',
-        value: 300
-      }, {
-        name: '迪博自控技术',
-        value: 200
-      }, {
-        name: '仪和贸易',
-        value: 100
+        name: 'ABB',
+        value: 6181
       }, {
         name: '太安',
         value: 4386
@@ -652,7 +462,7 @@ export default {
       }, {
         name: '南通远东',
         value: 70
-      },{
+      }, {
         name: '瑞士TESA',
         value: 60
       }, {
@@ -671,7 +481,7 @@ export default {
         name: '南通远东',
         value: 10
       },
-       {
+      {
         name: '太安',
         value: 600
       }, {
@@ -689,7 +499,47 @@ export default {
       }, {
         name: '仪和贸易',
         value: 100
-      },{
+      }, {
+        name: '南通远东',
+        value: 70
+      }, {
+        name: '瑞士TESA',
+        value: 60
+      }, {
+        name: '迪博自控技术',
+        value: 50
+      }, {
+        name: '仪和贸易',
+        value: 40
+      }, {
+        name: '光明仪表',
+        value: 30
+      }, {
+        name: '西门子',
+        value: 20
+      }, {
+        name: '南通远东',
+        value: 10
+      },
+      {
+        name: '太安',
+        value: 600
+      }, {
+        name: '东旗',
+        value: 500
+      }, {
+        name: '西安西玛电机',
+        value: 400
+      }, {
+        name: '瑞士TESA',
+        value: 300
+      }, {
+        name: '迪博自控技术',
+        value: 200
+      }, {
+        name: '仪和贸易',
+        value: 100
+      }, {
         name: '光明仪表',
         value: 90
       }, {
@@ -698,7 +548,7 @@ export default {
       }, {
         name: '南通远东',
         value: 70
-      },{
+      }, {
         name: '瑞士TESA',
         value: 60
       }, {
@@ -758,50 +608,10 @@ export default {
         name: '西门子',
         value: 80
       }, {
-        name: '南通远东',
-        value: 70
-      },{
-        name: '瑞士TESA',
-        value: 60
-      }, {
-        name: '迪博自控技术',
-        value: 50
-      }, {
-        name: '仪和贸易',
-        value: 40
-      }, {
-        name: '光明仪表',
-        value: 30
-      }, {
-        name: '西门子',
-        value: 20
-      }, {
-        name: '南通远东',
-        value: 10
-      },
-       {
-        name: '太安',
-        value: 600
-      }, {
-        name: '东旗',
-        value: 500
-      }, {
-        name: '西安西玛电机',
-        value: 400
-      }, {
-        name: '瑞士TESA',
-        value: 300
-      }, {
-        name: '迪博自控技术',
-        value: 200
-      }, {
-        name: '仪和贸易',
-        value: 100
-      },{
         name: '日本康太克',
         value: 10000,
-      }, {
         name: 'ABB',
+      }, {
         value: 6181
       }, {
         name: '太安',
@@ -819,8 +629,8 @@ export default {
         name: '迪博自控技术',
         value: 1898
       }, {
+        value: 1484,
         name: '仪和贸易',
-        value: 1484
       }, {
         name: '光明仪表',
         value: 90
@@ -830,7 +640,7 @@ export default {
       }, {
         name: '南通远东',
         value: 70
-      },{
+      }, {
         name: '瑞士TESA',
         value: 60
       }, {
@@ -848,115 +658,93 @@ export default {
       }, {
         name: '南通远东',
         value: 10
-      },
-       {
-        name: '太安',
-        value: 600
-      }, {
-        name: '东旗',
-        value: 500
-      }, {
-        name: '西安西玛电机',
-        value: 400
-      }, {
-        name: '瑞士TESA',
-        value: 300
-      }, {
-        name: '迪博自控技术',
-        value: 200
-      }, {
-        name: '仪和贸易',
-        value: 100
-      },{
-        name: '日本康太克',
-        value: 10000,
-      }, {
-        name: 'ABB',
-        value: 6181
-      }, {
-        name: '太安',
-        value: 4386
-      }, {
-        name: '东旗',
-        value: 4055
-      }, {
-        name: '西安西玛电机',
-        value: 2467
-      }, {
-        name: '瑞士TESA',
-        value: 2244
-      }, {
-        name: '迪博自控技术',
-        value: 1898
-      }, {
-        name: '仪和贸易',
-        value: 1484
-      }, {
-        name: '光明仪表',
-        value: 90
-      }, {
-        name: '西门子',
-        value: 80
-      }, {
-        name: '南通远东',
-        value: 70
-      },{
-        name: '瑞士TESA',
-        value: 60
-      }, {
-        name: '迪博自控技术',
-        value: 50
-      }, {
-        name: '仪和贸易',
-        value: 40
-      }, {
-        name: '光明仪表',
-        value: 30
-      }, {
-        name: '西门子',
-        value: 20
-      }, {
-        name: '南通远东',
-        value: 10
-      },
-       {
-        name: '太安',
-        value: 600
-      }, {
-        name: '东旗',
-        value: 500
-      }, {
-        name: '西安西玛电机',
-        value: 400
-      }, {
-        name: '瑞士TESA',
-        value: 300
-      }, {
-        name: '迪博自控技术',
-        value: 200
-      }, {
-        name: '仪和贸易',
-        value: 100
       },
       {
         name: '太安',
-        value: 60
+        value: 600
       }, {
         name: '东旗',
-        value: 50
+        value: 500
       }, {
         name: '西安西玛电机',
-        value: 40
+        value: 400
       }, {
         name: '瑞士TESA',
-        value: 30
+        value: 300
       }, {
         name: '迪博自控技术',
-        value: 20
+        value: 200
       }, {
         name: '仪和贸易',
+        value: 100
+      }, {
+        name: '南通远东',
+        value: 70
+      }, {
+        name: '瑞士TESA',
+        value: 60
+      }, {
+        name: '迪博自控技术',
+        value: 50
+      }, {
+        name: '仪和贸易',
+        value: 40
+      }, {
+        name: '光明仪表',
+        value: 30
+      }, {
+        name: '西门子',
+        value: 20
+      }, {
+        name: '南通远东',
         value: 10
-      }]
+      },
+      {
+        name: '太安',
+        value: 600
+      }, {
+        name: '东旗',
+        value: 500
+      }, {
+        name: '西安西玛电机',
+        value: 400
+      }, {
+        name: '瑞士TESA',
+        value: 300
+      }, {
+        name: '迪博自控技术',
+        value: 200
+      }, {
+        name: '仪和贸易',
+        value: 100
+      }, {
+        name: '光明仪表',
+        value: 90
+      }, {
+        name: '西门子',
+        value: 80
+      }, {
+        name: '南通远东',
+        value: 70
+      }, {
+        name: '瑞士TESA',
+        value: 60
+      }, {
+        name: '迪博自控技术',
+        value: 50
+      }, {
+        name: '仪和贸易',
+        value: 40
+      }, {
+        name: '光明仪表',
+        value: 30
+      }, {
+        name: '西门子',
+        value: 20
+      }, {
+        name: '南通远东',
+        value: 10
+      },]
 
 
     }
@@ -993,9 +781,9 @@ export default {
           x: "right",
           y: "bottom",
           show: true,
-          textStyle: {
             color: "#fff",
-            fontSize: '10'
+          textStyle: {
+            fontSize: '6'
           },
           show: false,
         },
@@ -1007,27 +795,28 @@ export default {
           },
           textStyle: {
             color: "#fff",
-            fontSize: 8
-          }
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         grid: {
-          top: 0,
+          top: "30%",
+           left: "17%",
           bottom: 10,
-          width: 290,
-          height: 80
+          width:175,
+          height: 50
         },
         xAxis: {
           type: "value",
-          position: "top",
           splitLine: { lineStyle: { type: "dashed" } },
+          position: "top",
           min: -0.1,
-          max: 0.25,
           nameTextStyle: {
-            color: "#fff"
+          max: 0.25,
           },
+            color: "#fff",
           axisLine: {
+              color: "#ddd",
             lineStyle: {
-              color: "#ddd"
             }
           },
           axisLabel: {
@@ -1060,7 +849,8 @@ export default {
             label: {
               normal: {
                 show: true,
-                formatter: "{b}"
+                formatter: "{b}",
+                fontSize: 6
               }
             },
             data: [0.12, 0.25, -0.1]
@@ -1081,7 +871,8 @@ export default {
           textStyle: {
             color: "#fff",
             fontSize: 8
-          }
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         grid: {
           top: 0,
@@ -1107,7 +898,7 @@ export default {
           {
             name: "采购金额占比",
             type: "pie",
-            radius: [3, 28],
+            radius: [10, 35],
             label: {
               fontSize: 8
             },
@@ -1143,10 +934,21 @@ export default {
             // 坐标轴指示器，坐标轴触发有效
             type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
           },
+          //  formatter: "{b} <br/>{a0} : {c0}%<br/>{a1} : {c1}%<br/>{a2} : {c2}%<br/>{a3} : {c3}%",
+          formatter: function(params) {
+            var str = '';
+            var name = params[0].name + '<br>';
+            str += name;
+            params.forEach(item => {
+              str += item.marker + " " + item.seriesName + ':' + item.value + '%<br>'
+            });
+            return str;
+          },
           textStyle: {
             color: "#fff",
             fontSize: 8
           },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         legend: {
           show: false,
@@ -1154,6 +956,7 @@ export default {
           y: "bottom",
           orient: "horizontal",
           data: ["原材料", "外购零件", "工具量具", "工装火具", "办公耗材"],
+
           textStyle: {
             color: "#fff",
             fontSize: 8
@@ -1164,7 +967,8 @@ export default {
           left: 0,
           right: "10%",
           bottom: "0%",
-          height: 80,
+          height: 70,
+          
           containLabel: true
         },
         xAxis: [
@@ -1173,7 +977,8 @@ export default {
             data: ["2015", "2016", "2017", "2018"],
             nameTextStyle: {
               color: "#fff",
-              fontSize: 8
+              fontSize: 8,
+              nameGap: 5
             },
             axisLine: {
               lineStyle: {
@@ -1192,6 +997,12 @@ export default {
             // min: 0,
             // max: 300,
             interval: 50,
+            name: '占比',
+            nameTextStyle: {
+              fontSize: 6,
+              color: '#ddd',
+              nameGap: 5
+            },
             axisLine: {
               lineStyle: {
                 color: "#ddd",
@@ -1255,7 +1066,17 @@ export default {
           textStyle: {
             color: "#fff",
             fontSize: 8
-          }
+          },
+          formatter: function(params) {
+            var str = '';
+            var name = params[0].name + '<br>';
+            str += name;
+            params.forEach(item => {
+              str += item.marker + " " + item.seriesName + ':' + item.value + '万元<br>'
+            });
+            return str;
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         legend: {
           x: "right",
@@ -1270,20 +1091,21 @@ export default {
             "滚珠丝杆"
           ],
           textStyle: {
-            color: "#fff",
-            fontSize: 6
+            color: "#ddd",
+            fontSize: 8
           },
-          itemWidth: 6,
-          itemHeight: 6,
+          itemWidth: 9,
+          itemHeight: 9,
           padding: [5, 0, 0, 0],
           itemGap: -5
         },
         grid: {
+
           left: "1%",
           right: "4%",
           bottom: "0%",
           width: 400,
-          height: 125,
+          height: 110,
           containLabel: true
         },
         toolbox: {
@@ -1296,8 +1118,10 @@ export default {
           type: "category",
           data: ["2015", "2016", "2017", "2018"],
           nameTextStyle: {
-            color: "#fff"
+            color: "#ddd",
+
           },
+          nameGap: 5,
           axisLine: {
             lineStyle: {
               color: "#ddd"
@@ -1313,6 +1137,13 @@ export default {
           min: 0,
           max: 20,
           interval: 2,
+          name: '万元',
+          nameTextStyle: {
+            fontSize: 6,
+            color: '#ddd',
+
+          },
+          nameGap: 5,
           axisLabel: {
             formatter: "{value} 万元"
           },
@@ -1470,13 +1301,14 @@ export default {
           textStyle: {
             color: "#fff",
             fontSize: 8
-          }
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         series: [
           {
             type: "wordCloud",
-            gridSize: 20,
-            sizeRange: [10, 20],
+            gridSize: 10,
+            sizeRange: [10, 15],
             rotationRange: [0, 0],
             shape: "circle",
             textStyle: {
@@ -1520,13 +1352,23 @@ export default {
             label: {
               backgroundColor: "#6a7985"
             },
-           
+
           },
-           textStyle: {
-              color: "#fff",
-              fontSize: 8,
-              lineHeight:'50'
-            }
+          textStyle: {
+            color: "#fff",
+            fontSize: 8,
+            lineHeight: '50'
+          },
+          formatter: function(params) {
+            var str = '';
+            var name = params[0].name + '<br>';
+            str += name;
+            params.forEach(item => {
+              str += item.marker + " " + item.seriesName + ':' + item.value + '%<br>'
+            });
+            return str;
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         legend: {
           x: "right",
@@ -1537,11 +1379,12 @@ export default {
           ],
           y: "top",
           textStyle: {
-            color: "#fff",
+            color: "#ddd",
             fontSize: 8
           },
           itemWidth: 8,
-          itemHeight: 9,
+          itemHeight: 8,
+          itemGap: -5,
           padding: [5, 0, 0, 0],
         },
 
@@ -1565,7 +1408,7 @@ export default {
             boundaryGap: false,
             data: ["2014年", "2015年", "2016年", "2017年", "2018年"],
             nameTextStyle: {
-              color: "#fff"
+              color: "#ddd"
             },
             axisLine: {
               lineStyle: {
@@ -1586,15 +1429,21 @@ export default {
             },
             min: "0",
             max: "300",
+            name: '占比',
+            nameTextStyle: {
+              color: '#ddd',
+              fontSize: 8
+            },
+            nameGap: 5,
             axisLine: {
               lineStyle: {
-                color: "#fff",
-                fontSize: "8px"
+                color: "#ddd",
+                fontSize: "6px"
               }
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 8
+              fontSize: 6
             }
           }
         ],
@@ -1602,28 +1451,31 @@ export default {
           {
             name: "生产计划大纲按时生产完成率",
             type: "line",
-            stack: "总量",
-            areaStyle: {},
+            // stack: "总量",
+            stack: null,
+            // areaStyle: {},
             data: [95, 90, 200, 97, 150],
           },
           {
             name: "同期客户增长率",
-            stack: "总量",
+            // stack: "总量",
             type: "line",
-            areaStyle: {},
+            stack: null,
+            // areaStyle: {},
             data: [60, 80, 50, 30, 10]
           },
           {
             name: "同期最终客户占比率",
             type: "line",
-            stack: "总量",
+            // stack: "总量",
+            stack: null,
             label: {
               normal: {
                 show: true,
                 position: "top"
               }
             },
-            areaStyle: { normal: {} },
+            // areaStyle: { normal: {} },
             data: [30, 20, 50, 70, 90]
           }
         ]
@@ -1679,8 +1531,8 @@ export default {
             name: "Line 1",
             type: "pie",
             clockWise: false,
-            center: ['50%', '60%'],
-            radius: [10, 20],
+            center: ['50%', '55%'],
+            radius: [5, 13],
             label: {
               normal: {
                 show: false,
@@ -1709,8 +1561,8 @@ export default {
             name: "Line 2",
             type: "pie",
             clockWise: false,
-            center: ['50%', '60%'],
-            radius: [20, 30],
+            center: ['50%', '55%'],
+            radius: [18, 26],
             label: {
               normal: {
                 show: false,
@@ -1739,8 +1591,8 @@ export default {
             name: "Line 3",
             type: "pie",
             clockWise: false,
-            center: ['50%', '60%'],
-            radius: [30, 40],
+            center: ['50%', '55%'],
+            radius: [31, 39],
             label: {
               normal: {
                 show: false,
@@ -1769,8 +1621,8 @@ export default {
             name: "Line 4",
             type: "pie",
             clockWise: false,
-            center: ['50%', '60%'],
-            radius: [40, 50],
+            center: ['50%', '55%'],
+            radius: [44, 52],
             label: {
               normal: {
                 show: false,
@@ -1818,11 +1670,12 @@ export default {
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b}: {c} ({d}%)",
+          formatter: "{a} <br/>{b}: {c}台 ({d}%)",
           textStyle: {
             color: "#fff",
             fontSize: 8
-          }
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         legend: {
           show: false,
@@ -1842,7 +1695,7 @@ export default {
               normal: {
                 show: true,
                 position: "outside",
-                formatter: "\n{b}: {c} ",
+                formatter: "\n{b}: {c}台 ",
                 fontSize: "6"
               },
               emphasis: {
@@ -1890,11 +1743,12 @@ export default {
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b}: {c} ({d}%)",
+          formatter: "{a} <br/>{b}: {c}台 ({d}%)",
           textStyle: {
             color: "#fff",
             fontSize: 8
-          }
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         legend: {
           show: false,
@@ -1914,7 +1768,7 @@ export default {
               normal: {
                 show: true,
                 position: "outside",
-                formatter: "{b}: {c} ",
+                formatter: "{b}: {c}台 ",
                 fontSize: "6"
               },
 
@@ -1963,11 +1817,12 @@ export default {
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b}: {c} ({d}%)",
+          formatter: "{a} <br/>{b}: {c}台 ({d}%)",
           textStyle: {
             color: "#fff",
             fontSize: 8
-          }
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         legend: {
           show: false,
@@ -1987,7 +1842,7 @@ export default {
               normal: {
                 show: true,
                 position: "outside",
-                formatter: "{b}: {c} ",
+                formatter: "{b}: {c}台",
                 fontSize: "6"
               },
 
@@ -2036,11 +1891,12 @@ export default {
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b}: {c} ({d}%)",
+          formatter: "{a} <br/>{b}: {c}台 ({d}%)",
           textStyle: {
             color: "#fff",
             fontSize: 8
-          }
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         legend: {
           show: false,
@@ -2060,7 +1916,7 @@ export default {
               normal: {
                 show: true,
                 position: "outside",
-                formatter: "{b}: {c} ",
+                formatter: "{b}: {c}台",
                 fontSize: "6"
               },
 
@@ -2106,7 +1962,17 @@ export default {
           textStyle: {
             color: "#fff",
             fontSize: 8
-          }
+          },
+          formatter: function(params) {
+            var str = '';
+            var name = params[0].name + '<br>';
+            str += name;
+            params.forEach(item => {
+              str += item.marker + " " + item.seriesName + ':' + item.value + '%<br>'
+            });
+            return str;
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.66);'
         },
         legend: {
           x: "right",
@@ -2118,7 +1984,7 @@ export default {
             "销售收入增加率"
           ],
           textStyle: {
-            color: "#fff",
+            color: "#ddd",
             fontSize: 8
           },
           padding: [10, 0, 0, 0],
@@ -2126,7 +1992,7 @@ export default {
           itemHeight: 8,
         },
         grid: {
-          top: "20%",
+          top: "25%",
           left: "3%",
           right: "4%",
           bottom: "3%",
@@ -2153,9 +2019,10 @@ export default {
             "2018年"
           ],
           nameTextStyle: {
-            color: "#fff",
-            fontSize: 8
+            color: "#ddd",
+            fontSize: 8,
           },
+
           axisLine: {
             lineStyle: {
               color: "#ddd",
@@ -2172,6 +2039,12 @@ export default {
           axisLabel: {
             formatter: "{value} %"
           },
+          name: '占比',
+          nameTextStyle: {
+            color: "#ddd",
+            fontSize: 8,
+          },
+          nameGap: 5,
           axisLine: {
             lineStyle: {
               color: "#ddd"
@@ -2235,6 +2108,14 @@ export default {
 </script>
 
 <style scoped>
+#overCaigouKindsEchart>div:nth-of-type(2) {
+  font-size: 12px !important;
+  background-color: red !important;
+  padding: 12px !important;
+  display: inline-block;
+  transform: scale(0.833) !important;
+}
+
 .echart-container {
   /* width: 3745px; */
   width: 936.25px;
@@ -2263,7 +2144,7 @@ export default {
   position: absolute;
   top: 24px;
   left: 215px;
-  font-size: 14px;
+  font-size: 13px;
   color: #ffffff;
   font-weight: bold;
 }
@@ -2282,12 +2163,12 @@ export default {
 }
 
 .caigou-part>div:nth-of-type(2)>div:nth-of-type(1) {
-  width: 40%;
+  width:65%;
   height: 80%;
 }
 
 .caigou-part>div:nth-of-type(2)>div:nth-of-type(2) {
-  width: 60%;
+  width: 35%;
   height: 80%;
 }
 
@@ -2303,7 +2184,7 @@ export default {
   /* font-size: 36px; */
   font-size: 12px;
   color: #fefefe;
-  transform: scale(0.83);
+  /* transform: scale(0.83); */
   /* padding-bottom: 10px; */
   padding-bottom: 2.5px;
 }
@@ -2327,14 +2208,17 @@ export default {
 .total-price {
   /* width: 382.3px !important;
   height: 300px !important; */
-  width: 95.57px !important;
+  width: 129.57px !important;
   height: 75px !important;
   border-radius: 50%;
   background: url("./../assets/2.svg");
+  background-size: 100% 100%;
+  margin-left: 10px;
+
   /* padding: 20px;
    */
-  padding: 5x;
-
+  padding: 5px;
+  margin-top: 6px;
   position: relative;
   animation: loading 2s linear infinite;
 }
@@ -2342,24 +2226,40 @@ export default {
 .sub-total {
   width: 100% !important;
   height: 100% !important;
-  border: 5px solid transparent;
+  /* border: 5px solid transparent; */
   border-radius: 50%;
   background: url("./../assets/1.svg");
   box-sizing: border-box;
+    background-size: 100% 100%;
   animation: loading1 1s linear infinite;
 }
 
 .font-part {
   /* width: 220px !important;
   height: 200px !important; */
-  width: 55px !important;
+  width: 55px  !important;
   height: 50px !important;
   position: absolute;
   border-radius: 50%;
   /* top: 350px;
   left: 160px; */
-  top: 87.5px;
-  left: 35px;
+  top:91.5px;
+  left: 47px;
+  text-align: center;
+  line-height: 50px;
+  background: url("./../assets/bgad.png");
+}
+.font-part1 {
+  /* width: 220px !important;
+  height: 200px !important; */
+  width: 55px  !important;
+  height: 50px !important;
+  position: absolute;
+  border-radius: 50%;
+  /* top: 350px;
+  left: 160px; */
+  top:91.5px;
+  left: 138px;
   text-align: center;
   line-height: 50px;
   background: url("./../assets/bgad.png");
@@ -2370,7 +2270,11 @@ export default {
   /* margin-left: 10px; */
   margin-left: 2.5px;
 }
-
+.font-part1 img {
+  width: 90%;
+  /* margin-left: 10px; */
+  margin-left: 2.5px;
+}
 @-webkit-keyframes loading {
   from {
     -webkit-transform: rotate(0deg);
@@ -2414,16 +2318,23 @@ export default {
 
 
 
+
+
 /* 横线 */
 
 .transverseLine {
   /* padding-top: 50px; */
   /* padding-top: 12.5px; */
+  height: 15px;
+  line-height: 15px;
+
 }
 
 .transverseLine img {
   width: 100%;
 }
+
+
 
 
 
@@ -2452,6 +2363,8 @@ export default {
 
 
 
+
+
 /* 采购KPI的第二部分 */
 
 .part2-box {
@@ -2462,7 +2375,7 @@ export default {
 
 .part2-box>div:nth-of-type(1),
 .caigou-part4>div:nth-of-type(1) {
-  width: 42%;
+  width: 50%;
 }
 
 .part2-box>div:nth-of-type(1) {
@@ -2485,7 +2398,7 @@ export default {
 
 .part2-box>div:nth-of-type(2),
 .caigou-part4>div:nth-of-type(2) {
-  width: 58%;
+  width: 50%;
 }
 
 #overCaigouKindsEchart {
@@ -2493,6 +2406,8 @@ export default {
   height: 105.75px;
   /*  */
 }
+
+
 
 
 
@@ -2515,6 +2430,8 @@ export default {
 
 
 
+
+
 /* 交货一次检验合格率  准时交货率 主要供应商*/
 
 .caigou-part4 {
@@ -2525,7 +2442,8 @@ export default {
 
 .caigou-part4 .longLine {
   /* height: 730px !important; */
-  height: 160px !important;
+  height: 150px !important;
+  text-align: center;
 }
 
 .caigou-part4 .longLine img {
@@ -2541,11 +2459,11 @@ export default {
 }
 
 .commit-goods>div:nth-of-type(1) {
-  width: 80%;
+  width: 90%;
 }
 
 .commit-goods>div:nth-of-type(2) {
-  width: 20%;
+  width: 10%;
 }
 
 #commitGoodsEchart {
@@ -2562,6 +2480,8 @@ export default {
   /* height: 700px; */
   height: 140px;
 }
+
+
 
 
 
@@ -2663,6 +2583,8 @@ export default {
 
 
 
+
+
 /* 产品数据 */
 
 .right-part3-main {
@@ -2751,6 +2673,8 @@ export default {
 .table-container>span:nth-of-type(5) {
   padding-left: 10px;
 }
+
+
 
 
 
