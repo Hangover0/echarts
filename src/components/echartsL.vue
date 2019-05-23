@@ -42,16 +42,24 @@
             <div class="halo2 halo">
               <div class="halo3 halo">
                 <div class="halo4 halo">
-                  <div class="halo5 halo"><span class="smallCharacter">总装<br/>分厂</span></div>
+                  <div class="halo5 halo">
+                    <span class="smallCharacter">
+                      总装<br>分厂
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-           <div class="GoldTwo">
+          <div class="GoldTwo">
             <div class="GoldTwo4 halo">
               <div class="GoldTwo3 halo">
                 <div class="GoldTwo2 halo">
-                  <div class="GoldTwo1 halo"><span class="smallCharacter">金二<br/>分厂</span></div>
+                  <div class="GoldTwo1 halo">
+                    <span class="smallCharacter">
+                      金二<br>分厂
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -60,7 +68,11 @@
             <div class="Agold4 halo">
               <div class="Agold3 halo">
                 <div class="Agold2 halo">
-                  <div class="Agold1 halo"><span class="smallCharacter">金一<br/>分厂</span></div>
+                  <div class="Agold1 halo">
+                    <span class="smallCharacter">
+                      金一<br>分厂
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -69,7 +81,11 @@
             <div class="cast4 halo">
               <div class="cast3 halo">
                 <div class="cast2 halo">
-                  <div class="cast1 halo"><span class="smallCharacter">段热铆<br/>分&emsp;厂</span></div>
+                  <div class="cast1 halo">
+                    <span class="smallCharacter">
+                      段热铆<br>分&emsp;厂
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -78,7 +94,11 @@
             <div class="Heatforging4 halo">
               <div class="Heatforging3 halo">
                 <div class="Heatforging2 halo">
-                  <div class="Heatforging1 halo"><span class="smallCharacter">铸造<br/>分厂</span></div>
+                  <div class="Heatforging1 halo">
+                    <span class="smallCharacter">
+                      铸造<br>分厂
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -166,27 +186,42 @@
     <div class="boxR">
       <div class="title">生产KPI</div>
       <div>
-        <div class="subtitle subtitle1">
+        <div class="subtitle subtitle1 subtitle4">
           <img class="arrows" src="../assets/Headingstyles.png" alt>完成工时统计
         </div>
         <div id="echart5"></div>
       </div>
-       <div class="transverseLine">
+      <div class="transverseLine">
         <img src="../assets/transverseLine.svg" alt>
       </div>
       <div>
-        <div class="subtitle">
+        <div class="subtitle subtitle4">
           <img class="arrows" src="../assets/Headingstyles.png" alt>
           {{title}}
         </div>
         <div class="echart6Box">
           <div id="echart6"></div>
           <div class="p">
-            <p class="p1 smallCharacter">金一<br/>分厂</p>
-            <p class="p2 smallCharacter">金二<br/>分厂</p>
-            <p class="p3 smallCharacter">总装<br/>分厂</p>
-            <p class="p4 smallCharacter">锻热铆<br/>分&emsp;厂</p>
-            <p class="p5 smallCharacter">铸造<br/>分厂</p>
+            <p class="p1 smallCharacter">
+              金一
+              <br>分厂
+            </p>
+            <p class="p2 smallCharacter">
+              金二
+              <br>分厂
+            </p>
+            <p class="p3 smallCharacter">
+              总装
+              <br>分厂
+            </p>
+            <p class="p4 smallCharacter">
+              锻热铆
+              <br>分&emsp;厂
+            </p>
+            <p class="p5 smallCharacter">
+              铸造
+              <br>分厂
+            </p>
           </div>
         </div>
       </div>
@@ -268,21 +303,25 @@ export default {
             }
           },
           textStyle: {
-            fontSize: 5,
-            fontWeight: 'normal',
-          }
+            fontWeight: "lighter"
+          },
+          extraCssText: "line-height:20px;transform:scale(0.83);",
+          formatter: function(params) {
+            var str = params[0].axisValueLabel + '<br>' + params[0].marker + " " + params[0].seriesName + ':' + params[0].value + '(次)<br>' + params[1].marker + " " + params[1].seriesName + ':' + params[1].value + '(个)<br>' +params[2].marker + " " + params[2].seriesName + ':' + params[2].value + '(小时)<br>' + params[3].marker + " " + params[3].seriesName + ':' + params[3].value + '(台)<br>'
+            return str;
+          },
         },
         legend: {
           y: "top",
           x: "right",
           textStyle: {
             color: "#ddd",
-                         fontSize : 8,
+            fontSize: 10
           },
-          itemWidth: 8,  // 设置宽度
-      　　itemHeight: 8, // 设置高度
-      　　itemGap: 2, // 设置间距
-          padding: [10,0,0,0],
+          itemWidth: 8, // 设置宽度
+          itemHeight: 8, // 设置高度
+          itemGap: 2, // 设置间距
+          padding: [10, 0, 0, 0],
           data: [
             "设备故障次数",
             "设备维护保养问题数",
@@ -293,20 +332,7 @@ export default {
         xAxis: [
           {
             type: "category",
-            data: [
-              "1月",
-              "2月",
-              "3月",
-              "4月",
-              "5月",
-              "6月",
-              "7月",
-              "8月",
-              "9月",
-              "10月",
-              "11月",
-              "12月"
-            ],
+            data: ["1月", "2月", "3月", "4月", "5月"],
             axisPointer: {
               type: "shadow"
             },
@@ -320,7 +346,7 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 8
+              fontSize: 10
             }
           }
         ],
@@ -332,32 +358,41 @@ export default {
             max: 50,
             interval: 10,
             axisLabel: {
-              formatter: "{value}",
+              formatter: "{value}" + "(次/台)"
             },
             axisLine: {
               lineStyle: {
-                color: "#ddd",
+                color: "#ddd"
               }
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 8
+              fontSize: 10
             },
             nameTextStyle: {
-              fontSize: 8
+              fontSize: 10
             }
           },
           {
             type: "value",
+            name: "工时",
             min: 0,
             max: 100,
             interval: 20,
             axisLabel: {
               formatter: "{value} "
             },
+            axisLine: {
+              lineStyle: {
+                color: "#ddd"
+              }
+            },
             axisLabel: {
               color: "#ddd",
-              fontSize: 8
+              fontSize: 10
+            },
+            nameTextStyle: {
+              fontSize: 10
             }
           }
         ],
@@ -366,25 +401,25 @@ export default {
             name: "设备故障次数",
             type: "bar",
             yAxisIndex: 0,
-            data: [10, 13, 15, 16, 12, 20, 9, 12, 7, 15, 12, 13],
+            data: [10, 13, 15, 16, 12]
           },
           {
             name: "设备维护保养问题数",
             yAxisIndex: 0,
             type: "bar",
-            data: [12, 16, 13, 15, 10, 17, 25, 30, 10, 15, 25, 35],
+            data: [12, 16, 13, 15, 10]
           },
           {
             name: "平均响应时长",
             type: "line",
             yAxisIndex: 1,
-            data: [48, 51, 35, 32, 36, 34, 35, 30, 20, 27, 28, 16],
+            data: [48, 51, 35, 32, 36]
           },
           {
             name: "故障设备台数",
             type: "line",
             yAxisIndex: 0,
-            data: [4, 5, 7, 2, 3, 3, 5, 6, 3, 3, 5, 1],
+            data: [4, 5, 7, 2, 3]
           }
         ]
       });
@@ -397,10 +432,15 @@ export default {
       this.echart2.setOption({
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {d}%",
+          formatter: function(params) {
+            console.log(params);
+            var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+            return str;
+          },
           textStyle: {
-            fontSize: 8
-          }
+            fontWeight: "lighter"
+          },
+          extraCssText: "line-height:20px;transform:scale(0.83);"
         },
         legend: {
           show: "false",
@@ -413,11 +453,11 @@ export default {
             name: "每月故障次数",
             type: "pie",
             label: {
-              fontSize: 8,
+              fontSize: 10
             },
             labelLine: {
               length: 2,
-              length2: 5,
+              length2: 5
             },
             radius: ["35%", "65%"],
             center: ["50%", "58%"],
@@ -452,10 +492,14 @@ export default {
       this.echart3.setOption({
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {d}%",
+          formatter: function(params) {
+            var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+            return str;
+          },
           textStyle: {
-            fontSize: 8
-          }
+            fontWeight: "lighter"
+          },
+          extraCssText: "line-height:20px;transform:scale(0.83);"
         },
         legend: {
           show: "false",
@@ -468,11 +512,11 @@ export default {
             name: "每月故障次数",
             type: "pie",
             label: {
-              fontSize: 8,
+              fontSize: 10
             },
             labelLine: {
               length: 2,
-              length2: 5,
+              length2: 5
             },
             radius: ["35%", "65%"],
             center: ["50%", "58%"],
@@ -514,20 +558,25 @@ export default {
             }
           },
           textStyle: {
-            fontSize: 8
-          }
+            fontWeight: "lighter"
+          },
+          extraCssText: "line-height:20px;transform:scale(0.83);",
+          formatter: function(params) {
+            var str = params[0].axisValueLabel + '<br>' + params[0].marker + " " + params[0].seriesName + ':' + params[0].value + '(工时)<br>' + params[1].marker + " " + params[1].seriesName + ':' + params[1].value + '(工时)<br>' +params[2].marker + " " + params[2].seriesName + ':' + params[2].value + '%<br>'
+            return str;
+          },
         },
         legend: {
           y: "top",
           x: "right",
           textStyle: {
             color: "#ddd",
-            fontSize : 8,
+            fontSize: 10
           },
-          itemWidth: 8,  // 设置宽度
-      　　itemHeight: 8, // 设置高度
-      　　itemGap: 2, // 设置间距
-          padding: [10,0,0,0],
+          itemWidth: 8, // 设置宽度
+          itemHeight: 8, // 设置高度
+          itemGap: 2, // 设置间距
+          padding: [10, 0, 0, 0],
           data: [
             "月份完成工时",
             "同期完成工时",
@@ -538,20 +587,7 @@ export default {
         xAxis: [
           {
             type: "category",
-            data: [
-              "1月",
-              "2月",
-              "3月",
-              "4月",
-              "5月",
-              "6月",
-              "7月",
-              "8月",
-              "9月",
-              "10月",
-              "11月",
-              "12月"
-            ],
+            data: ["1月", "2月", "3月", "4月", "5月"],
             axisPointer: {
               type: "shadow"
             },
@@ -565,7 +601,7 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 8
+              fontSize: 10
             }
           }
         ],
@@ -574,10 +610,10 @@ export default {
             type: "value",
             name: "工时",
             min: 0,
-            max: 180,
-            interval: 30,
+            max: 250,
+            interval: 150,
             axisLabel: {
-              formatter: "{value} "
+              formatter: "{value} 小时 "
             },
             axisLine: {
               lineStyle: {
@@ -586,19 +622,20 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 8
+              fontSize: 10
             },
             nameTextStyle: {
-              fontSize: 8
+              fontSize: 10
             }
           },
           {
             type: "value",
+            name: "同比工时完成率",
             min: 0,
-            max: 1500,
-            interval: 300,
+            max: 5,
+            interval: 1,
             axisLabel: {
-              formatter: "{value} "
+              formatter: "{value} %"
             },
             axisLine: {
               lineStyle: {
@@ -607,7 +644,10 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 8
+              fontSize: 10
+            },
+            nameTextStyle: {
+              fontSize: 10
             }
           }
         ],
@@ -615,50 +655,26 @@ export default {
           {
             name: "月份完成工时",
             type: "bar",
-            data: [100, 120, 120, 140, 160, 100, 70, 75, 120, 140, 160, 160],
+            data: [100, 120, 120, 140, 160],
+            yAxisIndex: 0
           },
           {
             name: "同期完成工时",
             type: "bar",
-            data: [80, 120, 120, 130, 165, 110, 85, 90, 135, 120, 140, 150],
+            yAxisIndex: 0,
+            data: [80, 120, 120, 130, 165]
           },
-          {
-            name: "本年完成工时",
-            type: "line",
-            yAxisIndex: 1,
-            data: [
-              150,
-              280,
-              400,
-              500,
-              650,
-              700,
-              780,
-              885,
-              1000,
-              1150,
-              1280,
-              1480
-            ]
-          },
+          // {
+          //   name: "本年完成工时",
+          //   type: "line",
+          //   yAxisIndex: 0,
+          //   data: [100, 220, 340, 480, 740]
+          // },
           {
             name: "同比工时完成率",
             type: "line",
-            yAxisIndex: 0,
-            data: [
-              1.875,
-              2.33,
-              3.3,
-              3.8,
-              3.9,
-              6.3,
-              9.17,
-              9.8,
-              7.4,
-              9.58,
-              9.14,
-              9.8
-            ]
+            yAxisIndex: 1,
+            data: [1.875, 2.33, 3.3, 3.8, 3.9]
           }
         ]
       });
@@ -675,20 +691,23 @@ export default {
           orient: "horizontal",
           textStyle: {
             color: "#ddd",
-                        fontSize : 8,
-
+            fontSize: 10
           },
-          itemWidth: 8,  // 设置宽度
-      　　itemHeight: 8, // 设置高度
-      　　itemGap: 2, // 设置间距
-          padding: [0,20,0,0]
+          itemWidth: 8, // 设置宽度
+          itemHeight: 8, // 设置高度
+          itemGap: 2, // 设置间距
+          padding: [0, 20, 0, 0]
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {d}%",
+          formatter: function(params) {
+            var str = params.seriesName + '<br>' + params.marker + " " + params.data[0] + ':' + params.value[params.seriesIndex+1] + '%<br>'
+            return str;
+          },
           textStyle: {
-            fontSize: 8
-          }
+            fontWeight: "lighter"
+          },
+          extraCssText: "line-height:20px;transform:scale(0.83);"
         },
         dataset: {
           source: this.arr
@@ -697,7 +716,7 @@ export default {
           {
             type: "pie",
             label: {
-              fontSize: 8,
+              fontSize: 10
             },
             radius: 47,
             center: ["30%", "20%"],
@@ -711,18 +730,18 @@ export default {
             },
             labelLine: {
               length: 5,
-              length2: 6,
+              length2: 6
             }
           },
           {
             name: "金一分厂",
             type: "pie",
             label: {
-              fontSize: 8,
+              fontSize: 10
             },
             labelLine: {
               length: 5,
-              length2: 6,
+              length2: 6
             },
             radius: ["15%", "25%"],
             center: ["70%", "20%"],
@@ -742,11 +761,11 @@ export default {
             type: "pie",
             name: "金二分厂",
             label: {
-              fontSize: 8,
+              fontSize: 10
             },
             labelLine: {
               length: 5,
-              length2: 6,
+              length2: 6
             },
             radius: ["15%", "25%"],
             center: ["30%", "52%"],
@@ -759,11 +778,11 @@ export default {
             name: "总装分厂",
             type: "pie",
             label: {
-              fontSize: 8,
+              fontSize: 10
             },
             labelLine: {
               length: 5,
-              length2: 6,
+              length2: 6
             },
             radius: ["15%", "25%"],
             center: ["70%", "52%"],
@@ -776,11 +795,11 @@ export default {
             name: "段热铆分厂",
             type: "pie",
             label: {
-              fontSize: 8,
+              fontSize: 10
             },
             labelLine: {
               length: 5,
-              length2: 6,
+              length2: 6
             },
             radius: ["15%", "25%"],
             center: ["30%", "84%"],
@@ -793,11 +812,11 @@ export default {
             name: "铸造分厂",
             type: "pie",
             label: {
-              fontSize: 8,
+              fontSize: 10
             },
             labelLine: {
               length: 5,
-              length2: 6,
+              length2: 6
             },
             radius: ["15%", "25%"],
             center: ["70%", "84%"],
@@ -837,7 +856,7 @@ export default {
 <style scoped>
 .smallCharacter {
   display: inline-block;
-  transform: scale(0.66);
+  /* transform: scale(0.83); */
 }
 .haloBox {
   width: 450px;
@@ -1167,7 +1186,7 @@ export default {
   position: absolute;
   top: 26px;
   left: 218px;
-  font-size: 12px;
+  font-size: 13px;
   color: #ffffff;
   font-weight: bold;
 }
@@ -1179,19 +1198,22 @@ export default {
 }
 .subtitle2 {
   width: 220px !important;
-  margin-left: -10px !important;
+  /* margin-left: -10px !important; */
 }
-.subtitle3 {
+/* .subtitle3 {
   margin-left: -28px !important;
+} */
+.subtitle4 {
+  margin-left: 20px !important;
 }
 .subtitle {
   width: 450px;
   font-size: 12px;
   color: #fefefe;
-  transform: scale(0.83);
-  margin-right: 30px;
+  /* transform: scale(0.83); */
+  /* margin-right: 30px; */
   box-sizing: border-box;
-  margin-left: -15px;
+  /* margin-left: -15px; */
 }
 #echart1 {
   width: 450px;
@@ -1226,7 +1248,6 @@ export default {
 }
 #echart2,
 #echart3 {
-  text-align: center;
   height: 125px;
 }
 /* echart6 文字定位 */
@@ -1237,27 +1258,27 @@ export default {
 .p1 {
   position: absolute;
   bottom: 289px;
-  right: 122px;
+  right: 120px;
 }
 .p2 {
   position: absolute;
   bottom: 167px;
-  right: 303px;
+  right: 301px;
 }
 .p3 {
   position: absolute;
   bottom: 167px;
-  right: 123px;
+  right: 120px;
 }
 .p4 {
   position: absolute;
   bottom: 45px;
-  right: 297px;
+  right: 295px;
 }
 .p5 {
   position: absolute;
   bottom: 45px;
-  right: 123px;
+  right: 120px;
 }
 /* 横线 */
 .transverseLine {
@@ -1272,7 +1293,7 @@ export default {
 .longLine {
   margin: 24px 5px 0 5px;
 }
-.longLine img{
+.longLine img {
   height: 660px;
 }
 /* 箭头样式 */
@@ -1285,46 +1306,46 @@ export default {
 /* 1.定义动画 */
 @keyframes halos4 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223,1);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 1);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(30,189,223,0.9);
+    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.9);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.8);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.8);
   }
 }
 @keyframes halos3 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.7);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(30,189,223,0.6);
+    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.6);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.5);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.5);
   }
 }
 @keyframes halos2 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.5);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.5);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(30,189,223,0.4);
+    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.4);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.3);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.3);
   }
 }
 @keyframes halos1 {
   0% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.3);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.3);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(30,189,223,0.2);
+    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.2);
   }
   100% {
-    box-shadow: 0px 0px 1px 0px rgba(30,189,223,0.1);
+    box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.1);
   }
 }
 /* 2.定义动画 */
@@ -1333,7 +1354,7 @@ export default {
     box-shadow: 0px 0px 1px 0px rgb(30, 189, 223, 1);
   }
   70% {
-    box-shadow: 0px 0px 5px 0px rgba(30,189,223, 0.9);
+    box-shadow: 0px 0px 5px 0px rgba(30, 189, 223, 0.9);
   }
   100% {
     box-shadow: 0px 0px 1px 0px rgba(30, 189, 223, 0.8);
