@@ -10,6 +10,7 @@
       <p>{{weather.tmp}}℃</p>
     </div>-->
     <div class="content">
+      <echartsL1/>
       <echartsL/>
       <echartsR/>
     </div>
