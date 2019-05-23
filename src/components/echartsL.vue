@@ -1,8 +1,8 @@
 <template>
   <div class="box">
+    <div class="title">生产车间</div>
     <!-- 左边echarts -->
     <div class="boxL">
-      <div class="title title1">设备情况看板</div>
       <div>
         <div class="subtitle subtitle1 subtitle3">
           <img class="arrows" src="../assets/Headingstyles.png" alt>设备故障统计
@@ -15,18 +15,30 @@
       <div class="boxL-center">
         <div>
           <div class="subtitle subtitle2">
-            <img class="arrows" src="../assets/Headingstyles.png" alt>每月故障时间分布
+            <img class="arrows" src="../assets/Headingstyles.png" alt>当月个人违规数
           </div>
-          <div>
+          <div class="echart2Box">
             <div id="echart2"></div>
+            <div class="echart2Title">
+              <p>金一分厂</p>
+              <p>金二分厂</p>
+              <p>锻热铆车间</p>
+              <p>总装车间</p>
+            </div>
           </div>
         </div>
         <div>
           <div class="subtitle subtitle2">
-            <img class="arrows" src="../assets/Headingstyles.png" alt>每月故障时间分布
+            <img class="arrows" src="../assets/Headingstyles.png" alt>当月个人旷工数
           </div>
-          <div>
+          <div class="echart3Box">
             <div id="echart3"></div>
+            <div class="echart3Title">
+              <p>金一分厂</p>
+              <p>金二分厂</p>
+              <p>锻热铆车间</p>
+              <p>总装车间</p>
+            </div>
           </div>
         </div>
       </div>
@@ -184,7 +196,7 @@
     </div>
     <!-- 右边echarts -->
     <div class="boxR">
-      <div class="title">生产KPI</div>
+      <div class="title"></div>
       <div>
         <div class="subtitle subtitle1 subtitle4">
           <img class="arrows" src="../assets/Headingstyles.png" alt>完成工时统计
@@ -307,9 +319,35 @@ export default {
           },
           extraCssText: "line-height:20px;transform:scale(0.83);",
           formatter: function(params) {
-            var str = params[0].axisValueLabel + '<br>' + params[0].marker + " " + params[0].seriesName + ':' + params[0].value + '(次)<br>' + params[1].marker + " " + params[1].seriesName + ':' + params[1].value + '(个)<br>' +params[2].marker + " " + params[2].seriesName + ':' + params[2].value + '(小时)<br>' + params[3].marker + " " + params[3].seriesName + ':' + params[3].value + '(台)<br>'
+            var str =
+              params[0].axisValueLabel +
+              "<br>" +
+              params[0].marker +
+              " " +
+              params[0].seriesName +
+              ":" +
+              params[0].value +
+              "次<br>" +
+              params[1].marker +
+              " " +
+              params[1].seriesName +
+              ":" +
+              params[1].value +
+              "个<br>" +
+              params[2].marker +
+              " " +
+              params[2].seriesName +
+              ":" +
+              params[2].value +
+              "小时<br>" +
+              params[3].marker +
+              " " +
+              params[3].seriesName +
+              ":" +
+              params[3].value +
+              "台<br>";
             return str;
-          },
+          }
         },
         legend: {
           y: "top",
@@ -358,7 +396,7 @@ export default {
             max: 50,
             interval: 10,
             axisLabel: {
-              formatter: "{value}" + "(次/台)"
+              formatter: "{value}"
             },
             axisLine: {
               lineStyle: {
@@ -424,17 +462,159 @@ export default {
         ]
       });
     },
+    // drawChart2() {
+    //   this.echart2 = echarts.init(
+    //     document.getElementById("echart2"),
+    //     "mythemes"
+    //   );
+    //   this.echart2.setOption({
+    //     tooltip: {
+    //       trigger: "item",
+    //       formatter: function(params) {
+    //         var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+    //         return str;
+    //       },
+    //       textStyle: {
+    //         fontWeight: "lighter"
+    //       },
+    //       extraCssText: "line-height:20px;transform:scale(0.83);"
+    //     },
+    //     legend: {
+    //       show: "false",
+    //       x: "center",
+    //       y: "bottom",
+    //       data: ["完成率", "未完成率", "外部影响"]
+    //     },
+    //     series: [
+    //       {
+    //         name: "每月故障次数",
+    //         type: "pie",
+    //         label: {
+    //           fontSize: 10
+    //         },
+    //         labelLine: {
+    //           length: 2,
+    //           length2: 5
+    //         },
+    //         radius: ["35%", "65%"],
+    //         center: ["50%", "58%"],
+    //         data: [
+    //           { value: 263, name: "CAK50143DJ" },
+    //           { value: 263, name: "CAK50142DJ" },
+    //           { value: 263, name: "CAK50141DJ" },
+    //           { value: 526, name: "CAK50140DJ" },
+    //           { value: 790, name: "CAK50139DJ" },
+    //           { value: 1053, name: "CAK50138DJ" },
+    //           { value: 1316, name: "CAK50137DJ" },
+    //           { value: 1579, name: "CAK50136DJ" },
+    //           { value: 1842, name: "CAK50135DJ" },
+    //           { value: 2105, name: "CAK50134DJ" }
+    //         ],
+    //         itemStyle: {
+    //           emphasis: {
+    //             shadowBlur: 10,
+    //             shadowOffsetX: 0,
+    //             shadowColor: "rgba(0, 0, 0, 0.5)"
+    //           }
+    //         }
+    //       }
+    //     ]
+    //   });
+    // },
+    // drawChart3() {
+    //   this.echart3 = echarts.init(
+    //     document.getElementById("echart3"),
+    //     "mythemes"
+    //   );
+    //   this.echart3.setOption({
+    //     tooltip: {
+    //       trigger: "item",
+    //       formatter: function(params) {
+    //         var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+    //         return str;
+    //       },
+    //       textStyle: {
+    //         fontWeight: "lighter"
+    //       },
+    //       extraCssText: "line-height:20px;transform:scale(0.83);"
+    //     },
+    //     legend: {
+    //       show: "false",
+    //       x: "center",
+    //       y: "bottom",
+    //       data: ["完成率", "未完成率", "外部影响"]
+    //     },
+    //     series: [
+    //       {
+    //         name: "每月故障次数",
+    //         type: "pie",
+    //         label: {
+    //           fontSize: 10
+    //         },
+    //         labelLine: {
+    //           length: 2,
+    //           length2: 5
+    //         },
+    //         radius: ["35%", "65%"],
+    //         center: ["50%", "58%"],
+    //         data: [
+    //           { value: 263, name: "CAK50143DJ" },
+    //           { value: 263, name: "CAK50142DJ" },
+    //           { value: 263, name: "CAK50141DJ" },
+    //           { value: 526, name: "CAK50140DJ" },
+    //           { value: 790, name: "CAK50139DJ" },
+    //           { value: 1053, name: "CAK50138DJ" },
+    //           { value: 1316, name: "CAK50137DJ" },
+    //           { value: 1579, name: "CAK50136DJ" },
+    //           { value: 1842, name: "CAK50135DJ" },
+    //           { value: 2105, name: "CAK50134DJ" }
+    //         ],
+    //         itemStyle: {
+    //           emphasis: {
+    //             shadowBlur: 10,
+    //             shadowOffsetX: 0,
+    //             shadowColor: "rgba(0, 0, 0, 0.5)"
+    //           }
+    //         }
+    //       }
+    //     ]
+    //   });
+    // },
     drawChart2() {
       this.echart2 = echarts.init(
         document.getElementById("echart2"),
         "mythemes"
       );
+      var hideStyle = {
+        normal: {
+          color: "transparent", //未完成的圆环的颜色
+          label: {
+            show: false
+          },
+          labelLine: {
+            show: false
+          }
+        },
+        emphasis: {
+          show: false
+        }
+      };
       this.echart2.setOption({
         tooltip: {
           trigger: "item",
+          position: "right",
           formatter: function(params) {
-            console.log(params);
-            var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+            if (params.name !== "hide") {
+              var str =
+                "当月个人违规数" +
+                "<br>" +
+                params.marker +
+                " " +
+                params.name +
+                ":" +
+                params.value +
+                "个<br>";
+            }
             return str;
           },
           textStyle: {
@@ -443,43 +623,143 @@ export default {
           extraCssText: "line-height:20px;transform:scale(0.83);"
         },
         legend: {
-          show: "false",
-          x: "center",
           y: "bottom",
-          data: ["完成率", "未完成率", "外部影响"]
+          x: "62%",
+          textStyle: {
+            color: "#ddd",
+            fontSize: 10
+          },
+          itemWidth: 8, // 设置宽度
+          itemHeight: 8, // 设置高度
+          itemGap: 2, // 设置间距
+          padding: [0, 20, 0, 0],
+          data: ["金一分厂", "金二分厂", "锻热铆车间", "总装车间"],
+          orient: "vertical",
+          show:true
+        },
+        grid: {
+          top: "middle"
         },
         series: [
           {
-            name: "每月故障次数",
+            name: "金一分厂",
             type: "pie",
+            clockWise: false,
+            center: ["40%", "55%"],
+            radius: [5, 18],
             label: {
-              fontSize: 10
+              normal: {
+                show: false,
+                position: "inside"
+              }
             },
             labelLine: {
-              length: 2,
-              length2: 5
-            },
-            radius: ["35%", "65%"],
-            center: ["50%", "58%"],
-            data: [
-              { value: 263, name: "CAK50143DJ" },
-              { value: 263, name: "CAK50142DJ" },
-              { value: 263, name: "CAK50141DJ" },
-              { value: 526, name: "CAK50140DJ" },
-              { value: 790, name: "CAK50139DJ" },
-              { value: 1053, name: "CAK50138DJ" },
-              { value: 1316, name: "CAK50137DJ" },
-              { value: 1579, name: "CAK50136DJ" },
-              { value: 1842, name: "CAK50135DJ" },
-              { value: 2105, name: "CAK50134DJ" }
-            ],
-            itemStyle: {
-              emphasis: {
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowColor: "rgba(0, 0, 0, 0.5)"
+              normal: {
+                show: false
               }
-            }
+            },
+            hoverAnimation: false,
+            data: [
+              {
+                value: 12,
+                name: "金一分厂"
+              },
+              {
+                value: 8,
+                name: "hide",
+                itemStyle: hideStyle
+              }
+            ]
+          },
+          {
+            name: "金二分厂",
+            type: "pie",
+            clockWise: false,
+            center: ["40%", "55%"],
+            radius: [23, 36],
+            label: {
+              normal: {
+                show: false,
+                position: "inside"
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            hoverAnimation: false,
+            data: [
+              {
+                value: 10,
+                name: "金二分厂"
+              },
+              {
+                value: 10,
+                name: "hide",
+                itemStyle: hideStyle
+              }
+            ]
+          },
+          {
+            name: "锻热铆车间",
+            type: "pie",
+            clockWise: false,
+            center: ["40%", "55%"],
+            radius: [41, 54],
+            label: {
+              normal: {
+                show: false,
+                position: "inside"
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            hoverAnimation: false,
+            data: [
+              {
+                value: 8,
+                name: "锻热铆车间"
+              },
+              {
+                value: 12,
+                name: "hide",
+                itemStyle: hideStyle
+              }
+            ]
+          },
+          {
+            name: "总装车间",
+            type: "pie",
+            clockWise: false,
+            center: ["40%", "55%"],
+            radius: [59, 72],
+            label: {
+              normal: {
+                show: false,
+                position: "inside"
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            hoverAnimation: false,
+            data: [
+              {
+                value: 11,
+                name: "总装车间"
+              },
+              {
+                value: 9,
+                name: "hide",
+                itemStyle: hideStyle
+              }
+            ]
           }
         ]
       });
@@ -489,11 +769,36 @@ export default {
         document.getElementById("echart3"),
         "mythemes"
       );
+      var hideStyle = {
+        normal: {
+          color: "transparent", //未完成的圆环的颜色
+          label: {
+            show: false
+          },
+          labelLine: {
+            show: false
+          }
+        },
+        emphasis: {
+          show: false
+        }
+      };
       this.echart3.setOption({
         tooltip: {
           trigger: "item",
+          position: "right",
           formatter: function(params) {
-            var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+            if (params.name !== "hide") {
+              var str =
+                "当月个人违规数" +
+                "<br>" +
+                params.marker +
+                " " +
+                params.name +
+                ":" +
+                params.value +
+                "个<br>";
+            }
             return str;
           },
           textStyle: {
@@ -502,43 +807,143 @@ export default {
           extraCssText: "line-height:20px;transform:scale(0.83);"
         },
         legend: {
-          show: "false",
-          x: "center",
           y: "bottom",
-          data: ["完成率", "未完成率", "外部影响"]
+          x: "70%",
+          textStyle: {
+            color: "#ddd",
+            fontSize: 10
+          },
+          itemWidth: 8, // 设置宽度
+          itemHeight: 8, // 设置高度
+          itemGap: 2, // 设置间距
+          padding: [0, 0, 0, 0],
+          data: ["金一分厂", "金二分厂", "锻热铆车间", "总装车间"],
+          orient: "vertical",
+          show:  true
+        },
+        grid: {
+          top: "middle"
         },
         series: [
           {
-            name: "每月故障次数",
+            name: "金一分厂",
             type: "pie",
+            clockWise: false,
+            center: ["40%", "55%"],
+            radius: [5, 18],
             label: {
-              fontSize: 10
+              normal: {
+                show: false,
+                position: "inside"
+              }
             },
             labelLine: {
-              length: 2,
-              length2: 5
-            },
-            radius: ["35%", "65%"],
-            center: ["50%", "58%"],
-            data: [
-              { value: 263, name: "CAK50143DJ" },
-              { value: 263, name: "CAK50142DJ" },
-              { value: 263, name: "CAK50141DJ" },
-              { value: 526, name: "CAK50140DJ" },
-              { value: 790, name: "CAK50139DJ" },
-              { value: 1053, name: "CAK50138DJ" },
-              { value: 1316, name: "CAK50137DJ" },
-              { value: 1579, name: "CAK50136DJ" },
-              { value: 1842, name: "CAK50135DJ" },
-              { value: 2105, name: "CAK50134DJ" }
-            ],
-            itemStyle: {
-              emphasis: {
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowColor: "rgba(0, 0, 0, 0.5)"
+              normal: {
+                show: false
               }
-            }
+            },
+            hoverAnimation: false,
+            data: [
+              {
+                value: 2,
+                name: "金一分厂"
+              },
+              {
+                value: 3,
+                name: "hide",
+                itemStyle: hideStyle
+              }
+            ]
+          },
+          {
+            name: "金二分厂",
+            type: "pie",
+            clockWise: false,
+            center: ["40%", "55%"],
+            radius: [23, 36],
+            label: {
+              normal: {
+                show: false,
+                position: "inside"
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            hoverAnimation: false,
+            data: [
+              {
+                value: 3,
+                name: "金二分厂"
+              },
+              {
+                value: 2,
+                name: "hide",
+                itemStyle: hideStyle
+              }
+            ]
+          },
+          {
+            name: "锻热铆车间",
+            type: "pie",
+            clockWise: false,
+            center: ["40%", "55%"],
+            radius: [41, 54],
+            label: {
+              normal: {
+                show: false,
+                position: "inside"
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            hoverAnimation: false,
+            data: [
+              {
+                value: 1,
+                name: "锻热铆车间"
+              },
+              {
+                value: 4,
+                name: "hide",
+                itemStyle: hideStyle
+              }
+            ]
+          },
+          {
+            name: "总装车间",
+            type: "pie",
+            clockWise: false,
+            center: ["40%", "55%"],
+            radius: [59, 72],
+            label: {
+              normal: {
+                show: false,
+                position: "inside"
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            hoverAnimation: false,
+            data: [
+              {
+                value: 3,
+                name: "总装车间"
+              },
+              {
+                value: 2,
+                name: "hide",
+                itemStyle: hideStyle
+              }
+            ]
           }
         ]
       });
@@ -562,9 +967,29 @@ export default {
           },
           extraCssText: "line-height:20px;transform:scale(0.83);",
           formatter: function(params) {
-            var str = params[0].axisValueLabel + '<br>' + params[0].marker + " " + params[0].seriesName + ':' + params[0].value + '(工时)<br>' + params[1].marker + " " + params[1].seriesName + ':' + params[1].value + '(工时)<br>' +params[2].marker + " " + params[2].seriesName + ':' + params[2].value + '%<br>'
+            var str =
+              params[0].axisValueLabel +
+              "<br>" +
+              params[0].marker +
+              " " +
+              params[0].seriesName +
+              ":" +
+              params[0].value +
+              "工时<br>" +
+              params[1].marker +
+              " " +
+              params[1].seriesName +
+              ":" +
+              params[1].value +
+              "工时<br>" +
+              params[2].marker +
+              " " +
+              params[2].seriesName +
+              ":" +
+              params[2].value +
+              "%<br>";
             return str;
-          },
+          }
         },
         legend: {
           y: "top",
@@ -701,7 +1126,15 @@ export default {
         tooltip: {
           trigger: "item",
           formatter: function(params) {
-            var str = params.seriesName + '<br>' + params.marker + " " + params.data[0] + ':' + params.value[params.seriesIndex+1] + '%<br>'
+            var str =
+              params.seriesName +
+              "<br>" +
+              params.marker +
+              " " +
+              params.data[0] +
+              ":" +
+              params.value[params.seriesIndex + 1] +
+              "%<br>";
             return str;
           },
           textStyle: {
@@ -860,7 +1293,7 @@ export default {
 }
 .haloBox {
   width: 450px;
-  height: 195px;
+  height: 160px;
   overflow: hidden;
   position: relative;
   color: #ffffff;
@@ -871,8 +1304,8 @@ export default {
 .halo1 {
   display: flex;
   position: absolute;
-  top: 6px;
-  left: 172px;
+  top: 0px;
+  left: 130px;
 }
 .halo2 {
   animation: halos1 2s linear infinite;
@@ -894,8 +1327,8 @@ export default {
 .GoldTwo {
   display: flex;
   position: absolute;
-  top: 70px;
-  left: 71px;
+  top: 38px;
+  left: 50px;
 }
 .GoldTwo4 {
   animation: GoldTwo1 2s linear infinite;
@@ -917,8 +1350,8 @@ export default {
 .Agold {
   display: flex;
   position: absolute;
-  top: 75px;
-  left: 179px;
+  top: 72px;
+  left: 176px;
 }
 .Agold4 {
   animation: Agold1 2s linear infinite;
@@ -941,7 +1374,7 @@ export default {
   display: flex;
   position: absolute;
   top: 0px;
-  left: 290px;
+  left: 236px;
 }
 .cast4 {
   animation: cast1 2s linear infinite;
@@ -963,8 +1396,8 @@ export default {
 .Heatforging {
   display: flex;
   position: absolute;
-  top: 115px;
-  left: 247px;
+  top: 79px;
+  left: 300px;
 }
 .Heatforging4 {
   animation: Heatforging1 2s linear infinite;
@@ -987,7 +1420,7 @@ export default {
   display: flex;
   position: absolute;
   top: 10px;
-  left: 123px;
+  left: 100px;
 }
 .one4 {
   animation: cast1 2s linear infinite;
@@ -1007,8 +1440,8 @@ export default {
 .two {
   display: flex;
   position: absolute;
-  top: 80px;
-  left: 30px;
+  top: 78px;
+  left: 13px;
 }
 .two4 {
   animation: Agold1 2s linear infinite;
@@ -1028,8 +1461,8 @@ export default {
 .three {
   display: flex;
   position: absolute;
-  top: 77px;
-  left: 159px;
+  top: 81px;
+  left: 147px;
 }
 .three4 {
   animation: Heatforging1 2s linear infinite;
@@ -1049,8 +1482,8 @@ export default {
 .four {
   display: flex;
   position: absolute;
-  top: 135px;
-  left: 162px;
+  top: 124px;
+  left: 114px;
 }
 .four4 {
   animation: cast1 2s linear infinite;
@@ -1071,7 +1504,7 @@ export default {
   display: flex;
   position: absolute;
   top: 0px;
-  left: 246px;
+  left: 209px;
 }
 .five4 {
   animation: GoldTwo1 2s linear infinite;
@@ -1091,8 +1524,8 @@ export default {
 .six {
   display: flex;
   position: absolute;
-  top: 70px;
-  left: 264px;
+  top: 104px;
+  left: 265px;
 }
 .six4 {
   animation: GoldTwo1 2s linear infinite;
@@ -1112,8 +1545,8 @@ export default {
 .seven {
   display: flex;
   position: absolute;
-  top: 107px;
-  left: 345px;
+  top: 105px;
+  left: 390px;
 }
 .seven4 {
   animation: GoldTwo1 2s linear infinite;
@@ -1134,7 +1567,7 @@ export default {
   display: flex;
   position: absolute;
   top: 30px;
-  left: 390px;
+  left: 350px;
 }
 .eight4 {
   animation: Agold1 2s linear infinite;
@@ -1171,6 +1604,7 @@ export default {
   background-size: 963px 709px;
   box-sizing: border-box;
   padding-left: 10px;
+  position: relative;
 }
 .boxL {
   width: 48%;
@@ -1185,13 +1619,10 @@ export default {
 .title {
   position: absolute;
   top: 26px;
-  left: 218px;
+  left: 456px;
   font-size: 13px;
   color: #ffffff;
   font-weight: bold;
-}
-.title1 {
-  left: 189px;
 }
 .subtitle1 {
   margin: 45px 0 0 0;
@@ -1238,9 +1669,41 @@ export default {
   display: flex;
   width: 450px;
 }
+.echart2Box {
+  width: 220px;
+  position: relative;
+}
+.echart2Title {
+      position: absolute;
+    top: 16px;
+    right: 71px;
+    font-size: 12px;
+    color: #dddddd;
+    line-height: 18px;
+}
+.echart2Title p {
+  transform: scale(0.83);
+  padding: 0px;
+}
 #echart2 {
   margin: 0 0px 0 0px;
   width: 220px;
+}
+.echart3Box {
+  width: 220px;
+  position: relative;
+}
+.echart3Title {
+      position: absolute;
+    top: 16px;
+    right: 71px;
+    font-size: 12px;
+    color: #dddddd;
+    line-height: 18px;
+}
+.echart3Title p {
+  transform: scale(0.83);
+  padding: 0px;
 }
 #echart3 {
   margin: 0 0px 0 0px;
@@ -1248,7 +1711,7 @@ export default {
 }
 #echart2,
 #echart3 {
-  height: 125px;
+  height: 165px;
 }
 /* echart6 文字定位 */
 .p {
@@ -1291,10 +1754,10 @@ export default {
 }
 /* 竖线 */
 .longLine {
-  margin: 24px 5px 0 5px;
+  margin: 65px 5px 0 5px;
 }
 .longLine img {
-  height: 660px;
+  height: 600px;
 }
 /* 箭头样式 */
 .arrows {
