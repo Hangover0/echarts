@@ -6,21 +6,21 @@
       <!--采购费用分析  -->
       <div class="caigou-part">
         <!-- style='margin-left:-30px;' -->
-        <div class="sub-title" > 
+        <div class="sub-title">
           <img class="arrows" src="../assets/Headingstyles.png" alt>采购费用分析
         </div>
         <div>
           <div class="total-price">
             <div class="sub-total"></div>
           </div>
-           <div class="total-price">
+          <div class="total-price">
             <div class="sub-total"></div>
           </div>
           <div class="font-part">
             <img src="../assets/totalPrice.png" alt>
           </div>
-           <div class="font-part1">
-            <img src="../assets/totalPrice.png" alt>
+          <div class="font-part1">
+            <img src="../assets/qiankuanPrice.png" alt>
           </div>
           <div id="caigouEchart"></div>
         </div>
@@ -35,7 +35,7 @@
           <div>
             <div class="caigou-kinds">
               <!-- style='margin-left:-5px;' -->
-              <div class="sub-title" >
+              <div class="sub-title">
                 <img class="arrows" src="../assets/Headingstyles.png" alt>各类物资采购金额占比
               </div>
               <div id="caigouKindsEchart"></div>
@@ -45,11 +45,11 @@
               <img src="../assets/longstring.svg" alt>
             </div>
           </div>
-          <!--历年各类物资采购金额占比  -->
+          <!--当年采购出错统计  -->
           <div>
             <!-- style='margin-left:-5px;' -->
-            <div class="sub-title" >
-              <img class="arrows" src="../assets/Headingstyles.png" alt>历年各类物资采购金额占比
+            <div class="sub-title">
+              <img class="arrows" src="../assets/Headingstyles.png" alt>当年采购出错统计
             </div>
             <div id="overCaigouKindsEchart"></div>
           </div>
@@ -63,7 +63,7 @@
 
       <div class="caigou-part3">
         <!-- style='margin-left:-30px;' -->
-        <div class="sub-title" >
+        <div class="sub-title">
           <img class="arrows" src="../assets/Headingstyles.png" alt>重要物资历史采购价格趋势
         </div>
         <div id="importantCaigouEchart"></div>
@@ -77,14 +77,14 @@
           <div>
             <div>
               <!-- style='margin-left:-7px;' -->
-              <div class="sub-title" >
+              <div class="sub-title">
                 <img class="arrows" src="../assets/Headingstyles.png" alt>当年综合交货一次检验合格率
               </div>
               <div id="commitGoodsEchart"></div>
             </div>
             <div>
               <!-- style='margin-left:-7px;' -->
-              <div class="sub-title" >
+              <div class="sub-title">
                 <img class="arrows" src="../assets/Headingstyles.png" alt>当年综合准时交货率
               </div>
               <div id="commitGoodsTimeEchart"></div>
@@ -96,7 +96,7 @@
         </div>
         <div class="main-gongying">
           <!-- style='margin-left:-7px;' -->
-          <div class="sub-title" >
+          <div class="sub-title">
             <img class="arrows" src="../assets/Headingstyles.png" alt>主要供应商
           </div>
           <div id="mainGongyingEchart"></div>
@@ -110,7 +110,7 @@
         <!-- 采购费用分析 -->
         <div class="right-part1">
           <!-- style='margin-left:-30px;' -->
-          <div class="sub-title" >
+          <div class="sub-title">
             <img class="arrows" src="../assets/Headingstyles.png" alt>销售额
           </div>
           <vue-seamless-scroll :data="listData" :class-option="optionSingleHeight" class="seamless-warp">
@@ -134,7 +134,7 @@
         <!--客户增长  -->
         <div class="right-part2">
           <!-- style='margin-left:-30px;' -->
-          <div class="sub-title" >
+          <div class="sub-title">
             <img class="arrows" src="../assets/Headingstyles.png" alt>客户增长
           </div>
           <div id="rightEchart1"></div>
@@ -146,7 +146,7 @@
         <!--产品数据  -->
         <div class="right-part3">
           <!-- style='margin-left:-30px;' -->
-          <div class="sub-title" >
+          <div class="sub-title">
             <img class="arrows" src="../assets/Headingstyles.png" alt>产品销售完成率
           </div>
           <div class="right-part3-main">
@@ -165,7 +165,7 @@
 
         <div class="right-part4">
           <!-- style='margin-left:-30px;' -->
-          <div class="sub-title" >
+          <div class="sub-title">
             <img class="arrows" src="../assets/Headingstyles.png" alt>销售数据
           </div>
           <div id="rightLastEchart"></div>
@@ -781,7 +781,7 @@ export default {
           x: "right",
           y: "bottom",
           show: true,
-            color: "#fff",
+          color: "#fff",
           textStyle: {
             fontSize: '6'
           },
@@ -796,13 +796,13 @@ export default {
           textStyle: {
             color: "#fff",
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         grid: {
           top: "30%",
-           left: "17%",
+          left: "17%",
           bottom: 10,
-          width:175,
+          width: 175,
           height: 50
         },
         xAxis: {
@@ -811,11 +811,11 @@ export default {
           position: "top",
           min: -0.1,
           nameTextStyle: {
-          max: 0.25,
+            max: 0.25,
           },
-            color: "#fff",
+          color: "#fff",
           axisLine: {
-              color: "#ddd",
+            color: "#ddd",
             lineStyle: {
             }
           },
@@ -867,12 +867,17 @@ export default {
         title: {},
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {d}%",
+         formatter: function(params) {
+            // console.log(params);
+            var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+            // console.log(str);
+            return str;
+          },
           textStyle: {
             color: "#fff",
             fontSize: 8
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         grid: {
           top: 0,
@@ -940,7 +945,7 @@ export default {
             var name = params[0].name + '<br>';
             str += name;
             params.forEach(item => {
-              str += item.marker + " " + item.seriesName + ':' + item.value + '%<br>'
+              str += item.marker + " " + item.seriesName + ':' + item.value + '次<br>'
             });
             return str;
           },
@@ -948,38 +953,41 @@ export default {
             color: "#fff",
             fontSize: 8
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         legend: {
           show: false,
           x: "right",
           y: "bottom",
-          orient: "horizontal",
-          data: ["原材料", "外购零件", "工具量具", "工装火具", "办公耗材"],
-
+      
+          data: ["采购程序违规次数", "供应商违规次数统计", "计划出错数"],
+              orient: "horizontal",
           textStyle: {
             color: "#fff",
             fontSize: 8
           },
+          itemWidth:8,
+          itemHeight:8,
+          itemGap:-1,
+
           // padding: [100, 90, 0, 0]
         },
         grid: {
           left: 0,
           right: "10%",
-          bottom: "0%",
-          height: 70,
-          
+          bottom: "0",
+          height: 85,
           containLabel: true
         },
         xAxis: [
           {
             type: "category",
-            data: ["2015", "2016", "2017", "2018"],
+            data: ["1月", "2月", "3月", "4月", "5月"],
             nameTextStyle: {
               color: "#fff",
               fontSize: 8,
-              nameGap: 5
             },
+            nameGap: 1,
             axisLine: {
               lineStyle: {
                 color: "#ddd"
@@ -994,15 +1002,16 @@ export default {
         yAxis: [
           {
             type: "value",
-            // min: 0,
-            // max: 300,
-            interval: 50,
-            name: '占比',
+            min: 0,
+            max: 5,
+            interval: 1,
+            name: '次数',
             nameTextStyle: {
-              fontSize: 6,
+              fontSize: 8,
               color: '#ddd',
-              nameGap: 5
+
             },
+            nameGap: 5,
             axisLine: {
               lineStyle: {
                 color: "#ddd",
@@ -1016,41 +1025,28 @@ export default {
         ],
         series: [
           {
-            name: "原材料",
+            name: "采购程序违规次数",
             type: "bar",
             stack: "采购金额",
-            barMinHeight: 12,
-            data: [110, 105, 100, 95],
+            barMinHeight: 3,
+            data: [1, 0, 1, 1, 0],
 
           },
           {
-            name: "外购零件",
+            name: "供应商违规次数统计",
             type: "bar",
+             barMinHeight: 2,
             stack: "采购金额",
-            data: [60, 75, 85, 105],
+            data: [2, 1, 3, 0, 1],
           },
           {
-            name: "工具量具",
+            name: "计划出错数",
             type: "bar",
             stack: "采购金额",
-            barMinHeight: 15,
-            data: [20, 25, 30, 20]
+            barMinHeight: 4,
+            data: [0, 0, 1, 1, 0]
           },
-          {
-            name: "工装火具",
-            type: "bar",
-            stack: "采购金额",
-            barMinHeight: 5,
-            data: [30, 40, 45, 30],
 
-          },
-          {
-            name: "办公耗材",
-            type: "bar",
-            stack: "采购金额",
-            barMinHeight: 10,
-            data: [22, 25, 28, 18],
-          }
         ]
       });
     },
@@ -1076,7 +1072,7 @@ export default {
             });
             return str;
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         legend: {
           x: "right",
@@ -1094,8 +1090,8 @@ export default {
             color: "#ddd",
             fontSize: 8
           },
-          itemWidth: 9,
-          itemHeight: 9,
+          itemWidth: 8,
+          itemHeight: 8,
           padding: [5, 0, 0, 0],
           itemGap: -5
         },
@@ -1129,7 +1125,7 @@ export default {
           },
           axisLabel: {
             color: "#ddd",
-            fontSize: 6
+            fontSize: 8
           }
         },
         yAxis: {
@@ -1139,7 +1135,7 @@ export default {
           interval: 2,
           name: '万元',
           nameTextStyle: {
-            fontSize: 6,
+            fontSize: 8,
             color: '#ddd',
 
           },
@@ -1237,7 +1233,7 @@ export default {
               normal: {
                 formatter: (value * 100).toFixed(2) + "%",
                 textStyle: {
-                  fontSize: 6,
+                  fontSize: 8,
                 }
               }
             }
@@ -1283,7 +1279,7 @@ export default {
               normal: {
                 formatter: (value * 100).toFixed(2) + "%",
                 textStyle: {
-                  fontSize: 6
+                  fontSize: 8
                 }
               }
             }
@@ -1302,7 +1298,7 @@ export default {
             color: "#fff",
             fontSize: 8
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         series: [
           {
@@ -1368,7 +1364,7 @@ export default {
             });
             return str;
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         legend: {
           x: "right",
@@ -1443,7 +1439,7 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 6
+              fontSize: 8
             }
           }
         ],
@@ -1515,24 +1511,47 @@ export default {
           show: false,
           x: "left",
           y: "bottom",
-          data: ["2015年", "2016年", "2017年", "2018年"],
+          data: ["1月", "2月", "3月", "4月", '5月'],
           orient: 'horizontal',
           textStyle: {
             color: "#ddd",
             fontSize: 8
           },
-          padding: [30, 0, 0, 0]
+          padding: [30, 0, 0, 30]
         },
         grid: {
-          top: 'middle'
+          top: 'middle',
+        },
+        tooltip: {
+          trigger: "item",
+          formatter: function(params) {
+            // console.log(params);
+            if (params.name !== 'hide') {
+              var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+              // console.log(str);
+              return str;
+            }
+
+          },
+          textStyle: {
+            color: "#fff",
+            fontSize: 8
+          },
+          position: function(pos, params, dom, rect, size) {
+            // 鼠标在左侧时 tooltip 显示到右侧，鼠标在右侧时 tooltip 显示到左侧。
+            var obj = { top: 60 };
+            obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+            return obj;
+          },
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         series: [
           {
-            name: "Line 1",
+            name: "1月",
             type: "pie",
             clockWise: false,
             center: ['50%', '55%'],
-            radius: [5, 13],
+            radius: [5, 11],
             label: {
               normal: {
                 show: false,
@@ -1544,25 +1563,25 @@ export default {
                 show: false
               }
             },
-            hoverAnimation: true,
+            hoverAnimation: false,
             data: [
               {
-                value: 107,
-                name: "2015年"
+                value: 6.22,
+                name: "1月"
               },
               {
-                value: 193,
+                value: 13.78,
                 name: "hide",
                 itemStyle: hideStyle
               }
             ]
           },
           {
-            name: "Line 2",
+            name: "2月",
             type: "pie",
             clockWise: false,
             center: ['50%', '55%'],
-            radius: [18, 26],
+            radius: [15, 21],
             label: {
               normal: {
                 show: false,
@@ -1574,25 +1593,25 @@ export default {
                 show: false
               }
             },
-            hoverAnimation: true,
+            hoverAnimation: false,
             data: [
               {
-                value: 100,
-                name: "2016年"
+                value: 9.78,
+                name: "2月"
               },
               {
-                value: 100,
+                value: 10.22,
                 name: "hide",
                 itemStyle: hideStyle
               }
             ]
           },
           {
-            name: "Line 3",
+            name: "3月",
             type: "pie",
             clockWise: false,
             center: ['50%', '55%'],
-            radius: [31, 39],
+            radius: [25, 31],
             label: {
               normal: {
                 show: false,
@@ -1604,25 +1623,25 @@ export default {
                 show: false
               }
             },
-            hoverAnimation: true,
+            hoverAnimation: false,
             data: [
               {
-                value: 197,
-                name: "2017年"
+                value: 12.58,
+                name: "3月"
               },
               {
-                value: 3,
+                value: 7.42,
                 name: "hide",
                 itemStyle: hideStyle
               }
             ]
           },
           {
-            name: "Line 4",
+            name: "4月",
             type: "pie",
             clockWise: false,
             center: ['50%', '55%'],
-            radius: [44, 52],
+            radius: [35, 41],
             label: {
               normal: {
                 show: false,
@@ -1634,14 +1653,44 @@ export default {
                 show: false
               }
             },
-            hoverAnimation: true,
+            hoverAnimation: false,
             data: [
               {
-                value: 93,
-                name: "2018年"
+                value: 11.42,
+                name: "4月"
               },
               {
-                value: 107,
+                value: 8.58,
+                name: "hide",
+                itemStyle: hideStyle
+              }
+            ]
+          },
+          {
+            name: "5月",
+            type: "pie",
+            clockWise: false,
+            center: ['50%', '55%'],
+            radius: [45, 51],
+            label: {
+              normal: {
+                show: false,
+                position: "inside"
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            hoverAnimation: false,
+            data: [
+              {
+                value: 10,
+                name: "5月"
+              },
+              {
+                value: 10,
                 name: "hide",
                 itemStyle: hideStyle
               }
@@ -1657,7 +1706,7 @@ export default {
       );
       this.product2.setOption({
         title: {
-          text: "轧辊磨床累计\n交货数量",
+          text: "2018年轧辊\n磨床订购台数",
           show: true,
           x: "center",
           y: "center",
@@ -1670,16 +1719,28 @@ export default {
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b}: {c}台 ({d}%)",
+          formatter: function(params) {
+            // console.log(params);
+            var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+            // console.log(str);
+            return str;
+          },
           textStyle: {
             color: "#fff",
             fontSize: 8
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          position: function(pos, params, dom, rect, size) {
+            // 鼠标在左侧时 tooltip 显示到右侧，鼠标在右侧时 tooltip 显示到左侧。
+            var obj = { top: 60 };
+            obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+            return obj;
+          },
+
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         legend: {
           show: false,
-          data: ["2015年", "2016年", "2017年", "2018年"],
+          data: ["第一季度", "第二季度", "第三季度", "第四季度"],
           textStyle: {
             color: "#fff",
             fontSize: 8
@@ -1687,7 +1748,7 @@ export default {
         },
         series: [
           {
-            name: "2015年",
+            name: "2018年",
             type: "pie",
             radius: ["50%", "70%"],
             avoidLabelOverlap: false,
@@ -1706,6 +1767,7 @@ export default {
                 }
               }
             },
+            hoverAnimation: false,
             labelLine: {
 
               normal: {
@@ -1715,10 +1777,10 @@ export default {
               }
             },
             data: [
-              { value: 153, name: "2015年" },
-              { value: 180, name: "2016年" },
-              { value: 166, name: "2017年" },
-              { value: 178, name: "2018年", selected: true }
+              { value: 42, name: "第一季度" },
+              { value: 45, name: "第二季度" },
+              { value: 40, name: "第三季度" },
+              { value: 50, name: "第四季度" }
             ]
           }
         ]
@@ -1731,7 +1793,7 @@ export default {
       );
       this.product3.setOption({
         title: {
-          text: "轧辊磨床客户\n 订购累计台数",
+          text: "2018年轧辊\n 磨床交货台数",
           show: true,
           x: "center",
           y: "center",
@@ -1743,16 +1805,27 @@ export default {
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b}: {c}台 ({d}%)",
+          formatter: function(params) {
+            // console.log(params);
+            var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+            // console.log(str);
+            return str;
+          },
+          position: function(pos, params, dom, rect, size) {
+            // 鼠标在左侧时 tooltip 显示到右侧，鼠标在右侧时 tooltip 显示到左侧。
+            var obj = { top: 60 };
+            obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+            return obj;
+          },
           textStyle: {
             color: "#fff",
             fontSize: 8
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         legend: {
           show: false,
-          data: ["2015年", "2016年", "2017年", "2018年"],
+          data: ["第一季度", "第二季度", "第三季度", "第四季度"],
           textStyle: {
             color: "#fff",
             fontSize: 8
@@ -1760,7 +1833,7 @@ export default {
         },
         series: [
           {
-            name: "2015年",
+            name: "2018年",
             type: "pie",
             radius: ["50%", "70%"],
             avoidLabelOverlap: false,
@@ -1780,6 +1853,7 @@ export default {
                 }
               }
             },
+            hoverAnimation: false,
             labelLine: {
               normal: {
                 show: true,
@@ -1789,10 +1863,10 @@ export default {
               }
             },
             data: [
-              { value: 153, name: "2015年" },
-              { value: 180, name: "2016年" },
-              { value: 166, name: "2017年" },
-              { value: 178, name: "2018年", selected: true }
+              { value: 41, name: "第一季度" },
+              { value: 45, name: "第二季度" },
+              { value: 40, name: "第三季度" },
+              { value: 50, name: "第四季度" }
             ]
           }
         ]
@@ -1805,7 +1879,7 @@ export default {
       );
       this.product4.setOption({
         title: {
-          text: "无心磨床客户订购\n累计台数",
+          text: "2018年无心\n磨床订购台数",
           show: true,
           x: "center",
           y: "center",
@@ -1817,16 +1891,27 @@ export default {
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b}: {c}台 ({d}%)",
+          formatter: function(params) {
+            // console.log(params);
+            var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+            // console.log(str);
+            return str;
+          },
+          position: function(pos, params, dom, rect, size) {
+            // 鼠标在左侧时 tooltip 显示到右侧，鼠标在右侧时 tooltip 显示到左侧。
+            var obj = { top: 60 };
+            obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+            return obj;
+          },
           textStyle: {
             color: "#fff",
             fontSize: 8
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         legend: {
           show: false,
-          data: ["2015年", "2016年", "2017年", "2018年"],
+          data: ["第一季度", "第二季度", "第三季度", "第四季度"],
           textStyle: {
             color: "#fff",
             fontSize: 6
@@ -1834,10 +1919,11 @@ export default {
         },
         series: [
           {
-            name: "2015年",
+            name: "2018年",
             type: "pie",
             radius: ["50%", "70%"],
             avoidLabelOverlap: false,
+            hoverAnimation: false,
             label: {
               normal: {
                 show: true,
@@ -1863,10 +1949,10 @@ export default {
               }
             },
             data: [
-              { value: 97, name: "2015年" },
-              { value: 112, name: "2016年" },
-              { value: 117, name: "2017年" },
-              { value: 130, name: "2018年", selected: true }
+              { value: 32, name: "第一季度" },
+              { value: 30, name: "第二季度" },
+              { value: 31, name: "第三季度" },
+              { value: 35, name: "第四季度" }
             ]
           }
         ]
@@ -1879,7 +1965,7 @@ export default {
       );
       this.product5.setOption({
         title: {
-          text: "无心磨床客户订购\n累计台数",
+          text: "2018年无心\n磨床交货台数",
           show: true,
           x: "center",
           y: "center",
@@ -1891,7 +1977,18 @@ export default {
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b}: {c}台 ({d}%)",
+          formatter: function(params) {
+            // console.log(params);
+            var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
+            // console.log(str);
+            return str;
+          },
+          position: function(pos, params, dom, rect, size) {
+            // 鼠标在左侧时 tooltip 显示到右侧，鼠标在右侧时 tooltip 显示到左侧。
+            var obj = { top: 60 };
+            obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+            return obj;
+          },
           textStyle: {
             color: "#fff",
             fontSize: 8
@@ -1900,7 +1997,7 @@ export default {
         },
         legend: {
           show: false,
-          data: ["2015年", "2016年", "2017年", "2018年"],
+          data: ["第一季度", "第二季度", "第三季度", "第四季度"],
           textStyle: {
             color: "#fff",
             fontSize: 6
@@ -1908,11 +2005,12 @@ export default {
         },
         series: [
           {
-            name: "2015年",
+            name: "2018年",
             type: "pie",
             radius: ["50%", "70%"],
             avoidLabelOverlap: false,
-            label: {
+            hoverAnimation: false,
+             label: {
               normal: {
                 show: true,
                 position: "outside",
@@ -1924,7 +2022,7 @@ export default {
                 show: true,
                 textStyle: {
                   fontSize: "8",
-                  fontWeight: "light"
+                  fontWeight: "bold"
                 }
               }
             },
@@ -1936,11 +2034,12 @@ export default {
                 length2: 0,
               }
             },
+
             data: [
-              { value: 97, name: "2015年" },
-              { value: 112, name: "2016年" },
-              { value: 117, name: "2017年" },
-              { value: 130, name: "2018年", selected: true }
+              { value: 30, name: "第一季度" },
+              { value: 30, name: "第二季度" },
+              { value: 30, name: "第三季度" },
+              { value: 35, name: "第四季度" }
             ]
           }
         ]
@@ -1972,16 +2071,15 @@ export default {
             });
             return str;
           },
-          extraCssText: 'line-height:20px;transform:scale(0.66);'
+          extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         legend: {
           x: "right",
           y: "top",
           data: [
-            "订单签单率",
-            "销售产品完成率",
-            "销售回款回笼率",
-            "销售收入增加率"
+            "订单签订率",
+            "销售数完成情况",
+            "资金收入完成率"
           ],
           textStyle: {
             color: "#ddd",
@@ -2010,13 +2108,11 @@ export default {
           type: "category",
           boundaryGap: false,
           data: [
-            "2012年",
-            "2013年",
-            "2014年",
-            "2015年",
-            "2016年",
-            "2017年",
-            "2018年"
+            "1月",
+            "2月",
+            "3月",
+            "4月",
+            "5月"
           ],
           nameTextStyle: {
             color: "#ddd",
@@ -2026,7 +2122,7 @@ export default {
           axisLine: {
             lineStyle: {
               color: "#ddd",
-              fontSize: 8
+              fontSize: 10
             }
           },
           axisLabel: {
@@ -2057,25 +2153,20 @@ export default {
         },
         series: [
           {
-            name: "订单签单率",
+            name: "订单签订率",
             type: "line",
-            data: [95, 95, 80, 95, 100, 89, 90],
+            data: [92, 87, 93, 83, 90],
           },
           {
-            name: "销售产品完成率",
+            name: "销售数完成情况",
             type: "line",
-            data: [85, 80, 91, 95, 120, 80, 64],
+            data: [55, 70, 63, 65, 64],
           },
           {
-            name: "销售回款回笼率",
+            name: "资金收入完成率",
             type: "line",
-            data: [65, 70, 55, 60, 75, 91, 90],
+            data: [86, 88, 94, 95.30, 98],
           },
-          {
-            name: "销售收入增加率",
-            type: "line",
-            data: [15, 10, 20, 30, 15, 7, 6],
-          }
         ]
       });
     }
@@ -2163,7 +2254,7 @@ export default {
 }
 
 .caigou-part>div:nth-of-type(2)>div:nth-of-type(1) {
-  width:65%;
+  width: 65%;
   height: 80%;
 }
 
@@ -2230,39 +2321,44 @@ export default {
   border-radius: 50%;
   background: url("./../assets/1.svg");
   box-sizing: border-box;
-    background-size: 100% 100%;
+  background-size: 100% 100%;
   animation: loading1 1s linear infinite;
 }
 
 .font-part {
   /* width: 220px !important;
   height: 200px !important; */
-  width: 55px  !important;
+  width: 55px !important;
   height: 50px !important;
   position: absolute;
   border-radius: 50%;
   /* top: 350px;
   left: 160px; */
-  top:91.5px;
+  top: 91.5px;
   left: 47px;
   text-align: center;
   line-height: 50px;
   background: url("./../assets/bgad.png");
+  background-size: 100%;
+  background-position: 50% 80%;
 }
+
 .font-part1 {
   /* width: 220px !important;
   height: 200px !important; */
-  width: 55px  !important;
+  width: 55px !important;
   height: 50px !important;
   position: absolute;
   border-radius: 50%;
   /* top: 350px;
   left: 160px; */
-  top:91.5px;
+  top: 91.5px;
   left: 138px;
   text-align: center;
   line-height: 50px;
   background: url("./../assets/bgad.png");
+  background-size: 100%;
+  background-position: 50% 80%;
 }
 
 .font-part img {
@@ -2270,11 +2366,13 @@ export default {
   /* margin-left: 10px; */
   margin-left: 2.5px;
 }
+
 .font-part1 img {
-  width: 90%;
+  width: 73%;
   /* margin-left: 10px; */
   margin-left: 2.5px;
 }
+
 @-webkit-keyframes loading {
   from {
     -webkit-transform: rotate(0deg);
@@ -2320,6 +2418,13 @@ export default {
 
 
 
+
+
+
+
+
+
+
 /* 横线 */
 
 .transverseLine {
@@ -2327,12 +2432,18 @@ export default {
   /* padding-top: 12.5px; */
   height: 15px;
   line-height: 15px;
-
 }
 
 .transverseLine img {
   width: 100%;
 }
+
+
+
+
+
+
+
 
 
 
@@ -2355,6 +2466,13 @@ export default {
   width: 2px;
   height: 100%;
 }
+
+
+
+
+
+
+
 
 
 
@@ -2416,12 +2534,26 @@ export default {
 
 
 
+
+
+
+
+
+
+
 /* 重要物资历史采购价格趋势部分 */
 
 #importantCaigouEchart {
   /* height: 500px; */
   height: 150px;
 }
+
+
+
+
+
+
+
 
 
 
@@ -2480,6 +2612,13 @@ export default {
   /* height: 700px; */
   height: 140px;
 }
+
+
+
+
+
+
+
 
 
 
@@ -2585,6 +2724,13 @@ export default {
 
 
 
+
+
+
+
+
+
+
 /* 产品数据 */
 
 .right-part3-main {
@@ -2595,6 +2741,8 @@ export default {
 
 .right-part3-main>div:nth-of-type(1) {
   width: 30%;
+  padding-left: 20px;
+  box-sizing: border-box;
   height: 100%;
 }
 
@@ -2673,6 +2821,13 @@ export default {
 .table-container>span:nth-of-type(5) {
   padding-left: 10px;
 }
+
+
+
+
+
+
+
 
 
 
