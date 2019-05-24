@@ -2815,8 +2815,10 @@ export default {
 .table-container>span:nth-of-type(2),
 .table-container>span:nth-of-type(5) {
   font-family: 'SourceHanSansCN-Regular';
+    font-size: 12px;
   transform: scale(0.75);
-  font-size: 8px;
+
+
 }
 
 .table-container>span:nth-of-type(2),
@@ -2859,8 +2861,8 @@ export default {
 
 .table-container>span:nth-of-type(4),
 .table-container>span:nth-of-type(7) {
+    font-size: 12px;
   transform: scale(0.66);
-  font-size: 6px;
   margin-left: -5px;
 }
 </style>
