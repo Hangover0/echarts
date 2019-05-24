@@ -3,18 +3,10 @@
     <div class="title">生产车间</div>
     <!-- 左边echarts -->
     <div class="boxL">
-      <div>
-        <div class="subtitle subtitle1 subtitle3">
-          <img class="arrows" src="../assets/Headingstyles.png" alt>设备故障统计
-        </div>
-        <div id="echart1"></div>
-      </div>
-      <div class="transverseLine">
-        <img src="../assets/transverseLine.svg" alt>
-      </div>
+      
       <div class="boxL-center">
         <div>
-          <div class="subtitle subtitle2">
+          <div class="subtitle subtitle2 subtitle1">
             <img class="arrows" src="../assets/Headingstyles.png" alt>当月个人违规数
           </div>
           <div class="echart2Box">
@@ -28,7 +20,7 @@
           </div>
         </div>
         <div>
-          <div class="subtitle subtitle2">
+          <div class="subtitle subtitle2 subtitle1">
             <img class="arrows" src="../assets/Headingstyles.png" alt>当月个人旷工数
           </div>
           <div class="echart3Box">
@@ -42,6 +34,17 @@
           </div>
         </div>
       </div>
+      <!-- 横线 -->
+      <div class="transverseLine">
+        <img src="../assets/transverseLine.svg" alt>
+      </div>
+      <div>
+        <div class="subtitle subtitle3">
+          <img class="arrows" src="../assets/Headingstyles.png" alt>设备故障统计
+        </div>
+        <div id="echart1"></div>
+      </div>
+      <!-- 横线 -->
       <div class="transverseLine">
         <img src="../assets/transverseLine.svg" alt>
       </div>
@@ -214,6 +217,8 @@
         <div class="echart6Box">
           <div id="echart6"></div>
           <div class="p">
+            <p class="p6 smallCharacter">生产供
+              <br>应&emsp;处</p>
             <p class="p1 smallCharacter">
               金一
               <br>分厂
@@ -261,9 +266,9 @@ export default {
           "锻热铆分厂",
           "铸造分厂"
         ],
-        ["完成率", 8326, 8671, 8671, 9091, 8324, 8324],
-        ["未完成率", 717, 166, 498, 606, 559, 559],
-        ["外部影响", 957, 1163, 831, 303, 1117, 1117]
+        ["完成率", 83.26, 86.71, 86.71, 90.91, 83.24, 83.24],
+        ["未完成率", 7.17, 1.66, 4.98, 6.06, 5.59, 5.59],
+        ["外部影响", 9.57, 11.63, 8.31, 3.03, 11.17, 11.17]
       ],
       name: ["本月完成率", "本季完成率"],
       title: "本月完成率",
@@ -278,9 +283,9 @@ export default {
             "锻热铆分厂",
             "铸造分厂"
           ],
-          ["完成率", 8326, 8671, 8671, 9091, 8324, 8324],
-          ["未完成率", 717, 166, 498, 606, 559, 559],
-          ["外部影响", 957, 1163, 831, 303, 1117, 1117]
+          ["完成率", 83.26, 86.71, 86.71, 90.91, 83.24, 83.24],
+        ["未完成率", 7.17, 1.66, 4.98, 6.06, 5.59, 5.59],
+        ["外部影响", 9.57, 11.63, 8.31, 3.03, 11.17, 11.17]
         ],
         [
           [
@@ -613,7 +618,7 @@ export default {
                 params.name +
                 ":" +
                 params.value +
-                "个<br>";
+                "次<br>";
             }
             return str;
           },
@@ -624,7 +629,7 @@ export default {
         },
         legend: {
           y: "bottom",
-          x: "62%",
+          x: "72%",
           textStyle: {
             color: "#ddd",
             fontSize: 10
@@ -635,7 +640,7 @@ export default {
           padding: [0, 20, 0, 0],
           data: ["金一分厂", "金二分厂", "锻热铆车间", "总装车间"],
           orient: "vertical",
-          show:true
+          show:false
         },
         grid: {
           top: "middle"
@@ -797,7 +802,7 @@ export default {
                 params.name +
                 ":" +
                 params.value +
-                "个<br>";
+                "次<br>";
             }
             return str;
           },
@@ -819,7 +824,7 @@ export default {
           padding: [0, 0, 0, 0],
           data: ["金一分厂", "金二分厂", "锻热铆车间", "总装车间"],
           orient: "vertical",
-          show:  true
+          show:  false
         },
         grid: {
           top: "middle"
@@ -829,7 +834,7 @@ export default {
             name: "金一分厂",
             type: "pie",
             clockWise: false,
-            center: ["40%", "55%"],
+            center: ["50%", "55%"],
             radius: [5, 18],
             label: {
               normal: {
@@ -859,7 +864,7 @@ export default {
             name: "金二分厂",
             type: "pie",
             clockWise: false,
-            center: ["40%", "55%"],
+            center: ["50%", "55%"],
             radius: [23, 36],
             label: {
               normal: {
@@ -889,7 +894,7 @@ export default {
             name: "锻热铆车间",
             type: "pie",
             clockWise: false,
-            center: ["40%", "55%"],
+            center: ["50%", "55%"],
             radius: [41, 54],
             label: {
               normal: {
@@ -919,7 +924,7 @@ export default {
             name: "总装车间",
             type: "pie",
             clockWise: false,
-            center: ["40%", "55%"],
+            center: ["50%", "55%"],
             radius: [59, 72],
             label: {
               normal: {
@@ -1033,12 +1038,12 @@ export default {
         yAxis: [
           {
             type: "value",
-            name: "工时",
+            name: "工时(时)",
             min: 0,
             max: 250,
-            interval: 150,
+            interval: 50,
             axisLabel: {
-              formatter: "{value} 小时 "
+              formatter: "{value} 工时"
             },
             axisLine: {
               lineStyle: {
@@ -1055,7 +1060,7 @@ export default {
           },
           {
             type: "value",
-            name: "同比工时完成率",
+            name: "完成率(%)",
             min: 0,
             max: 5,
             interval: 1,
@@ -1121,7 +1126,7 @@ export default {
           itemWidth: 8, // 设置宽度
           itemHeight: 8, // 设置高度
           itemGap: 2, // 设置间距
-          padding: [0, 20, 0, 0]
+          padding: [5, 20, 0, 0]
         },
         tooltip: {
           trigger: "item",
@@ -1151,7 +1156,7 @@ export default {
             label: {
               fontSize: 10
             },
-            radius: 47,
+            radius: ["15%", "25%"],
             center: ["30%", "20%"],
             // No encode specified, by default, it is '生产供应处'.
             itemStyle: {
@@ -1685,6 +1690,18 @@ export default {
   transform: scale(0.83);
   padding: 0px;
 }
+.echart2Title p:nth-child(4) {
+  color: #3fb1e3;
+}
+.echart2Title p:nth-child(3) {
+  color: #6be6c1;
+}
+.echart2Title p:nth-child(2) {
+  color: #e3b67f;
+}
+.echart2Title p:nth-child(1) {
+  color: #aaa0e6;
+}
 #echart2 {
   margin: 0 0px 0 0px;
   width: 220px;
@@ -1694,9 +1711,9 @@ export default {
   position: relative;
 }
 .echart3Title {
-      position: absolute;
+    position: absolute;
     top: 16px;
-    right: 71px;
+    right: 49px;
     font-size: 12px;
     color: #dddddd;
     line-height: 18px;
@@ -1704,6 +1721,18 @@ export default {
 .echart3Title p {
   transform: scale(0.83);
   padding: 0px;
+}
+.echart3Title p:nth-child(4) {
+  color: #3fb1e3;
+}
+.echart3Title p:nth-child(3) {
+  color: #6be6c1;
+}
+.echart3Title p:nth-child(2) {
+  color: #e3b67f;
+}
+.echart3Title p:nth-child(1) {
+  color: #aaa0e6;
 }
 #echart3 {
   margin: 0 0px 0 0px;
@@ -1742,6 +1771,11 @@ export default {
   position: absolute;
   bottom: 45px;
   right: 120px;
+}
+.p6 {
+  position: absolute;
+  bottom: 289px;
+  right: 294px;
 }
 /* 横线 */
 .transverseLine {
