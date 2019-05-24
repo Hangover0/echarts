@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div class="title">生产车间</div>
+    <div class="title">生产KPI</div>
     <!-- 左边echarts -->
     <div class="boxL">
       
@@ -418,7 +418,7 @@ export default {
           },
           {
             type: "value",
-            name: "工时",
+            name: "工时(时)",
             min: 0,
             max: 100,
             interval: 20,
@@ -795,7 +795,7 @@ export default {
           formatter: function(params) {
             if (params.name !== "hide") {
               var str =
-                "当月个人违规数" +
+                "当月个人旷工数" +
                 "<br>" +
                 params.marker +
                 " " +
@@ -1126,7 +1126,7 @@ export default {
           itemWidth: 8, // 设置宽度
           itemHeight: 8, // 设置高度
           itemGap: 2, // 设置间距
-          padding: [5, 20, 0, 0]
+          padding: [3, 20, 0, 0]
         },
         tooltip: {
           trigger: "item",
