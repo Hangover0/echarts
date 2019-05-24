@@ -1090,10 +1090,10 @@ export default {
             color: "#ddd",
             fontSize: 8
           },
-          itemWidth: 8,
-          itemHeight: 8,
+          itemWidth: 6,
+          itemHeight: 6,
           padding: [5, 0, 0, 0],
-          itemGap: -5
+          itemGap:-1
         },
         grid: {
 
@@ -1380,7 +1380,7 @@ export default {
           },
           itemWidth: 8,
           itemHeight: 8,
-          itemGap: -5,
+          itemGap:5,
           padding: [5, 0, 0, 0],
         },
 
@@ -1391,11 +1391,12 @@ export default {
           }
         },
         grid: {
-          left: 0,
+          left: '5%',
           top: '25%',
           right: '4%',
+          bottom:'5%',
           width: 370,
-          height: 130,
+          height: 120,
           containLabel: true
         },
         xAxis: [
@@ -1420,12 +1421,13 @@ export default {
         yAxis: [
           {
             type: "value",
-            axisLabel: {
-              formatter: "{value} %"
-            },
+          
             min: "0",
             max: "300",
-            name: '占比',
+              axisLabel: {
+              formatter: '{value} %'
+            },
+            name: '比率(%)',
             nameTextStyle: {
               color: '#ddd',
               fontSize: 8
@@ -2135,7 +2137,7 @@ export default {
           axisLabel: {
             formatter: "{value} %"
           },
-          name: '占比',
+          name: '比率(%)',
           nameTextStyle: {
             color: "#ddd",
             fontSize: 8,
@@ -2857,7 +2859,7 @@ export default {
 
 .table-container>span:nth-of-type(4),
 .table-container>span:nth-of-type(7) {
-  transform: scale(0.5);
+  transform: scale(0.66);
   font-size: 6px;
   margin-left: -5px;
 }
