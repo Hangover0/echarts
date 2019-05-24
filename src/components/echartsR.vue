@@ -135,7 +135,7 @@
         <div class="right-part2">
           <!-- style='margin-left:-30px;' -->
           <div class="sub-title">
-            <img class="arrows" src="../assets/Headingstyles.png" alt>客户增长
+            <img class="arrows" src="../assets/Headingstyles.png" alt>工业总产值
           </div>
           <div id="rightEchart1"></div>
           <div class="transverseLine">
@@ -867,7 +867,7 @@ export default {
         title: {},
         tooltip: {
           trigger: "item",
-         formatter: function(params) {
+          formatter: function(params) {
             // console.log(params);
             var str = params.seriesName + '<br>' + params.marker + " " + params.name + ':' + params.value + '%<br>'
             // console.log(str);
@@ -959,16 +959,16 @@ export default {
           show: false,
           x: "right",
           y: "bottom",
-      
+
           data: ["采购程序违规次数", "供应商违规次数统计", "计划出错数"],
-              orient: "horizontal",
+          orient: "horizontal",
           textStyle: {
             color: "#fff",
             fontSize: 8
           },
-          itemWidth:8,
-          itemHeight:8,
-          itemGap:-1,
+          itemWidth: 8,
+          itemHeight: 8,
+          itemGap: -1,
 
           // padding: [100, 90, 0, 0]
         },
@@ -1035,7 +1035,7 @@ export default {
           {
             name: "供应商违规次数统计",
             type: "bar",
-             barMinHeight: 2,
+            barMinHeight: 2,
             stack: "采购金额",
             data: [2, 1, 3, 0, 1],
           },
@@ -1093,7 +1093,7 @@ export default {
           itemWidth: 6,
           itemHeight: 6,
           padding: [5, 0, 0, 0],
-          itemGap:-1
+          itemGap: -1
         },
         grid: {
 
@@ -1357,21 +1357,24 @@ export default {
           },
           formatter: function(params) {
             var str = '';
-            var name = params[0].name + '<br>';
+            var name = params[0].name;
             str += name;
             params.forEach(item => {
-              str += item.marker + " " + item.seriesName + ':' + item.value + '%<br>'
+              str += " " +':' + item.value + '万元<br>'
             });
             return str;
           },
           extraCssText: 'line-height:20px;transform:scale(0.83);'
         },
         legend: {
+          show:false,
           x: "right",
           data: [
-            "生产计划大纲按时生产完成率",
-            "同期客户增长率",
-            "同期最终客户占比率"
+            "2018年12月",
+            "2019年1月",
+            "2019年2月",
+            "2019年3月",
+            "2019年4月"
           ],
           y: "top",
           textStyle: {
@@ -1380,7 +1383,7 @@ export default {
           },
           itemWidth: 8,
           itemHeight: 8,
-          itemGap:5,
+          itemGap: 5,
           padding: [5, 0, 0, 0],
         },
 
@@ -1391,19 +1394,19 @@ export default {
           }
         },
         grid: {
-          left: '5%',
-          top: '25%',
+          left: '0',
+          top: '20%',
           right: '4%',
-          bottom:'5%',
-          width: 370,
-          height: 120,
+          bottom: '5%',
+          width: 375,
+          height: 130,
           containLabel: true
         },
         xAxis: [
           {
-            type: "category",
-            boundaryGap: false,
-            data: ["2014年", "2015年", "2016年", "2017年", "2018年"],
+            boundaryGap: true,
+            type: 'category',
+            data: ['2018年12月', '2019年1月', '2019年2月', '2019年3月', '2019年4月'],
             nameTextStyle: {
               color: "#ddd"
             },
@@ -1414,20 +1417,19 @@ export default {
             },
             axisLabel: {
               color: "#ddd",
-              fontSize: 8
+              rotate:-20,
+              fontSize: 8,
+              // inside:true,
             }
           }
         ],
         yAxis: [
           {
-            type: "value",
-          
-            min: "0",
-            max: "300",
-              axisLabel: {
-              formatter: '{value} %'
-            },
-            name: '比率(%)',
+            type: 'value',
+            min: 0,
+            max: 2000,
+            interval: 500,
+            name: '万元',
             nameTextStyle: {
               color: '#ddd',
               fontSize: 8
@@ -1445,38 +1447,12 @@ export default {
             }
           }
         ],
-        series: [
-          {
-            name: "生产计划大纲按时生产完成率",
-            type: "line",
-            // stack: "总量",
-            stack: null,
-            // areaStyle: {},
-            data: [95, 90, 200, 97, 150],
-          },
-          {
-            name: "同期客户增长率",
-            // stack: "总量",
-            type: "line",
-            stack: null,
-            // areaStyle: {},
-            data: [60, 80, 50, 30, 10]
-          },
-          {
-            name: "同期最终客户占比率",
-            type: "line",
-            // stack: "总量",
-            stack: null,
-            label: {
-              normal: {
-                show: true,
-                position: "top"
-              }
-            },
-            // areaStyle: { normal: {} },
-            data: [30, 20, 50, 70, 90]
-          }
-        ]
+        series: [{
+          data: [1812, 1067, 1262, 1399, 1453],
+          type: 'bar',
+           barWidth : 20,
+           barGap:10,
+        }]
       });
     },
     productF1() {
@@ -2012,7 +1988,7 @@ export default {
             radius: ["50%", "70%"],
             avoidLabelOverlap: false,
             hoverAnimation: false,
-             label: {
+            label: {
               normal: {
                 show: true,
                 position: "outside",
@@ -2427,6 +2403,8 @@ export default {
 
 
 
+
+
 /* 横线 */
 
 .transverseLine {
@@ -2456,6 +2434,8 @@ export default {
 
 
 
+
+
 /* 竖线 */
 
 .longLine {
@@ -2468,6 +2448,8 @@ export default {
   width: 2px;
   height: 100%;
 }
+
+
 
 
 
@@ -2543,12 +2525,16 @@ export default {
 
 
 
+
+
 /* 重要物资历史采购价格趋势部分 */
 
 #importantCaigouEchart {
   /* height: 500px; */
   height: 150px;
 }
+
+
 
 
 
@@ -2614,6 +2600,8 @@ export default {
   /* height: 700px; */
   height: 140px;
 }
+
+
 
 
 
@@ -2733,6 +2721,8 @@ export default {
 
 
 
+
+
 /* 产品数据 */
 
 .right-part3-main {
@@ -2815,14 +2805,16 @@ export default {
 .table-container>span:nth-of-type(2),
 .table-container>span:nth-of-type(5) {
   font-family: 'SourceHanSansCN-Regular';
+  font-size: 12px;
   transform: scale(0.75);
-  font-size: 8px;
 }
 
 .table-container>span:nth-of-type(2),
 .table-container>span:nth-of-type(5) {
   padding-left: 10px;
 }
+
+
 
 
 
@@ -2859,8 +2851,8 @@ export default {
 
 .table-container>span:nth-of-type(4),
 .table-container>span:nth-of-type(7) {
+  font-size: 12px;
   transform: scale(0.66);
-  font-size: 6px;
   margin-left: -5px;
 }
 </style>
