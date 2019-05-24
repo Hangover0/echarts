@@ -147,7 +147,7 @@
         <div class="right-part3">
           <!-- style='margin-left:-30px;' -->
           <div class="sub-title">
-            <img class="arrows" src="../assets/Headingstyles.png" alt>产品销售完成率
+            <img class="arrows" src="../assets/Headingstyles.png" alt>产品销售完成情况
           </div>
           <div class="right-part3-main">
             <div id="product1"></div>
@@ -158,6 +158,14 @@
               <div id="product5"></div>
             </div>
           </div>
+
+           <div class="tip-position">
+              <p style="color:#c4ebad;">5月</p>
+              <p style="color:#aaa0e6;">4月</p>
+              <p style="color:#e3b67f;">3月</p>
+              <p style="color:#6be6c1;">2月</p>
+              <p style="color:#3fb1e3;">1月</p>
+            </div>
           <div class="transverseLine">
             <img src="../assets/transverseLine.svg" alt>
           </div>
@@ -1476,7 +1484,7 @@ export default {
       };
       this.product1.setOption({
         title: {
-          text: "销售计划完成率",
+          text: "当年产品销售完成率",
           textStyle: {
             color: "#ddd",
             fontSize: 8,
@@ -2724,13 +2732,24 @@ export default {
 
 
 /* 产品数据 */
+.right-part3{
+  position: relative;
+}
 
 .right-part3-main {
+  /* position: relative; */
   display: flex;
   justify-content: space-between;
   height: 150px;
 }
-
+.tip-position {
+     display: block;
+    position: absolute;
+    top: 17%;
+    font-size: 12px;
+    transform: scale(0.66);
+    left: 18%;
+}
 .right-part3-main>div:nth-of-type(1) {
   width: 30%;
   padding-left: 20px;
