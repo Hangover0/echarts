@@ -1060,7 +1060,7 @@ export default {
           },
           {
             type: "value",
-            name: "完成率(%)",
+            name: "同比工时完成率(%)",
             min: 0,
             max: 5,
             interval: 1,
